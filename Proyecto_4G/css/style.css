@@ -10,6 +10,16 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
+body{
+  font-family: "Open Sans", sans-serif;
+}
+
+.navbar{
+  background-color: aqua;
+}
+
+.page{
+}
 
 html {
   color: #222;
