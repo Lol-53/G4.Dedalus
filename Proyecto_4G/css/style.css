@@ -14,11 +14,41 @@ body{
   font-family: "Open Sans", sans-serif;
 }
 
-.navbar{
-  background-color: aqua;
+.navbar {
+  background-color: #fbfbfb;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.page{
+.navbar a{
+  color:#26508e;
+  font-size: larger;
+  transition: color 0.3s ease-in-out;
+
+}
+
+.navbar a:hover{
+  color:#34879e;
+}
+
+#navBarCollapsed:not(.show) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+
+
+div#page header h1{
+  font-size: 5em;
+}
+
+#navBarCollapsed{
+  transition: width 0.15s linear;
+
+}
+
+#navBarCollapsed.show {
+  width: 200px; /* Ancho fijo cuando está visible */
 }
 
 html {
