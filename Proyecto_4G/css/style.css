@@ -208,9 +208,6 @@ header h2{
 /* -------------------------------------------------------------------------- */
 
 #chat-text-area{
-
-  /* position: fixed; */
-
   bottom: 0;
   left: 0;
   margin: 10px;
@@ -233,6 +230,7 @@ header h2{
 .chat-bubble p{
   overflow-wrap: break-word;
   word-wrap: break-word;
+  margin-bottom:0;
 }
 
 .fromMe{
@@ -243,7 +241,6 @@ header h2{
 }
 
 .fromIA{
-  flex: end;
   align-self: flex-start;
   background-color: #e5e5e5;
   color: black;
@@ -255,15 +252,24 @@ header h2{
 }
 
 #chat-text-area{
-  /* border: 1px solid black; */
-  height:40px;
+  max-height: 200px;
+  transition: height 0.2s linear, max-height 0.2s linear;
 }
 
 #campo-msg{
-  height:80%;
-  width:85%;
+  width:80%;
+  max-height: 150px;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  overflow-y: hidden;
+  resize: none;
+  transition: height 0.2s linear, max-height 0.2s linear;
+}
+
+#text-bubble{
+  min-height: 40px;
+  /* height: 50px; */
+  transition: height 0.2s linear, max-height 0.2s linear;
 }
 
 #chat-text-area button{
