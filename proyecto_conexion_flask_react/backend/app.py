@@ -1,11 +1,7 @@
 from flask import Flask, request, jsonify
 import openai  # Utiliza el proxy de litellm
-import faiss  # Se añade FAISS para búsqueda vectorial
-import numpy as np  # Se añade NumPy para manejar embeddings
+import pandas as pd
 from flask_cors import CORS
-import litellm  # Importa litellm
-
-litellm.drop_params = True
 
 app = Flask(__name__)
 CORS(app)  # Esto habilita CORS para todas las rutas de Flask
@@ -16,28 +12,68 @@ client = openai.OpenAI(
     base_url="https://litellm.dccp.pbu.dedalus.com"
 )
 
-documentos = [
-    "Paciente Juan Pérez, diabetes tipo 2, tratamiento con insulina.",
-    "Paciente María López, hipertensión, dieta baja en sal y ejercicio.",
-    "Paciente Pedro Gómez, colesterol alto, estatinas y control de peso."
-]
+# Cargar datos de pacientes (solo una vez al iniciar)
+info_pacientes_df = pd.read_csv("datos_pacientes/info_pacientes.csv")
+notas_df = pd.read_csv("datos_pacientes/notas.csv")
 
-response = client.models.list()
-print(response)
+# Almacenar contexto de pacientes en memoria
+contextos_pacientes = {}
 
-def obtener_embedding(texto):
-    response = client.embeddings.create(
-        model="bedrock/amazon.titan-embed-text-v2:0",
-        input=texto
-    )
-    return response.data[0].embedding  # Extrae el embedding generado
+@app.route("/set-context", methods=["POST"])
+def set_context():
+    """Recibe el ID del paciente y carga su contexto desde los CSV."""
+    try:
+        data = request.get_json()
+        id_paciente = data.get("id_paciente")
 
+        if not id_paciente:
+            return jsonify({"error": "ID de paciente vacío"}), 400
 
-vectores = np.array([obtener_embedding(doc) for doc in documentos])
-dim = vectores.shape[1]  # Dimensión del embedding
-index = faiss.IndexFlatL2(dim)
-index.add(vectores)
-texto_por_indice = {i: documentos[i] for i in range(len(documentos))}
+        # Si ya existe el contexto, no lo recarga
+        if id_paciente in contextos_pacientes:
+            contexto = contextos_pacientes[id_paciente]
+        else:
+            # Buscar información del paciente
+            paciente_info = info_pacientes_df[info_pacientes_df["id"] == id_paciente]
+            notas_paciente = notas_df[notas_df["id"] == id_paciente]
+
+            if paciente_info.empty:
+                return jsonify({"error": "Paciente no encontrado"}), 404
+
+            # Convertir datos a string para pasarlo como contexto
+            info_texto = paciente_info.to_string(index=False)
+            notas_texto = notas_paciente.to_string(index=False) if not notas_paciente.empty else "Sin notas registradas."
+
+            # Generar contexto
+            contexto = f"""
+            Eres una IA que asiste a personal sanitario para responder preguntas, generar informes, gráficas y orientar sobre un paciente concreto. 
+            Como contexto inicial, te proporcionaré los siguientes datos del paciente:
+            {info_texto}
+    
+            Y algunas notas tomadas:
+            {notas_texto}
+            
+            Cuando se te haga una pregunta concreta, responderás con los datos proporcionados a eso y SOLO a eso, lo mismo con las gráficas, recuperarás
+            solo los datos necesarios, cuando se te pida un resumen, resumirás en base a todos los datos que tengas y cuando se te pida consejo
+            sobre pasos a seguir o recomendaciones para el paciente, recuperarás información relevante según el ámbito sobre el que se te pregunte.
+            """
+
+            # Guardar contexto en memoria
+            contextos_pacientes[id_paciente] = contexto
+            return jsonify({"message": "Contexto cargado correctamente"})
+
+        # Llamada a Amazon Bedrock usando litellm
+        response = client.chat.completions.create(
+            model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
+            messages=[{"role": "user", "content": contexto}]
+        )
+
+        # Extraer la respuesta del modelo
+        ai_response = response.choices[0].message.content
+        print(ai_response)
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route("/test", methods=["GET"])
 def test():
@@ -52,20 +88,10 @@ def ask_ai():
         if not user_message:
             return jsonify({"error": "Mensaje vacío"}), 400
 
-        vector_pregunta = obtener_embedding(user_message).reshape(1, -1)
-
-        k = 2  # Número de resultados a recuperar
-        _, indices = index.search(vector_pregunta, k)
-        contexto = "\n".join([texto_por_indice[idx] for idx in indices[0]])
-
         # Llamada a Amazon Bedrock usando litellm
         response = client.chat.completions.create(
             model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
-            messages=[
-                {"role": "system", "content": "Usa el siguiente contexto para responder preguntas:"},
-                {"role": "system", "content": contexto},
-                {"role": "user", "content": user_message}
-            ]
+            messages=[{"role": "user", "content": user_message}]
         )
 
         # Extraer la respuesta del modelo

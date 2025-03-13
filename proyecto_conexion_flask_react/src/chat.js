@@ -1,9 +1,32 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import "./Chat.css"; // Importa los estilos específicos del chat
 
 const Chat = () => {
+
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
     const [messages, setMessages] = useState([]); // Guarda el historial del chat
+    const idPaciente = 1;
+
+    useEffect(() => {
+        if (idPaciente) {
+            setContext(idPaciente);
+        }
+    }, [idPaciente]);
+
+    const setContext = async (idPaciente) => {
+        try {
+            const response = await fetch("http://localhost:5000/set-context", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ id_paciente: idPaciente }),
+            });
+
+            const data = await response.json();
+            console.log("Contexto cargado:", data.message);
+        } catch (error) {
+            console.error("Error al establecer el contexto:", error);
+        }
+    };
 
     const handleChange = (e) => {
         setMessage(e.target.value); // Actualiza el estado con lo que escribe el usuario
