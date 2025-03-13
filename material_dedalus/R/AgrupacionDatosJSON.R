@@ -79,5 +79,4 @@ write_json(json_result,"datos_evolucion.json")
 cat(json_result)
 
 
-data_pac <- 
 

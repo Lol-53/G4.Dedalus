@@ -1,0 +1,2124 @@
+{
+    "data": [
+        {
+            "title": "Juan Pérez ID: 1",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez. Medicamento: Ceftriaxona Dosis: 2 g. Via: IV cada 24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 1,
+                            "answers": [
+                                {
+                                    "text": "Ceftriaxona",
+                                    "answer_start": 43
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 2,
+                            "answers": [
+                                {
+                                    "text": "2 g",
+                                    "answer_start": 62
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 3,
+                            "answers": [
+                                {
+                                    "text": "IV cada 24h",
+                                    "answer_start": 72
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Juan Pérez ID: 1",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez. Medicamento: Azitromicina Dosis: 500 mg. Via: VO cada 24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 4,
+                            "answers": [
+                                {
+                                    "text": "Azitromicina",
+                                    "answer_start": 43
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 5,
+                            "answers": [
+                                {
+                                    "text": "500 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 6,
+                            "answers": [
+                                {
+                                    "text": "VO cada 24h",
+                                    "answer_start": 76
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Juan Pérez ID: 1",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez. Medicamento: Salbutamol Dosis: 5 mg. Via: Nebulizado c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 7,
+                            "answers": [
+                                {
+                                    "text": "Salbutamol",
+                                    "answer_start": 43
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 8,
+                            "answers": [
+                                {
+                                    "text": "5 mg",
+                                    "answer_start": 61
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 9,
+                            "answers": [
+                                {
+                                    "text": "Nebulizado c/6h",
+                                    "answer_start": 72
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Juan Pérez ID: 1",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez. Medicamento: Paracetamol Dosis: 1 g. Via: VO c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 10,
+                            "answers": [
+                                {
+                                    "text": "Paracetamol",
+                                    "answer_start": 43
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 11,
+                            "answers": [
+                                {
+                                    "text": "1 g",
+                                    "answer_start": 62
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 12,
+                            "answers": [
+                                {
+                                    "text": "VO c/8h",
+                                    "answer_start": 72
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Clopidogrel Dosis: 75 mg. Via: VO diario. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 13,
+                            "answers": [
+                                {
+                                    "text": "Clopidogrel",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 14,
+                            "answers": [
+                                {
+                                    "text": "75 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 15,
+                            "answers": [
+                                {
+                                    "text": "VO diario",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Enoxaparina Dosis: 60 mg. Via: SC c/12h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 16,
+                            "answers": [
+                                {
+                                    "text": "Enoxaparina",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 17,
+                            "answers": [
+                                {
+                                    "text": "60 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 18,
+                            "answers": [
+                                {
+                                    "text": "SC c/12h",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Nitroglicerina Dosis: 5 µg/min. Via: IV perfusión. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 19,
+                            "answers": [
+                                {
+                                    "text": "Nitroglicerina",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 20,
+                            "answers": [
+                                {
+                                    "text": "5 µg/min",
+                                    "answer_start": 66
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 21,
+                            "answers": [
+                                {
+                                    "text": "IV perfusión",
+                                    "answer_start": 81
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Morfina Dosis: 4 mg. Via: IV según necesidad. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 22,
+                            "answers": [
+                                {
+                                    "text": "Morfina",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 23,
+                            "answers": [
+                                {
+                                    "text": "4 mg",
+                                    "answer_start": 59
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 24,
+                            "answers": [
+                                {
+                                    "text": "IV según necesidad",
+                                    "answer_start": 70
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Atorvastatina Dosis: 80 mg. Via: VO nocte. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 25,
+                            "answers": [
+                                {
+                                    "text": "Atorvastatina",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 26,
+                            "answers": [
+                                {
+                                    "text": "80 mg",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 27,
+                            "answers": [
+                                {
+                                    "text": "VO nocte",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "María López ID: 2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Medicamento: Bisoprolol Dosis: 2.5 mg. Via: VO diario. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 28,
+                            "answers": [
+                                {
+                                    "text": "Bisoprolol",
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 29,
+                            "answers": [
+                                {
+                                    "text": "2.5 mg",
+                                    "answer_start": 62
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 30,
+                            "answers": [
+                                {
+                                    "text": "VO diario",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Carlos García ID: 3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Medicamento: Insulina regular Dosis: 0.1 U/kg/h. Via: IV perfusión. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 31,
+                            "answers": [
+                                {
+                                    "text": "Insulina regular",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 32,
+                            "answers": [
+                                {
+                                    "text": "0.1 U/kg/h",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 33,
+                            "answers": [
+                                {
+                                    "text": "IV perfusión",
+                                    "answer_start": 87
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Carlos García ID: 3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Medicamento: Cloruro de potasio Dosis: 20 mEq. Via: IV c/4h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 34,
+                            "answers": [
+                                {
+                                    "text": "Cloruro de potasio",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 35,
+                            "answers": [
+                                {
+                                    "text": "20 mEq",
+                                    "answer_start": 72
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 36,
+                            "answers": [
+                                {
+                                    "text": "IV c/4h",
+                                    "answer_start": 85
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Carlos García ID: 3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Medicamento: Suero fisiológico Dosis: 1000 ml. Via: IV rápido. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 37,
+                            "answers": [
+                                {
+                                    "text": "Suero fisiológico",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 38,
+                            "answers": [
+                                {
+                                    "text": "1000 ml",
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 39,
+                            "answers": [
+                                {
+                                    "text": "IV rápido",
+                                    "answer_start": 85
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Carlos García ID: 3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Medicamento: Bicarbonato de sodio Dosis: 50 mEq. Via: IV una dosis. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 40,
+                            "answers": [
+                                {
+                                    "text": "Bicarbonato de sodio",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 41,
+                            "answers": [
+                                {
+                                    "text": "50 mEq",
+                                    "answer_start": 74
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 42,
+                            "answers": [
+                                {
+                                    "text": "IV una dosis",
+                                    "answer_start": 87
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Carlos García ID: 3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Medicamento: Insulina glargina Dosis: 20 U. Via: SC nocte. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 43,
+                            "answers": [
+                                {
+                                    "text": "Insulina glargina",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 44,
+                            "answers": [
+                                {
+                                    "text": "20 U",
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 45,
+                            "answers": [
+                                {
+                                    "text": "SC nocte",
+                                    "answer_start": 82
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lucía Ramírez ID: 4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Medicamento: Ceftriaxona Dosis: 2 g. Via: IV c/24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 46,
+                            "answers": [
+                                {
+                                    "text": "Ceftriaxona",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 47,
+                            "answers": [
+                                {
+                                    "text": "2 g",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 48,
+                            "answers": [
+                                {
+                                    "text": "IV c/24h",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lucía Ramírez ID: 4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Medicamento: Metronidazol Dosis: 500 mg. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 49,
+                            "answers": [
+                                {
+                                    "text": "Metronidazol",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 50,
+                            "answers": [
+                                {
+                                    "text": "500 mg",
+                                    "answer_start": 66
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 51,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lucía Ramírez ID: 4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Medicamento: Ketorolaco Dosis: 30 mg. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 52,
+                            "answers": [
+                                {
+                                    "text": "Ketorolaco",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 53,
+                            "answers": [
+                                {
+                                    "text": "30 mg",
+                                    "answer_start": 64
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 54,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 76
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lucía Ramírez ID: 4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Medicamento: Metamizol Dosis: 2 g. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 55,
+                            "answers": [
+                                {
+                                    "text": "Metamizol",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 56,
+                            "answers": [
+                                {
+                                    "text": "2 g",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 57,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 73
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Lucía Ramírez ID: 4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Medicamento: Ondansetrón Dosis: 4 mg. Via: IV c/8h (prn). ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 58,
+                            "answers": [
+                                {
+                                    "text": "Ondansetrón",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 59,
+                            "answers": [
+                                {
+                                    "text": "4 mg",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 60,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h (prn)",
+                                    "answer_start": 76
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Furosemida Dosis: 40 mg. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 61,
+                            "answers": [
+                                {
+                                    "text": "Furosemida",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 62,
+                            "answers": [
+                                {
+                                    "text": "40 mg",
+                                    "answer_start": 67
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 63,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Enalapril Dosis: 5 mg. Via: VO c/12h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 64,
+                            "answers": [
+                                {
+                                    "text": "Enalapril",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 65,
+                            "answers": [
+                                {
+                                    "text": "5 mg",
+                                    "answer_start": 66
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 66,
+                            "answers": [
+                                {
+                                    "text": "VO c/12h",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Carvedilol Dosis: 6.25 mg. Via: VO c/12h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 67,
+                            "answers": [
+                                {
+                                    "text": "Carvedilol",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 68,
+                            "answers": [
+                                {
+                                    "text": "6.25 mg",
+                                    "answer_start": 67
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 69,
+                            "answers": [
+                                {
+                                    "text": "VO c/12h",
+                                    "answer_start": 81
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Digoxina Dosis: 0.25 mg. Via: VO diario. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 70,
+                            "answers": [
+                                {
+                                    "text": "Digoxina",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 71,
+                            "answers": [
+                                {
+                                    "text": "0.25 mg",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 72,
+                            "answers": [
+                                {
+                                    "text": "VO diario",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Nitroglicerina Dosis: 10 µg/min. Via: IV perfusión. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 73,
+                            "answers": [
+                                {
+                                    "text": "Nitroglicerina",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 74,
+                            "answers": [
+                                {
+                                    "text": "10 µg/min",
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 75,
+                            "answers": [
+                                {
+                                    "text": "IV perfusión",
+                                    "answer_start": 87
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Miguel Rodríguez ID: 5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Medicamento: Oxígeno Dosis: 5 L/min. Via: Mascarilla. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 76,
+                            "answers": [
+                                {
+                                    "text": "Oxígeno",
+                                    "answer_start": 49
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 77,
+                            "answers": [
+                                {
+                                    "text": "5 L/min",
+                                    "answer_start": 64
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 78,
+                            "answers": [
+                                {
+                                    "text": "Mascarilla",
+                                    "answer_start": 78
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Meropenem Dosis: 1 g. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 79,
+                            "answers": [
+                                {
+                                    "text": "Meropenem",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 80,
+                            "answers": [
+                                {
+                                    "text": "1 g",
+                                    "answer_start": 59
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 81,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 69
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Vancomicina Dosis: 1 g. Via: IV c/12h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 82,
+                            "answers": [
+                                {
+                                    "text": "Vancomicina",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 83,
+                            "answers": [
+                                {
+                                    "text": "1 g",
+                                    "answer_start": 61
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 84,
+                            "answers": [
+                                {
+                                    "text": "IV c/12h",
+                                    "answer_start": 71
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Norepinefrina Dosis: 0.1 µg/kg/min. Via: IV perfusión. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 85,
+                            "answers": [
+                                {
+                                    "text": "Norepinefrina",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 86,
+                            "answers": [
+                                {
+                                    "text": "0.1 µg/kg/min",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 87,
+                            "answers": [
+                                {
+                                    "text": "IV perfusión",
+                                    "answer_start": 83
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Solución salina 0.9% Dosis: 1000 ml. Via: IV rápido. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 88,
+                            "answers": [
+                                {
+                                    "text": "Solución salina 0.9%",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 89,
+                            "answers": [
+                                {
+                                    "text": "1000 ml",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 90,
+                            "answers": [
+                                {
+                                    "text": "IV rápido",
+                                    "answer_start": 84
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Paracetamol Dosis: 1 g. Via: IV c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 91,
+                            "answers": [
+                                {
+                                    "text": "Paracetamol",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 92,
+                            "answers": [
+                                {
+                                    "text": "1 g",
+                                    "answer_start": 61
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 93,
+                            "answers": [
+                                {
+                                    "text": "IV c/6h",
+                                    "answer_start": 71
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Ana Gómez ID: 6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Medicamento: Insulina rápida Dosis: 6 U. Via: SC c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 94,
+                            "answers": [
+                                {
+                                    "text": "Insulina rápida",
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 95,
+                            "answers": [
+                                {
+                                    "text": "6 U",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 96,
+                            "answers": [
+                                {
+                                    "text": "SC c/6h",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Pedro Álvarez ID: 7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Medicamento: Alteplasa Dosis: 0.9 mg/kg. Via: IV (dosis total). ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 97,
+                            "answers": [
+                                {
+                                    "text": "Alteplasa",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 98,
+                            "answers": [
+                                {
+                                    "text": "0.9 mg/kg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 99,
+                            "answers": [
+                                {
+                                    "text": "IV (dosis total)",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Pedro Álvarez ID: 7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Medicamento: Enoxaparina Dosis: 40 mg. Via: SC c/24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 100,
+                            "answers": [
+                                {
+                                    "text": "Enoxaparina",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 101,
+                            "answers": [
+                                {
+                                    "text": "40 mg",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 102,
+                            "answers": [
+                                {
+                                    "text": "SC c/24h",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Pedro Álvarez ID: 7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Medicamento: Aspirina Dosis: 100 mg. Via: VO diario. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 103,
+                            "answers": [
+                                {
+                                    "text": "Aspirina",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 104,
+                            "answers": [
+                                {
+                                    "text": "100 mg",
+                                    "answer_start": 62
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 105,
+                            "answers": [
+                                {
+                                    "text": "VO diario",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Pedro Álvarez ID: 7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Medicamento: Atorvastatina Dosis: 40 mg. Via: VO diario. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 106,
+                            "answers": [
+                                {
+                                    "text": "Atorvastatina",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 107,
+                            "answers": [
+                                {
+                                    "text": "40 mg",
+                                    "answer_start": 67
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 108,
+                            "answers": [
+                                {
+                                    "text": "VO diario",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Pedro Álvarez ID: 7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Medicamento: Labetalol Dosis: 10 mg. Via: IV c/8h (prn). ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 109,
+                            "answers": [
+                                {
+                                    "text": "Labetalol",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 110,
+                            "answers": [
+                                {
+                                    "text": "10 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 111,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h (prn)",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Rosa Jiménez ID: 8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Medicamento: Salbutamol Dosis: 5 mg. Via: Nebulizado c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 112,
+                            "answers": [
+                                {
+                                    "text": "Salbutamol",
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 113,
+                            "answers": [
+                                {
+                                    "text": "5 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 114,
+                            "answers": [
+                                {
+                                    "text": "Nebulizado c/6h",
+                                    "answer_start": 74
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Rosa Jiménez ID: 8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Medicamento: Ipratropio Dosis: 0.5 mg. Via: Nebulizado c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 115,
+                            "answers": [
+                                {
+                                    "text": "Ipratropio",
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 116,
+                            "answers": [
+                                {
+                                    "text": "0.5 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 117,
+                            "answers": [
+                                {
+                                    "text": "Nebulizado c/6h",
+                                    "answer_start": 76
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Rosa Jiménez ID: 8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Medicamento: Metilprednisolona Dosis: 40 mg. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 118,
+                            "answers": [
+                                {
+                                    "text": "Metilprednisolona",
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 119,
+                            "answers": [
+                                {
+                                    "text": "40 mg",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 120,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 82
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Rosa Jiménez ID: 8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Medicamento: Levofloxacino Dosis: 500 mg. Via: IV c/24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 121,
+                            "answers": [
+                                {
+                                    "text": "Levofloxacino",
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 122,
+                            "answers": [
+                                {
+                                    "text": "500 mg",
+                                    "answer_start": 66
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 123,
+                            "answers": [
+                                {
+                                    "text": "IV c/24h",
+                                    "answer_start": 79
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Rosa Jiménez ID: 8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Medicamento: Oxígeno Dosis: 3 L/min. Via: Puntas nasales. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 124,
+                            "answers": [
+                                {
+                                    "text": "Oxígeno",
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 125,
+                            "answers": [
+                                {
+                                    "text": "3 L/min",
+                                    "answer_start": 60
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 126,
+                            "answers": [
+                                {
+                                    "text": "Puntas nasales",
+                                    "answer_start": 74
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Salbutamol Dosis: 5 mg. Via: Nebulizado c/4h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 127,
+                            "answers": [
+                                {
+                                    "text": "Salbutamol",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 128,
+                            "answers": [
+                                {
+                                    "text": "5 mg",
+                                    "answer_start": 64
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 129,
+                            "answers": [
+                                {
+                                    "text": "Nebulizado c/4h",
+                                    "answer_start": 75
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Ipratropio Dosis: 0.5 mg. Via: Nebulizado c/4h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 130,
+                            "answers": [
+                                {
+                                    "text": "Ipratropio",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 131,
+                            "answers": [
+                                {
+                                    "text": "0.5 mg",
+                                    "answer_start": 64
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 132,
+                            "answers": [
+                                {
+                                    "text": "Nebulizado c/4h",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Hidrocortisona Dosis: 100 mg. Via: IV c/6h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 133,
+                            "answers": [
+                                {
+                                    "text": "Hidrocortisona",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 134,
+                            "answers": [
+                                {
+                                    "text": "100 mg",
+                                    "answer_start": 68
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 135,
+                            "answers": [
+                                {
+                                    "text": "IV c/6h",
+                                    "answer_start": 81
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Sulfato de magnesio Dosis: 2 g. Via: IV una dosis. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 136,
+                            "answers": [
+                                {
+                                    "text": "Sulfato de magnesio",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 137,
+                            "answers": [
+                                {
+                                    "text": "2 g",
+                                    "answer_start": 73
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 138,
+                            "answers": [
+                                {
+                                    "text": "IV una dosis",
+                                    "answer_start": 83
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Adrenalina Dosis: 0.5 mg. Via: SC una dosis. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 139,
+                            "answers": [
+                                {
+                                    "text": "Adrenalina",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 140,
+                            "answers": [
+                                {
+                                    "text": "0.5 mg",
+                                    "answer_start": 64
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 141,
+                            "answers": [
+                                {
+                                    "text": "SC una dosis",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Javier Santos ID: 9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Medicamento: Oxygen Dosis: 4 L/min. Via: Mascarilla. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 142,
+                            "answers": [
+                                {
+                                    "text": "Oxygen",
+                                    "answer_start": 46
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 143,
+                            "answers": [
+                                {
+                                    "text": "4 L/min",
+                                    "answer_start": 60
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 144,
+                            "answers": [
+                                {
+                                    "text": "Mascarilla",
+                                    "answer_start": 74
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Alejandro Ruiz ID: 10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Medicamento: Ringer Lactato Dosis: 1000 ml. Via: IV c/8h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 145,
+                            "answers": [
+                                {
+                                    "text": "Ringer Lactato",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 146,
+                            "answers": [
+                                {
+                                    "text": "1000 ml",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 147,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h",
+                                    "answer_start": 84
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Alejandro Ruiz ID: 10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Medicamento: Morfina Dosis: 5 mg. Via: IV c/4h (prn). ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 148,
+                            "answers": [
+                                {
+                                    "text": "Morfina",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 149,
+                            "answers": [
+                                {
+                                    "text": "5 mg",
+                                    "answer_start": 63
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 150,
+                            "answers": [
+                                {
+                                    "text": "IV c/4h (prn)",
+                                    "answer_start": 74
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Alejandro Ruiz ID: 10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Medicamento: Metoclopramida Dosis: 10 mg. Via: IV c/8h (prn). ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 151,
+                            "answers": [
+                                {
+                                    "text": "Metoclopramida",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 152,
+                            "answers": [
+                                {
+                                    "text": "10 mg",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 153,
+                            "answers": [
+                                {
+                                    "text": "IV c/8h (prn)",
+                                    "answer_start": 82
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Alejandro Ruiz ID: 10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Medicamento: Omeprazol Dosis: 40 mg. Via: IV c/24h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 154,
+                            "answers": [
+                                {
+                                    "text": "Omeprazol",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 155,
+                            "answers": [
+                                {
+                                    "text": "40 mg",
+                                    "answer_start": 65
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 156,
+                            "answers": [
+                                {
+                                    "text": "IV c/24h",
+                                    "answer_start": 77
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Alejandro Ruiz ID: 10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Medicamento: Ciprofloxacino Dosis: 400 mg. Via: IV c/12h. ",
+                    "qas": [
+                        {
+                            "question": "¿Qué medicamento está recibiendo el paciente?",
+                            "id": 157,
+                            "answers": [
+                                {
+                                    "text": "Ciprofloxacino",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la dosis del medicamento?",
+                            "id": 158,
+                            "answers": [
+                                {
+                                    "text": "400 mg",
+                                    "answer_start": 70
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la vía de administración del medicamento?",
+                            "id": 159,
+                            "answers": [
+                                {
+                                    "text": "IV c/12h",
+                                    "answer_start": 83
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
