@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Pacientes</title>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
   <!-- <link rel="stylesheet" type="text/css" href="css/styleCards.css"/> -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
 <div class="container-fluid d-flex flex-nowrap p-0 position-relative">
 
   <nav class="d-flex flex-nowrap navbar navbar-expand-md flex-column p-0 position-relative" >
-    <div class="d-flex flex-nowrap start-0 top-0 position-relative vh-100  shadow collapse collapse-horizontal navbar-collapse lateral"   id="navBarCollapsed">
-      <div class="position-fixed vh-100 start-0 top-0 flex-column  lateral ">
+    <div class="d-flex flex-nowrap start-0 top-0 position-relative vh-100   collapse collapse-horizontal navbar-collapse lateral"   id="navBarCollapsed">
+      <div class="position-fixed vh-100 start-0 top-0 flex-column shadow lateral ">
         <ul class="navbar-nav p-4 mt-3 w-100 d-flex flex-column">
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="index.html">Inicio</a></li>
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#">Recientes </a></li>
-          <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#">Pacientes</a></li>
+          <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" id="active" href="#">Pacientes</a></li>
           <!--        Son dos usuarios (paciente/doctor)-->
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#">Usuario</a></li>
         </ul>
@@ -29,7 +29,7 @@
     </div>
   </nav>
 
-  <div class="position-relative m-2 container-md w-100 pt-0 mt-0" id="page">
+  <div class="position-relative m-2 container-md w-100 pt-0 mt-0 " id="page">
     <button class="d-flex flex-nowrap z-3  btn btn-light d-md-none mt-2"
             type="button"
             data-bs-toggle="collapse"
@@ -54,7 +54,7 @@
         </a>
       </div>
       <div class="card shadow">
-        <a>
+        <a href="Chat.html">
 
           <div class="card-gradient gr1 card-img-top">
 

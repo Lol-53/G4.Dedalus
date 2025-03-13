@@ -33,13 +33,28 @@ header h1{
   font-size: 5em;
 }
 
+
+header h2{
+  font-size: 3em;
+}
+
 #navBarCollapsed{
   transition: transform 0.3s linear;
 }
 
-#page{
-  transition: transform 0.3s linear, position 0.3s linear;
+#navBarCollapsed #active{
+  font-size:22px;
+  font-weight: 400;
+  color: var(--azul1D)
+}
 
+#navBarCollapsed #active:hover{
+  font-size:25px;
+}
+
+#page{
+  transition: transform 0.3s linear, width 0.3s linear;
+  /* left:0; */
   /* left:200px; */
 }
 
@@ -76,15 +91,16 @@ header h1{
 
 
 #menu-button{
-  transition: transform 0.3s linear;
+  opacity: 0;
+  transition: opacity 0.3s linear;
 }
 
 #menu-button.expanded{
-  transform: translateY(10px);
+  opacity: 1;
 }
 
 #menu-button.hidden{
-  transform: translateY(-10px);
+  opacity: 0;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -102,6 +118,11 @@ header h1{
   text-wrap-mode: wrap;
   /* color:#26508e; */
   flex: 1 1 220px;
+}
+
+#pacientes a{
+  text-decoration: none;
+  color:inherit;
 }
 
 #pacientes .card:hover{
@@ -160,4 +181,101 @@ header h1{
 
 .card-gradient.gr4{
   background: linear-gradient(to right, #3399dd, #c5e86c);
+}
+
+/* -------------------------------------------------------------------------- */
+
+#navigation-buttons .btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:40px;
+  width:40px;
+  transition: opacity 0.3s linear;
+}
+
+#navigation-buttons .btn a{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+
+#chat-text-area{
+
+  /* position: fixed; */
+
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+
+
+}
+
+.chat-bubble{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 10px 15px;
+  width:auto;
+  border-radius: 15px;
+  margin-bottom:3%;
+}
+
+
+.chat-bubble p{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.fromMe{
+  align-self: flex-end;
+  background: linear-gradient(to left, var(--azul1D), #c9e452);
+  color: white;
+
+}
+
+.fromIA{
+  flex: end;
+  align-self: flex-start;
+  background-color: #e5e5e5;
+  color: black;
+}
+
+
+#chat-body{
+  overflow-y:auto;
+}
+
+#chat-text-area{
+  /* border: 1px solid black; */
+  height:40px;
+}
+
+#campo-msg{
+  height:80%;
+  width:85%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+#chat-text-area button{
+  transition: background-color 0.2s linear,  color 0.2s linear;
+}
+
+#button-send:hover{
+  background-color: var(--azul1D);
+  color:white;
+}
+
+#generar-resumen:hover{
+  background-color: var(--greenD);
+  /* color:white; */
 }
