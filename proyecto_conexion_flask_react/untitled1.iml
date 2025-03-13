@@ -2,7 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.10 (proyecto_conexion_flask_react)" />
+      <configuration sdkName="Python 3.11 (untitled1)" />
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
@@ -12,6 +12,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Python 3.10 (proyecto_conexion_flask_react) interpreter library" level="application" />
+    <orderEntry type="library" name="Python 3.11 (untitled1) interpreter library" level="application" />
   </component>
 </module>
