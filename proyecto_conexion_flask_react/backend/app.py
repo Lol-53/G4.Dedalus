@@ -19,23 +19,30 @@ notas_df = pd.read_csv("datos_pacientes/notas.csv")
 # Almacenar contexto de pacientes en memoria
 contextos_pacientes = {}
 
+conversation_history = {}
+
 @app.route("/set-context", methods=["POST"])
 def set_context():
     """Recibe el ID del paciente y carga su contexto desde los CSV."""
     try:
         data = request.get_json()
-        id_paciente = data.get("id_paciente")
+        id_paciente = int(data.get("id_paciente"))  # Convertir a entero
 
         if not id_paciente:
-            return jsonify({"error": "ID de paciente vacío"}), 400
+            print(jsonify({"error": "ID de paciente vacío"}), 400) 
 
         # Si ya existe el contexto, no lo recarga
         if id_paciente in contextos_pacientes:
             contexto = contextos_pacientes[id_paciente]
+            print(jsonify({"message": "Contexto cargado correctamente"}))
         else:
             # Buscar información del paciente
-            paciente_info = info_pacientes_df[info_pacientes_df["id"] == id_paciente]
-            notas_paciente = notas_df[notas_df["id"] == id_paciente]
+            paciente_info = info_pacientes_df[info_pacientes_df["PacienteID"] == id_paciente]
+            notas_paciente = notas_df[notas_df["PacienteID"] == id_paciente].head(2)  # Solo las dos primeras notas
+
+            
+            print(info_pacientes_df.head())  # Verifica que la columna y los datos están bien cargados
+            print(info_pacientes_df.columns)
 
             if paciente_info.empty:
                 return jsonify({"error": "Paciente no encontrado"}), 404
@@ -62,16 +69,6 @@ def set_context():
             contextos_pacientes[id_paciente] = contexto
             return jsonify({"message": "Contexto cargado correctamente"})
 
-        # Llamada a Amazon Bedrock usando litellm
-        response = client.chat.completions.create(
-            model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
-            messages=[{"role": "user", "content": contexto}]
-        )
-
-        # Extraer la respuesta del modelo
-        ai_response = response.choices[0].message.content
-        print(ai_response)
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -85,18 +82,39 @@ def ask_ai():
         data = request.get_json()
         user_message = data.get("message", "")
 
+        id_paciente = int(data.get("id_paciente"))
+
         if not user_message:
             return jsonify({"error": "Mensaje vacío"}), 400
+        
+        messages = []
+        
+        messages.append({"role": "system", "content": contextos_pacientes[id_paciente]})
+        
+        if id_paciente not in conversation_history:
+            conversation_history[id_paciente] = []
+            conversation_history[id_paciente].append({"role": "system", "content": "Este es el historial previo de la conversación:"})
+        else:
+            messages.extend(conversation_history[id_paciente])
+        
+        messages.append({"role": "user", "content": user_message})
+
+        print(messages)
 
         # Llamada a Amazon Bedrock usando litellm
         response = client.chat.completions.create(
             model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
-            messages=[{"role": "user", "content": user_message}]
+            messages=messages
         )
 
         # Extraer la respuesta del modelo
         ai_response = response.choices[0].message.content
         print(ai_response)
+    
+        # Agrega el mensaje del usuario y la IA al historial
+        conversation_history[id_paciente].append({"role": "user", "content": user_message})
+        conversation_history[id_paciente].append({"role": "assistant", "content": ai_response})
+
         return jsonify({"response": ai_response})
 
     except Exception as e:

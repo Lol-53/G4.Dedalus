@@ -51,7 +51,8 @@ const Chat = () => {
             const response = await fetch("http://localhost:5000/ask-ai", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userMessage }),
+                body: JSON.stringify({ message: userMessage, 
+                                        id_paciente: idPaciente }),
             });
 
             const data = await response.json();
