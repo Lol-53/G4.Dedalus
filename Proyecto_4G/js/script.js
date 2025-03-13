@@ -9,9 +9,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  sidebar.style.height = page.offsetHeight + "px";
   if(window.innerWidth < 768 && (!sidebar.classList.contains("hidden"))){
     sidebar.classList.add("hidden");
     page.classList.add("expanded");
+
   }
 
   button.addEventListener("click", function(event){
@@ -48,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.classList.add("expanded");
       button.classList.remove("hidden");
       page.style.width = "calc("+page.style.width+"+200px)"
+      sidebar.style.height = page.offsetHeight + "px";
 
     } else if (window.innerWidth >= 768) {
       // Si el tamaño de la pantalla es mayor y el navbar está oculto, lo mostramos
@@ -55,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function () {
       page.classList.remove("expanded");
       button.classList.remove("expanded");
       button.classList.add("hidden");
+      sidebar.style.height = page.offsetHeight + "px";
     }
   });
+
+
 });

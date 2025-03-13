@@ -14,20 +14,19 @@ body{
 
 .lateral{
   background-color: #fbfbfb;
-  width:200px;
+  width:220px;
 
 }
 
 .navbar a{
   color:#26508e;
   font-size: larger;
-  transition: color 0.3s ease-in-out, font-size 0.1s ease-in-out;
+  transition: color 0.3s ease-in-out, font-size 0.2s linear;
 }
 
 .navbar a:hover{
   color:#34879e;
   font-size: x-large;
-  transition: font-size 0.1s ease-in-out;
 }
 
 header h1{
@@ -91,9 +90,9 @@ header h1{
 /* -------------------------------------------------------------------------- */
 
 #pacientes .card{
-  min-width:200px;
+  min-width:220px;
   max-width:350px;
-  height:150px;
+  height:170px;
   margin:10px;
   margin-right: calc(1vw + 5px);
   font-size:20px;
@@ -102,7 +101,7 @@ header h1{
   border: none;
   text-wrap-mode: wrap;
   /* color:#26508e; */
-  flex: 1 1 200px;
+  flex: 1 1 220px;
 }
 
 #pacientes .card:hover{
@@ -118,6 +117,33 @@ header h1{
   color:gray;
 }
 
+.card-body{
+  flex-grow: 1;
+  overflow:hidden;
+  height:calc(170px - 55px);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card-body ul{
+  list-style: none;
+  font-size: 15px;
+}
+
+
+
+.card-text{
+  font-size: 15px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.card-gradient{
+  flex: 0 0 220px;
+  height:55px;
+  flex: 0 0 220px; /* Mantiene la altura fija */
+
+}
 
 .card-gradient.gr1{
   background: linear-gradient(to right, #bee7a6, var(--azul1D));
