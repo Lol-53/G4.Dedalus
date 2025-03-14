@@ -47,6 +47,44 @@
 
       </div>
     </header>
+
+    <!-- NAVEGACIÓN: BARRA DE BSUCAR, BOTONES DE ORDENAR Y FILTRAR (DROPDOWN)-->
+
+    <div id="accessibility-buttons" class="w-100 border-bottom d-flex flex-wrap mb-3 pb-3 align-items-center">
+      <form id="buscar-paciente" class="d-flex flex-nowrap bg-body-tertiary py-2 px-4 shadow rounded-pill me-4 my-2" role="search">
+        <div class="input-group d-flex">
+          <input type="search" placeholder="Buscar paciente" class="flex-grow-1 form-control">
+          <!-- <button data-bs-toggle="tipo-busqueda" aria-expanded="false"></button> -->
+          <select class="form-select flex-shrink-1 bg-body-secondary" id="tipo-busqueda">
+            <option selected value="1">Nombre</option>
+            <option value="2">Identificador</option>
+            <option value="3">NUHSA</option>
+            <option value="4">Nº de cama</option>
+          </select>
+        </div>
+        <button id="search-button" type="submit" class="border-0 rounded-circle ms-3 bg-body-secondary btn"><i class="bi bi-search"></i></button>
+      </form>
+
+
+      <div class="dropdown btn-group shadow me-4 align-self-center my-2" role="group">
+        <button type="button" class="btn btn-light border-end"><i class="bi bi-arrow-up"></i></button>
+        <button type="button" class="btn btn-light border-start border-end"><i class="bi bi-arrow-down"></i></button>
+        <button class="btn btn-light dropdown-toggle border-start" type="button" data-bs-toggle="dropdown" aria-expanded="false">Ordenar</button>
+        <ul class="dropdown-menu" id="ordenar">
+          <li class="dropdown-item active">Orden alfabético</li>
+          <li class="dropdown-item">Fecha de acceso</li>
+          <li class="dropdown-item">Fecha de creación</li>
+
+        </ul>
+      </div>
+
+
+      <input class="btn-check" type="checkbox" id="fuera-de-planta" autocomplete="off">
+      <label class="btn btn-light shadow align-self-center my-2" for="fuera-de-planta" id="button-fuera-de-planta">Fuera de Planta</label>
+
+
+    </div>
+
     <div class="container-fluid d-flex flex-wrap justify-content-start" id="pacientes">
       <div class="card shadow" id="newPaciente">
         <a>

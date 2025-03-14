@@ -234,6 +234,7 @@ header h2{
 }
 
 .fromMe{
+  flex:end;
   align-self: flex-end;
   background: linear-gradient(to left, var(--azul1D), #c9e452);
   color: white;
@@ -284,4 +285,42 @@ header h2{
 #generar-resumen:hover{
   background-color: var(--greenD);
   /* color:white; */
+}
+
+#buscar-paciente input{
+  width:50%
+}
+
+#tipo-busqueda:hover{
+  cursor:pointer;
+}
+
+#search-button{
+  transition: background-color 0.2s linear,  color 0.2s linear;
+}
+#search-button:hover{
+  background-color:#bee7a6 !important;
+}
+
+#accessibility-buttons .dropdown li{
+  cursor:pointer;
+  display: flex;
+  align-items: start;
+}
+
+.dropdown li.active{
+  background-color:#34879e;
+}
+
+#fuera-de-planta:checked + #button-fuera-de-planta{
+
+  transition: background-color 0.2s linear, color 0.2s linear;
+  background-color:#65a2b3;
+  color:white;
+  border: 1px solid rgba(255, 0, 0, 0)
+}
+
+#button-fuera-de-planta:hover{
+  background-color: #bee7a6;
+  border: 1px solid rgba(255, 0, 0, 0)
 }
