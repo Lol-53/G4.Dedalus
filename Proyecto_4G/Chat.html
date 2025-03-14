@@ -58,8 +58,8 @@
       <h2>Paciente 1</h2>
     </header>
 
-    <div class="container-fluid justify-content-start pe-0 " id="contenidoChat">
-      <div class="d-flex flex-column justify-content-start me-6 vh-50 p-3" id="chat-body">
+    <div class="container-fluid justify-content-start pe-0 d-flex flex-column" id="contenidoChat">
+      <div class="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" id="chat-body">
         <div class="chat-bubble fromIA shadow">
           Hola buenas
         </div>
@@ -87,19 +87,22 @@
         <div class="chat-bubble fromMe shadow">
           <p>dkjfjdflsdksdjfsdfsdfsdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
         </div>
+        <div class="chat-bubble fromIA shadow">
+          <img src="img/grafico.png" alt="">
+        </div>
 
       </div>
-      <div id="chat-text-area" class="d-flex flex-wrap align-items-center">
-        <form class="d-flex flex-wrap flex-column flex-fill bg-body-tertiary rounded-pill shadow d-flex position-relative align-self-center">
+      <div id="chat-text-area" class="d-flex flex-wrap align-items-center mb-3 align-items-center mt-0 flex-grow-1">
+        <form class="d-flex flex-wrap flex-column flex-fill bg-body-tertiary rounded-pill shadow d-flex position-relative align-self-center m-2 mt-0" id="text-bubble">
           <div class="d-flex align-items-center justify-content-between my-1 h-100">
             <!-- Quitarle borde a input y darselo al div -->
-            <input className="chat_input"
-                   type="text"
-                   onChange={handleChange}
-                   placeholder="Escribe un mensaje..."
-                   id="campo-msg"
-                   class="bg-body-tertiary border-0 border-bottom ms-4"
-            />
+            <textarea className="chat_input"
+                      type="text"
+                      onChange={handleChange}
+                      placeholder="Escribe un mensaje..."
+                      id="campo-msg"
+                      class="my-2 mx-3 bg-body-tertiary border-0 border-bottom ms-5"
+            ></textarea>
             <button type="submit" alt="enviar" class="rounded-circle border-0 px-2 py-1 me-2" id="button-send"><i class="bi bi-send"></i></button>
           </div>
         </form>

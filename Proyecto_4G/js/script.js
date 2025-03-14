@@ -73,10 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  let contenidoChat = document.getElementById("contenidoChat");
+
   // Detectamos el cambio de tamaño de la ventana para simular el colapso
   window.addEventListener("resize", function (event) {
 
     // Si el navbar está colapsado (según el tamaño de la pantalla)
+
+    if(contenidoChat){
+      contenidoChat.style.height=window.innerHeight-100 + "px";
+    }
 
     if (window.innerWidth < 768 ) {
       // Aplicamos la animación de deslizamiento
@@ -119,6 +125,57 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.style.height = window.innerHeight + "px";
       }
     }
+  });
+
+  let bubble = document.getElementById("text-bubble");
+  let textInput = document.getElementById("campo-msg");
+  let chatTextArea = document.getElementById("chat-text-area"); // Asegúrate de obtenerlo
+
+  if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
+
+  // Ajustar la altura inicial
+  let initialHeight = bubble.offsetHeight - 40;
+  let initialBubble= bubble.style.width;
+  textInput.style.height = `${bubble.offsetHeight - 40}px`;
+  document.getElementById("contenidoChat").style.height=window.innerHeight-100 + "px";
+
+  textInput.addEventListener("input", function () {
+
+    if (this.value.trim() === "") {
+      bubble.style.height= initialBubble;
+      this.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
+      chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
+      return;
+    }
+
+    this.style.height = "auto"; // Restablece la altura para recalcular
+    this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
+    chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
+    bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+    // Ajustar el contenedor principal (chat-text-area)
+    if (this.scrollHeight< 150) {
+      console.log("B");
+      this.style.height=this.scrollHeight;
+      // chatTextArea.style.height = `${this.scrollHeight -150}px`;
+      chatTextArea.style.height = "auto";
+      this.style.overflowY = "hidden";
+    } else {
+      console.log("C");
+      chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
+
+      // if(this.innerHeight < this.scrollHeight){
+      //     bubble.style.height = `calc(${this.innerHeight}px - ${textInput.style.fontSize})`;
+      //     this.style.overflowY = "hidden";
+      // }else{
+      //     bubble.style.height = "150px";
+      //     this.style.overflowY = "auto"; // Habilita el scrollbar dentro del textarea
+      //     this.style.height = `${275-150}px`; // Ajusta según el contenido
+      // }
+      this.style.overflowY = "auto";
+      this.style.height="120px";
+      chatTextArea.style.height="150px";
+    }
+    bubble.style.height = `calc(${this.innerHeight}px + ${initialBubble}px)`;
   });
 
 
