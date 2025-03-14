@@ -1,0 +1,288 @@
+body{
+  font-family: "Open Sans", sans-serif;
+}
+
+
+/* ------------------ DEFINICION COLORES DEDALUS ------------------ */
+
+:root{
+  --greenD: #c5e86c;
+  --azul1D: #4298b5;
+  --azul2D: #34879e;
+  --azul3D: #26508e;
+}
+
+.lateral{
+  background-color: #fbfbfb;
+  width:220px;
+
+}
+
+.navbar a{
+  color:#26508e;
+  font-size: larger;
+  transition: color 0.3s ease-in-out, font-size 0.2s linear;
+}
+
+.navbar a:hover{
+  color:#34879e;
+  font-size: x-large;
+}
+
+header h1{
+  font-size: 5em;
+}
+
+
+header h2{
+  font-size: 3em;
+}
+
+#navBarCollapsed{
+  transition: transform 0.3s linear;
+}
+
+#navBarCollapsed #active{
+  font-size:22px;
+  font-weight: 400;
+  color: var(--azul1D)
+}
+
+#navBarCollapsed #active:hover{
+  font-size:25px;
+}
+
+#page{
+  transition: transform 0.3s linear, width 0.3s linear;
+  /* left:0; */
+  /* left:200px; */
+}
+
+.hide{
+  transform: translateX(-100%);
+}
+
+
+/* @media (max-width:767px){
+#page{
+    left:0px
+}
+
+}
+
+@media (min-width:768px){
+#page{
+    left:0px
+}
+
+} */
+
+.lateral.hidden {
+  transform: translateX(-100%);
+}
+
+#page.hidden{
+  transform: translateX(0px);
+}
+
+#page.expanded{
+  transform: translateX(-200px);
+}
+
+
+#menu-button{
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+#menu-button.expanded{
+  opacity: 1;
+}
+
+#menu-button.hidden{
+  opacity: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+
+#pacientes .card{
+  min-width:220px;
+  max-width:350px;
+  height:170px;
+  margin:10px;
+  margin-right: calc(1vw + 5px);
+  font-size:20px;
+  background-color: #fbfbfb;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border: none;
+  text-wrap-mode: wrap;
+  /* color:#26508e; */
+  flex: 1 1 220px;
+}
+
+#pacientes a{
+  text-decoration: none;
+  color:inherit;
+}
+
+#pacientes .card:hover{
+  cursor:pointer;
+  background-color: #f7f7f7;
+  transform: scale(1.05);
+}
+
+#pacientes #newPaciente{
+  text-align: center;
+  justify-content: center;
+  font-size:100px;
+  color:gray;
+}
+
+.card-body{
+  flex-grow: 1;
+  overflow:hidden;
+  height:calc(170px - 55px);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.card-body ul{
+  list-style: none;
+  font-size: 15px;
+}
+
+
+
+.card-text{
+  font-size: 15px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+.card-gradient{
+  flex: 0 0 220px;
+  height:55px;
+  flex: 0 0 220px; /* Mantiene la altura fija */
+
+}
+
+.card-gradient.gr1{
+  background: linear-gradient(to right, #bee7a6, var(--azul1D));
+}
+
+.card-gradient.gr2{
+  background: linear-gradient(to left, var(--azul1D), var(--azul3D));
+}
+
+
+.card-gradient.gr3{
+  background: linear-gradient(to right, var(--greenD), #3b78e9);
+}
+
+.card-gradient.gr4{
+  background: linear-gradient(to right, #3399dd, #c5e86c);
+}
+
+/* -------------------------------------------------------------------------- */
+
+#navigation-buttons .btn{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:40px;
+  width:40px;
+  transition: opacity 0.3s linear;
+}
+
+#navigation-buttons .btn a{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------------------------------------------------------------- */
+
+#chat-text-area{
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+
+
+}
+
+.chat-bubble{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 70%;
+  padding: 10px 15px;
+  width:auto;
+  border-radius: 15px;
+  margin-bottom:3%;
+}
+
+
+.chat-bubble p{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin-bottom:0;
+}
+
+.fromuser{
+  align-self: flex-end;
+  background: linear-gradient(to left, var(--azul1D), #c9e452);
+  color: white;
+
+}
+
+.fromai{
+  align-self: flex-start;
+  background-color: #e5e5e5;
+  color: black;
+}
+
+
+#chat-body{
+  overflow-y:auto;
+}
+
+#chat-text-area{
+  width: calc(100vw - 20%);
+  max-height: 200px;
+  transition: height 0.2s linear, max-height 0.2s linear;
+}
+
+#campo-msg{
+  width:85%;
+  max-height: 150px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  overflow-y: hidden;
+  resize: none;
+  transition: height 0.2s linear, max-height 0.2s linear;
+}
+
+#text-bubble{
+  min-height: 40px;
+  /* height: 50px; */
+  transition: height 0.2s linear, max-height 0.2s linear;
+}
+
+#chat-text-area button{
+  transition: background-color 0.2s linear,  color 0.2s linear;
+}
+
+#button-send:hover{
+  background-color: var(--azul1D);
+  color:white;
+}
+
+#generar-resumen:hover{
+  background-color: var(--greenD);
+  /* color:white; */
+}
