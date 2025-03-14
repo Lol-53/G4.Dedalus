@@ -3,7 +3,7 @@ import json
 import os
 
 # Función para leer varios archivos CSV, filtrar por ID y generar un JSON
-def csv_a_json_por_id(csv_files, output_json, id_especifico: str):
+def csv_a_json_por_id(csv_files, id_especifico: str):
     # Lista para almacenar los datos filtrados de todos los CSV
     datos_completos = []
 
@@ -39,7 +39,5 @@ def csv_a_json_por_id(csv_files, output_json, id_especifico: str):
     # Si se encontraron datos, guardarlos en el archivo JSON
     if datos_completos:
         # print(datos_completos)
-        with open(output_json, 'w', encoding="utf8") as json_file:
-            json.dump(datos_completos, json_file, indent=4, ensure_ascii=False)
-            print(f"Archivo JSON generado: {output_json}")
+        return datos_completos
     
