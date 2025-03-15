@@ -298,8 +298,19 @@ const Chat = () => {
                         <div className="position-fixed vh-100 start-0 top-0 flex-column shadow lateral ">
                             <ul className="navbar-nav p-4 mt-3 w-100 d-flex flex-column">
                                 <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="/Prueba.html">Inicio</a></li>
-                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="#">Recientes </a></li>
-                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="/Pacientes.html">Pacientes</a></li>
+                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
+                                    className="nav-link d-block w-100 pe-4" href="#collapseRecientes"
+                                    data-bs-toggle="collapse" role="button" aria-expanded="false"
+                                    aria-controls="collapseRecientes">Recientes </a></li>
+                                <div className="collapse" id="collapseRecientes">
+                                    <ul>
+                                        <li><a href="Chat.html">Paciente 1</a></li>
+                                        <li><a href="#">Paciente 2</a></li>
+                                        <li><a href="#">Paciente 3</a></li>
+                                    </ul>
+                                </div>
+                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
+                                    className="nav-link d-block w-100 pe-4" href="/Pacientes.html">Pacientes</a></li>
                                 <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="#">Usuario</a></li>
                             </ul>
                         </div>

@@ -18,7 +18,7 @@ body{
 
 }
 
-.navbar a{
+.navbar a, .navbar a:focus{
   color:#26508e;
   font-size: larger;
   transition: color 0.3s ease-in-out, font-size 0.2s linear;
@@ -27,6 +27,23 @@ body{
 .navbar a:hover{
   color:#34879e;
   font-size: x-large;
+}
+
+#collapseRecientes ul li{
+  font-size:15px;
+  color:#5aa794;
+  list-style-type: none;
+}
+
+#collapseRecientes ul li a{
+  word-wrap: break-word;
+  text-decoration: none;
+  color:inherit;
+}
+
+#collapseRecientes ul li:hover{
+  cursor:pointer;
+  color:#38876a;
 }
 
 header h1{
