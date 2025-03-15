@@ -7,33 +7,40 @@
 # Matriz de correlación (Heatmap): Relación entre múltiples variables. X (falta test) -
 # Curvas de tendencia: Evolución de datos a lo largo del tiempo. X(M)(falta test) -
 # Diagramas de violín: Comparación de distribuciones y dispersión de los datos. X(M)(falta test) -
+import os
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from datetime import datetime
+
 
 # Definir los colores personalizados
 color2 = "#c5e86c"  # greenD
-color1 = "#4298b5"  # azul1D
+color1 = "#4298b5"  # azul1D Actual
 
-
+ 
 
 #Funciones de gráficas
+def grafica(df, path):
+    graficaCorrelacion(df,path)
+ 
 
-def grafica(df):
-    graficaCorrelacion(df)
-    
-
-def graficaCorrelacion(df):
+def graficaCorrelacion(df,path):
     sns.set_theme(style="whitegrid")
     plt.figure(figsize=(10,8))
     sns.heatmap(df.corr(), annot=True, cmap="coolwarm", linewidths=0.5)
     plt.title("Mapa de Calor de Correlación")
-    plt.savefig("matrizCorrelacion.png")
+
+    path_file  = pathDirectorio(f"{path}\matrizCorrelacion",f"matrizCorrelacion-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+    path_file = os.path.join(path,path_file)
+    
+
+    plt.savefig(path_file)
 
     limpiar()
-    return 0
+    return path_file
 
-def graficaDispersion(df,x,y):
+def graficaDispersion(df,x,y,path):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
         plt.figure(figsize=(8,5))
@@ -41,14 +48,19 @@ def graficaDispersion(df,x,y):
         plt.title("Relación entre " + x + " y " + y)
         plt.xlabel(x)
         plt.ylabel(y)
-        plt.savefig("graficaDispersion.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaDispersion",f"graficaDispersion-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1
 
-def graficaHistograma(df, y, bins=10):
+def graficaHistograma(df, y,path,bins=10):
     if verificarNombreColumnas(df,[y]) == True: 
         sns.set_theme(style="whitegrid")
         if bins == None:
@@ -57,63 +69,102 @@ def graficaHistograma(df, y, bins=10):
         plt.title("Histograma " + y)
         plt.xlabel(y)
         plt.ylabel("Frecuencia")
-        plt.savefig("histograma.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaHistograma",f"graficaHistograma-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1    
 
-def graficaBarras(df,x,y):
+def graficaBarras(df,x,y,path):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
         ax = sns.barplot(x=df[x], y=df[y], data=df, color= color1)
         plt.title("Gráfica de barras")
-        plt.savefig("graficaBarras.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaBarras",f"graficaBarras-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1
 
-def graficaBoxplot(df,x):
+def graficaBoxplot(df,x,path):
     if verificarNombreColumnas(df,[x]) == True:
         sns.set_theme(style="whitegrid")
         plt.figure(figsize=(8,5))
         ax = sns.boxplot(y=df[x], color= color1) 
         plt.title("Boxplot de " + x)
         plt.xlabel(x)
-        plt.savefig("boxplot.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaBoxplot",f"graficaBoxplot-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1
 
 
-def graficaViolin(df, x):
+def graficaViolin(df, x,path):
     if verificarNombreColumnas(df,[x]) == True:
         sns.set_theme(style="whitegrid")
         sns.violinplot(x=df[x], color= color1)
         plt.title("diagramaViolin")
-        plt.savefig("diagramaViolin.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaViolin",f"graficaViolin-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1
     
-def graficaCurvaTendencia(df,x,y):
+def graficaCurvaTendencia(df,x,y,path):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
         sns.regplot(data=df, x=x, y=y, order=2, color= color1)
         plt.title("curvaTendencia")
-        plt.savefig("curvaTendencia.png")
+
+        path_file  = pathDirectorio(f"{path}\graficaCurvaTendencia",f"graficaCurvaTendencia-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
+        path_file = os.path.join(path,path_file)
+    
+
+        plt.savefig(path_file)
 
         limpiar()
-        return 0
+        return path_file
     else:
         return -1
+    
+#Crea si no existe un directorio con el nombre pasado por direc y 
+# devuelve un path con el directorio y la imagen
+# Si no hay filename crea un directorio (generalmente el del paciente)
+def pathDirectorio(dir_name,filename= "non"):
+    # Crea el directorio si no existe
+    os.makedirs(dir_name, exist_ok=True) 
+    file_path = os.path.abspath(dir_name)
+
+    if filename != "non": #si se genera una imagen
+        file_path = os.path.join(dir_name, f"{filename}.png")
+
+    # Guardar el gráfico dentro del directorio
+    return file_path
 
 # Actualizar las gráficas
 def limpiar ():
@@ -149,3 +200,40 @@ def cargarDatos(tipoDatos):
     return df
 
 
+
+#FUNCION GENERAL A LLAMAR
+def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str | list)=[]):
+    path = pathDirectorio(id_patient) #Se genera directorio si no existe
+
+    df = cargarDatos(data_name)
+
+    if not graphics:
+        return graficaCorrelacion(df,path)
+    
+    lista_paths = []
+
+    for g in graphics:
+        if g == "graficaCorrelacion":
+            lista_paths.append(graficaCorrelacion(df,path))
+        elif g =="graficaDispersion":
+            lista_paths.append(graficaDispersion(df,x,y,path))
+        elif g =="graficaHistograma":
+            lista_paths.append(graficaHistograma(df,x,path=path))
+        elif g =="graficaBarras":
+            lista_paths.append(graficaBarras(df,x,y,path))
+        elif g =="graficaBoxplot" :
+            lista_paths.append(graficaBoxplot(df,x,path))
+        elif g == "graficaViolin":
+            lista_paths.append(graficaViolin(df,x,path))
+        elif g == "graficaCurvaTendencia":
+            lista_paths.append(graficaCurvaTendencia(df,x,y,path))
+        else :
+            lista_paths.append(" ")
+
+    return lista_paths
+
+    
+
+
+
+   
