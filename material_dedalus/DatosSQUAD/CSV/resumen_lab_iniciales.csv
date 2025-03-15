@@ -1,4 +1,4 @@
-PacienteID,Glucosa,pH,Cetonas,Creatinina,Hemoglobina,Leucocitos,Sodio,Potasio,Urea,Amilasa
+ID,Glucosa,pH,Cetonas,Creatinina,Hemoglobina,Leucocitos,Sodio,Potasio,Urea,Amilasa
 1,110,7.35,0.0,1.1,14.5,15000,134,4.3,50,80
 2,140,7.30,0.0,0.9,13.0,12000,137,4.0,40,50
 3,450,7.10,5.0,1.6,16.0,18000,130,5.5,60,95
