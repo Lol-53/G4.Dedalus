@@ -1,0 +1,1004 @@
+{
+    "data": [
+        {
+            "title": "1",
+            "paragraphs": [
+                {
+                    "context": "Paciente Juan Pérez de 68 años, Masculino. Alergias: Ninguna conocida. Motivo de ingreso: Fiebre alta y tos productiva. Diagnóstico principal: 233604007. Condiciones previas: EPOC (fumador crónico), Hipertensión arterial. Fecha de ingreso: 01/05/2023. Servicio: Neumología. Estado al ingreso: Estable, disnea moderada.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 1,
+                            "answers": [
+                                {
+                                    "text": 68,
+                                    "answer_start": 23
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 2,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 32
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 3,
+                            "answers": [
+                                {
+                                    "text": "Ninguna conocida",
+                                    "answer_start": 53
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 4,
+                            "answers": [
+                                {
+                                    "text": "Fiebre alta y tos productiva",
+                                    "answer_start": 90
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 5,
+                            "answers": [
+                                {
+                                    "text": 233604007,
+                                    "answer_start": 143
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 6,
+                            "answers": [
+                                {
+                                    "text": "EPOC (fumador crónico), Hipertensión arterial",
+                                    "answer_start": 175
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 7,
+                            "answers": [
+                                {
+                                    "text": "01/05/2023",
+                                    "answer_start": 240
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 8,
+                            "answers": [
+                                {
+                                    "text": "Neumología",
+                                    "answer_start": 262
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 9,
+                            "answers": [
+                                {
+                                    "text": "Estable, disnea moderada",
+                                    "answer_start": 293
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "2",
+            "paragraphs": [
+                {
+                    "context": "Paciente María López de 75 años, Femenino. Alergias: Penicilina. Motivo de ingreso: Dolor torácico opresivo irradiado a brazo izquierdo. Diagnóstico principal: 22298006. Condiciones previas: Hipertensión arterial, hipercolesterolemia. Fecha de ingreso: 10/07/2023. Servicio: Cardiología. Estado al ingreso: Hipotensa, diaforética (PA 90/60).",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 10,
+                            "answers": [
+                                {
+                                    "text": 75,
+                                    "answer_start": 24
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 11,
+                            "answers": [
+                                {
+                                    "text": "Femenino",
+                                    "answer_start": 33
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 12,
+                            "answers": [
+                                {
+                                    "text": "Penicilina",
+                                    "answer_start": 53
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 13,
+                            "answers": [
+                                {
+                                    "text": "Dolor torácico opresivo irradiado a brazo izquierdo",
+                                    "answer_start": 84
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 14,
+                            "answers": [
+                                {
+                                    "text": 22298006,
+                                    "answer_start": 160
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 15,
+                            "answers": [
+                                {
+                                    "text": "Hipertensión arterial, hipercolesterolemia",
+                                    "answer_start": 191
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 16,
+                            "answers": [
+                                {
+                                    "text": "10/07/2023",
+                                    "answer_start": 253
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 17,
+                            "answers": [
+                                {
+                                    "text": "Cardiología",
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 18,
+                            "answers": [
+                                {
+                                    "text": "Hipotensa, diaforética (PA 90/60)",
+                                    "answer_start": 307
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "3",
+            "paragraphs": [
+                {
+                    "context": "Paciente Carlos García de 22 años, Masculino. Alergias: Ninguna. Motivo de ingreso: Polidipsia, poliuria, vómitos y confusión. Diagnóstico principal: 420422005. Condiciones previas: Diabetes mellitus tipo 1 mal controlada. Fecha de ingreso: 20/09/2023. Servicio: UCI. Estado al ingreso: Deshidratación severa, respiración de Kussmaul.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 19,
+                            "answers": [
+                                {
+                                    "text": 22,
+                                    "answer_start": 26
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 20,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 35
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 21,
+                            "answers": [
+                                {
+                                    "text": "Ninguna",
+                                    "answer_start": 56
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 22,
+                            "answers": [
+                                {
+                                    "text": "Polidipsia, poliuria, vómitos y confusión",
+                                    "answer_start": 84
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 23,
+                            "answers": [
+                                {
+                                    "text": 420422005,
+                                    "answer_start": 150
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 24,
+                            "answers": [
+                                {
+                                    "text": "Diabetes mellitus tipo 1 mal controlada",
+                                    "answer_start": 182
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 25,
+                            "answers": [
+                                {
+                                    "text": "20/09/2023",
+                                    "answer_start": 241
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 26,
+                            "answers": [
+                                {
+                                    "text": "UCI",
+                                    "answer_start": 263
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 27,
+                            "answers": [
+                                {
+                                    "text": "Deshidratación severa, respiración de Kussmaul",
+                                    "answer_start": 287
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "4",
+            "paragraphs": [
+                {
+                    "context": "Paciente Lucía Ramírez de 30 años, Femenino. Alergias: Sulfonamidas. Motivo de ingreso: Dolor agudo en fosa ilíaca derecha, fiebre y vómitos. Diagnóstico principal: 74400008. Condiciones previas: Sin antecedentes médicos relevantes. Fecha de ingreso: 05/08/2023. Servicio: Cirugía General. Estado al ingreso: Dolor abdominal severo, febril.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 28,
+                            "answers": [
+                                {
+                                    "text": 30,
+                                    "answer_start": 26
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 29,
+                            "answers": [
+                                {
+                                    "text": "Femenino",
+                                    "answer_start": 35
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 30,
+                            "answers": [
+                                {
+                                    "text": "Sulfonamidas",
+                                    "answer_start": 55
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 31,
+                            "answers": [
+                                {
+                                    "text": "Dolor agudo en fosa ilíaca derecha, fiebre y vómitos",
+                                    "answer_start": 88
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 32,
+                            "answers": [
+                                {
+                                    "text": 74400008,
+                                    "answer_start": 165
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 33,
+                            "answers": [
+                                {
+                                    "text": "Sin antecedentes médicos relevantes",
+                                    "answer_start": 196
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 34,
+                            "answers": [
+                                {
+                                    "text": "05/08/2023",
+                                    "answer_start": 251
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 35,
+                            "answers": [
+                                {
+                                    "text": "Cirugía General",
+                                    "answer_start": 273
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 36,
+                            "answers": [
+                                {
+                                    "text": "Dolor abdominal severo, febril",
+                                    "answer_start": 309
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5",
+            "paragraphs": [
+                {
+                    "context": "Paciente Miguel Rodríguez de 60 años, Masculino. Alergias: Ninguna conocida. Motivo de ingreso: Disnea aguda en reposo, ortopnea, edema en miembros inferiores. Diagnóstico principal: 42343007. Condiciones previas: Hipertensión arterial, fibrilación auricular crónica. Fecha de ingreso: 12/04/2023. Servicio: Medicina Interna. Estado al ingreso: Taquipneico, SatO2 82% al aire ambiente.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 37,
+                            "answers": [
+                                {
+                                    "text": 60,
+                                    "answer_start": 29
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 38,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 38
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 39,
+                            "answers": [
+                                {
+                                    "text": "Ninguna conocida",
+                                    "answer_start": 59
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 40,
+                            "answers": [
+                                {
+                                    "text": "Disnea aguda en reposo, ortopnea, edema en miembros inferiores",
+                                    "answer_start": 96
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 41,
+                            "answers": [
+                                {
+                                    "text": 42343007,
+                                    "answer_start": 183
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 42,
+                            "answers": [
+                                {
+                                    "text": "Hipertensión arterial, fibrilación auricular crónica",
+                                    "answer_start": 214
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 43,
+                            "answers": [
+                                {
+                                    "text": "12/04/2023",
+                                    "answer_start": 286
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 44,
+                            "answers": [
+                                {
+                                    "text": "Medicina Interna",
+                                    "answer_start": 308
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 45,
+                            "answers": [
+                                {
+                                    "text": "Taquipneico, SatO2 82% al aire ambiente",
+                                    "answer_start": 345
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6",
+            "paragraphs": [
+                {
+                    "context": "Paciente Ana Gómez de 50 años, Femenino. Alergias: Ibuprofeno. Motivo de ingreso: Fiebre alta, taquicardia y bajo nivel de conciencia. Diagnóstico principal: 91302008. Condiciones previas: Diabetes mellitus tipo 2, nefrolitiasis recurrente. Fecha de ingreso: 30/10/2023. Servicio: UCI. Estado al ingreso: Hipotensa (PA 75/45), confusa (shock séptico).",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 46,
+                            "answers": [
+                                {
+                                    "text": 50,
+                                    "answer_start": 22
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 47,
+                            "answers": [
+                                {
+                                    "text": "Femenino",
+                                    "answer_start": 31
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 48,
+                            "answers": [
+                                {
+                                    "text": "Ibuprofeno",
+                                    "answer_start": 51
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 49,
+                            "answers": [
+                                {
+                                    "text": "Fiebre alta, taquicardia y bajo nivel de conciencia",
+                                    "answer_start": 82
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 50,
+                            "answers": [
+                                {
+                                    "text": 91302008,
+                                    "answer_start": 158
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 51,
+                            "answers": [
+                                {
+                                    "text": "Diabetes mellitus tipo 2, nefrolitiasis recurrente",
+                                    "answer_start": 189
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 52,
+                            "answers": [
+                                {
+                                    "text": "30/10/2023",
+                                    "answer_start": 259
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 53,
+                            "answers": [
+                                {
+                                    "text": "UCI",
+                                    "answer_start": 281
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 54,
+                            "answers": [
+                                {
+                                    "text": "Hipotensa (PA 75/45), confusa (shock séptico)",
+                                    "answer_start": 305
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7",
+            "paragraphs": [
+                {
+                    "context": "Paciente Pedro Álvarez de 78 años, Masculino. Alergias: Ninguna. Motivo de ingreso: Déficit motor súbito en hemicuerpo derecho y afasia. Diagnóstico principal: 230690007. Condiciones previas: Hipertensión arterial, diabetes mellitus tipo 2. Fecha de ingreso: 01/03/2023. Servicio: Neurología. Estado al ingreso: Consciente, hemiparesia derecha, afasia de Broca.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 55,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 26
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 56,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 35
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 57,
+                            "answers": [
+                                {
+                                    "text": "Ninguna",
+                                    "answer_start": 56
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 58,
+                            "answers": [
+                                {
+                                    "text": "Déficit motor súbito en hemicuerpo derecho y afasia",
+                                    "answer_start": 84
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 59,
+                            "answers": [
+                                {
+                                    "text": 230690007,
+                                    "answer_start": 160
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 60,
+                            "answers": [
+                                {
+                                    "text": "Hipertensión arterial, diabetes mellitus tipo 2",
+                                    "answer_start": 192
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 61,
+                            "answers": [
+                                {
+                                    "text": "01/03/2023",
+                                    "answer_start": 259
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 62,
+                            "answers": [
+                                {
+                                    "text": "Neurología",
+                                    "answer_start": 281
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 63,
+                            "answers": [
+                                {
+                                    "text": "Consciente, hemiparesia derecha, afasia de Broca",
+                                    "answer_start": 312
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8",
+            "paragraphs": [
+                {
+                    "context": "Paciente Rosa Jiménez de 65 años, Femenino. Alergias: Penicilina. Motivo de ingreso: Disnea en aumento, tos productiva con esputo purulento. Diagnóstico principal: 195951007. Condiciones previas: EPOC GOLD III (exfumadora), Hipertensión arterial. Fecha de ingreso: 18/06/2023. Servicio: Neumología. Estado al ingreso: Taquipneica, sibilancias, SatO2 85% (AA).",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 64,
+                            "answers": [
+                                {
+                                    "text": 65,
+                                    "answer_start": 25
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 65,
+                            "answers": [
+                                {
+                                    "text": "Femenino",
+                                    "answer_start": 34
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 66,
+                            "answers": [
+                                {
+                                    "text": "Penicilina",
+                                    "answer_start": 54
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 67,
+                            "answers": [
+                                {
+                                    "text": "Disnea en aumento, tos productiva con esputo purulento",
+                                    "answer_start": 85
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 68,
+                            "answers": [
+                                {
+                                    "text": 195951007,
+                                    "answer_start": 164
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 69,
+                            "answers": [
+                                {
+                                    "text": "EPOC GOLD III (exfumadora), Hipertensión arterial",
+                                    "answer_start": 196
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 70,
+                            "answers": [
+                                {
+                                    "text": "18/06/2023",
+                                    "answer_start": 265
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 71,
+                            "answers": [
+                                {
+                                    "text": "Neumología",
+                                    "answer_start": 287
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 72,
+                            "answers": [
+                                {
+                                    "text": "Taquipneica, sibilancias, SatO2 85% (AA)",
+                                    "answer_start": 318
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9",
+            "paragraphs": [
+                {
+                    "context": "Paciente Javier Santos de 18 años, Masculino. Alergias: Ácaros del polvo; pólenes. Motivo de ingreso: Crisis asmática severa con sibilancias y uso de músculos accesorios. Diagnóstico principal: 195967001. Condiciones previas: Asma desde la niñez, rinitis alérgica. Fecha de ingreso: 11/02/2023. Servicio: Neumología. Estado al ingreso: Taquipneico, sibilancias audibles, habla entrecortada.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 73,
+                            "answers": [
+                                {
+                                    "text": 18,
+                                    "answer_start": 26
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 74,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 35
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 75,
+                            "answers": [
+                                {
+                                    "text": "Ácaros del polvo; pólenes",
+                                    "answer_start": 56
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 76,
+                            "answers": [
+                                {
+                                    "text": "Crisis asmática severa con sibilancias y uso de músculos accesorios",
+                                    "answer_start": 102
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 77,
+                            "answers": [
+                                {
+                                    "text": 195967001,
+                                    "answer_start": 194
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 78,
+                            "answers": [
+                                {
+                                    "text": "Asma desde la niñez, rinitis alérgica",
+                                    "answer_start": 226
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 79,
+                            "answers": [
+                                {
+                                    "text": "11/02/2023",
+                                    "answer_start": 283
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 80,
+                            "answers": [
+                                {
+                                    "text": "Neumología",
+                                    "answer_start": 305
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 81,
+                            "answers": [
+                                {
+                                    "text": "Taquipneico, sibilancias audibles, habla entrecortada",
+                                    "answer_start": 336
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "10",
+            "paragraphs": [
+                {
+                    "context": "Paciente Alejandro Ruiz de 46 años, Masculino. Alergias: Ninguna. Motivo de ingreso: Dolor epigástrico intenso irradiado a espalda, náuseas y vómitos. Diagnóstico principal: 197456007. Condiciones previas: Hipertrigliceridemia, consumo crónico de alcohol. Fecha de ingreso: 15/11/2023. Servicio: Gastroenterología. Estado al ingreso: Dolor intenso, taquicárdico, vómitos.",
+                    "qas": [
+                        {
+                            "question": "¿Qué edad tiene el paciente?",
+                            "id": 82,
+                            "answers": [
+                                {
+                                    "text": 46,
+                                    "answer_start": 27
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el sexo del paciente?",
+                            "id": 83,
+                            "answers": [
+                                {
+                                    "text": "Masculino",
+                                    "answer_start": 36
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿El paciente tiene alergias?",
+                            "id": 84,
+                            "answers": [
+                                {
+                                    "text": "Ninguna",
+                                    "answer_start": 57
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el motivo de ingreso del paciente?",
+                            "id": 85,
+                            "answers": [
+                                {
+                                    "text": "Dolor epigástrico intenso irradiado a espalda, náuseas y vómitos",
+                                    "answer_start": 85
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el diagnóstico principal del paciente?",
+                            "id": 86,
+                            "answers": [
+                                {
+                                    "text": 197456007,
+                                    "answer_start": 174
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Qué condiciones previas tiene el paciente?",
+                            "id": 87,
+                            "answers": [
+                                {
+                                    "text": "Hipertrigliceridemia, consumo crónico de alcohol",
+                                    "answer_start": 206
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué fecha ingresó el paciente?",
+                            "id": 88,
+                            "answers": [
+                                {
+                                    "text": "15/11/2023",
+                                    "answer_start": 274
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿En qué servicio fue ingresado el paciente?",
+                            "id": 89,
+                            "answers": [
+                                {
+                                    "text": "Gastroenterología",
+                                    "answer_start": 296
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál era el estado del paciente al ingreso?",
+                            "id": 90,
+                            "answers": [
+                                {
+                                    "text": "Dolor intenso, taquicárdico, vómitos",
+                                    "answer_start": 334
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

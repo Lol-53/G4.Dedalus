@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Cargar el DataFrame desde CSV
-df = pd.read_csv(r"C:\Users\mpord\Documents\3IngSoft\2Cuatri\G4.Dedalus\material_dedalus\DatosSQUAD\resumen_lab_iniciales_conNombre.csv",encoding="utf-8")
+df = pd.read_csv(r"CSV\resumen_lab_iniciales_conNombre.csv",encoding="utf-8")
 
 # Convertir a formato SQuAD
 data = {"data": []}
@@ -11,9 +11,9 @@ i = 0
 
 for _, row in df.iterrows():
     i+=1
-    titulo = f"{row['Nombre']} ID: {row['PacienteID']}"
+    titulo = f"{row['ID']}"
     context = (
-        f"Paciente {row['PacienteID']} nombre {row['Nombre']}. "
+        f"Paciente {row['ID']} nombre {row['Nombre']}. "
             f"Glucosa: {row['Glucosa']} mg/dL. "
             f"pH: {row['pH']}. "
             f"Cetonas: {row['Cetonas']} mmol/L. "

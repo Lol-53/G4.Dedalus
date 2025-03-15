@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Cargar el DataFrame desde CSV
-df = pd.read_csv(r"C:\Users\mpord\Documents\3IngSoft\2Cuatri\G4.Dedalus\material_dedalus\DatosSQUAD\resumen_procedimientos.csv",encoding="utf-8")
+df = pd.read_csv(r"CSV\resumen_procedimientos.csv",encoding="utf-8")
 
 # Convertir a formato SQuAD
 data = {"data": []}
@@ -14,15 +14,15 @@ i = 0
 
 for _, row in df.iterrows():
     i+=1
-    if(int(row['PacienteID'])-1 < len(pacientes)):
-        titulo = f"{pacientes[int(row['PacienteID'])-1]} ID: {row['PacienteID']}"
-        nombre = pacientes[int(row['PacienteID'])-1]
+    titulo = f"{row['ID']}"
+
+    if(int(row['ID'])-1 < len(pacientes)):
+        nombre = pacientes[int(row['ID'])-1]
     else:
-        titulo = f"Paciente {row['PacienteID']} ID: {row['PacienteID']}"
         nombre = "Desconocido"
 
     context = (
-        f"Paciente {row['PacienteID']} nombre {nombre}. "
+        f"Paciente {row['ID']} nombre {nombre}. "
         f"Procedimientos: {row['Procedimientos']}"
         f"Tratamientos: {row['Tratamientos']}. "
         f"Cirugías Previas: {row['CirugíasPrevias']}. "
