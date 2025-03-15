@@ -18,8 +18,7 @@ for _, row in df.iterrows():
         titulo = f"{row['ID']}"
         nombre = pacientes[int(row['ID'])-1]
     else:
-        titulo = f"Paciente {row['ID']} ID: {row['ID']}"
-        nombre = "Desconocido"
+        continue
     context = (
         f"Paciente {row['ID']} nombre {nombre}. "
         f"Fecha: {row['Fecha']}"
