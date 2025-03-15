@@ -104,14 +104,12 @@ const Chat = () => {
 
             // Si el navbar está colapsado (según el tamaño de la pantalla)
 
-            if(contenidoChat){
-                contenidoChat.style.height=window.innerHeight-100 + "px";
-            }
+
 
             if (window.innerWidth < 768 ) {
                 // Aplicamos la animación de deslizamiento
                 if(chat){
-                    chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important")}, 100);
                 }
                 sidebar.classList.add("hidden");
                 page.classList.add("expanded");
@@ -135,7 +133,9 @@ const Chat = () => {
             } else if (window.innerWidth >= 768) {
                 // Si el tamaño de la pantalla es mayor y el navbar está oculto, lo mostramos
                 if(chat){
-                    chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+                        chat.style.setProperty("width", (window.innerWidth-250) + "px", "important")
+                    }, 100);
                 }
 
                 sidebar.classList.remove("hidden");
@@ -148,6 +148,11 @@ const Chat = () => {
                 }else{
                     sidebar.style.height = window.innerHeight + "px";
                 }
+            }
+
+            if(contenidoChat){
+
+                contenidoChat.style.height=window.innerHeight-100 + "px";
             }
         });
 
