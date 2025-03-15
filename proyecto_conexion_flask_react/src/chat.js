@@ -194,6 +194,12 @@ const Chat = () => {
             bubble.style.height = `calc(${this.innerHeight}px + ${initialBubble}px)`;
         });
 
+        window.addEventListener('load', function() {
+
+            // Desplaza el scroll hacia abajo
+            chat.scrollTop = chat.scrollHeight;
+        });
+
         if (idPaciente) {
             setContext(idPaciente);
         }
@@ -235,12 +241,15 @@ const Chat = () => {
 
         let initialHeight = 40;
         let initialBubble= bubble.style.width;
+        const chat = chat_body.current;
 
         bubble.style.height= initialBubble;
         textInput.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
         chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
 
         const messageSend = message;
+
+        chat.scrollTop = chatBody.scrollHeight;
 
         setMessage(""); // Limpiar el input después de enviar
 
