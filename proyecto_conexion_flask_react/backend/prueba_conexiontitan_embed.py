@@ -41,18 +41,18 @@ for entry in data["data"]:
             )
 
             if response.status_code == 200:
+                print("embedding generado con exito")
                 result = response.json()
                 embeddings_data[patient_id].append({
                     "context": context,
                     "question": question,
                     "answer": answer,
-                    "embedding": result
+                    "embedding": result["data"][0]["embedding"]
                 })
             else :
                 print(f"Error al generar embeddings para el paciente {patient_id}")
                 print(response.json())
-
-            time.sleep(2)
+            time.sleep(70)
 
 # Guardar los embeddings en un archivo JSON
 with open("embeddings.json", "w", encoding="utf-8") as file:
