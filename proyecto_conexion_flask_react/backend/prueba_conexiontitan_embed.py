@@ -4,7 +4,7 @@ from typing import TextIO
 import time
 
 # Cargar el archivo JSON SQuAD
-with open("datos_pacientes/dataset_squad_procedimientos.json", "r", encoding="utf-8") as file:
+with open("datos_pacientes/dataset_squad_lab_iniciales.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 # Lista para almacenar los embeddings
@@ -52,10 +52,10 @@ for entry in data["data"]:
             else :
                 print(f"Error al generar embeddings para el paciente {patient_id}")
                 print(response.json())
-            time.sleep(70)
+            time.sleep(1)
 
 # Guardar los embeddings en un archivo JSON
-with open("embeddings.json", "w", encoding="utf-8") as file:
+with open("embeddings_lab_iniciales.json", "w", encoding="utf-8") as file:
     json.dump(embeddings_data, file, ensure_ascii=False, indent=4)
 
 print("Embeddings generados y guardados en embeddings.json")

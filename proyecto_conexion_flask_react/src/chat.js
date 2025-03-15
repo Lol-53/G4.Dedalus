@@ -233,7 +233,7 @@ const Chat = () => {
         if (!message.trim()) return; // Evita enviar mensajes vacíos
 
         // Agregar el mensaje del usuario al chat
-        setMessages([...messages, { role: "user", content: message }]);
+        setMessages([...messages, { role: "user", content: `<p>${message}</p>` }]);
 
         const bubble = text_bubble.current;
         const textInput = campo_msg.current;
@@ -249,7 +249,7 @@ const Chat = () => {
 
         const messageSend = message;
 
-        chat.scrollTop = chat_body.scrollHeight;
+        chat.scrollTop = chat.scrollHeight -200;
 
         setMessage(""); // Limpiar el input después de enviar
 
