@@ -11,11 +11,17 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+# Definir los colores personalizados
+color2 = "#c5e86c"  # greenD
+color1 = "#4298b5"  # azul1D
+
+
+
 #Funciones de gráficas
 
-def grafica(datos):
+def grafica(df):
+    graficaCorrelacion(df)
     
-    return None
 
 def graficaCorrelacion(df):
     sns.set_theme(style="whitegrid")
@@ -31,7 +37,7 @@ def graficaDispersion(df,x,y):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
         plt.figure(figsize=(8,5))
-        ax = sns.scatterplot(x=df[x], y=df[y])
+        ax = sns.scatterplot(x=df[x], y=df[y], color= color1)
         plt.title("Relación entre " + x + " y " + y)
         plt.xlabel(x)
         plt.ylabel(y)
@@ -47,7 +53,7 @@ def graficaHistograma(df, y, bins=10):
         sns.set_theme(style="whitegrid")
         if bins == None:
             bins = 10
-        ax = sns.histplot(df[y], kde=True, bins=bins)
+        ax = sns.histplot(df[y], kde=True, bins=bins, color= color1)
         plt.title("Histograma " + y)
         plt.xlabel(y)
         plt.ylabel("Frecuencia")
@@ -61,7 +67,7 @@ def graficaHistograma(df, y, bins=10):
 def graficaBarras(df,x,y):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
-        ax = sns.barplot(x=df[x], y=df[y], data=df)
+        ax = sns.barplot(x=df[x], y=df[y], data=df, color= color1)
         plt.title("Gráfica de barras")
         plt.savefig("graficaBarras.png")
 
@@ -74,7 +80,7 @@ def graficaBoxplot(df,x):
     if verificarNombreColumnas(df,[x]) == True:
         sns.set_theme(style="whitegrid")
         plt.figure(figsize=(8,5))
-        ax = sns.boxplot(y=df[x]) 
+        ax = sns.boxplot(y=df[x], color= color1) 
         plt.title("Boxplot de " + x)
         plt.xlabel(x)
         plt.savefig("boxplot.png")
@@ -88,7 +94,7 @@ def graficaBoxplot(df,x):
 def graficaViolin(df, x):
     if verificarNombreColumnas(df,[x]) == True:
         sns.set_theme(style="whitegrid")
-        sns.violinplot(x=df[x])
+        sns.violinplot(x=df[x], color= color1)
         plt.title("diagramaViolin")
         plt.savefig("diagramaViolin.png")
 
@@ -100,7 +106,7 @@ def graficaViolin(df, x):
 def graficaCurvaTendencia(df,x,y):
     if verificarNombreColumnas(df,[x,y]) == True:
         sns.set_theme(style="whitegrid")
-        sns.regplot(data=df, x=x, y=y, order=2)
+        sns.regplot(data=df, x=x, y=y, order=2, color= color1)
         plt.title("curvaTendencia")
         plt.savefig("curvaTendencia.png")
 
