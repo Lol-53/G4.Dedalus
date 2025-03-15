@@ -202,7 +202,7 @@ def cargarDatos(tipoDatos):
 
 
 #FUNCION GENERAL A LLAMAR
-def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics=[]):
+def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str | list)=[]):
     path = pathDirectorio(id_patient) #Se genera directorio si no existe
 
     df = cargarDatos(data_name)
