@@ -249,7 +249,7 @@ const Chat = () => {
 
         const messageSend = message;
 
-        chat.scrollTop = chatBody.scrollHeight;
+        chat.scrollTop = chat_body.scrollHeight;
 
         setMessage(""); // Limpiar el input después de enviar
 
