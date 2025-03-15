@@ -19,6 +19,15 @@ const Chat = () => {
     const campo_msg = useRef(null);
     const chat_text_area = useRef(null);
 
+    function scrollToBottom() {
+        const chat = chat_body.current;
+
+        // Usa setTimeout para esperar a que el mensaje se agregue al DOM
+        setTimeout(() => {
+            chat.scrollTop = chat.scrollHeight;
+        }, 0); // Retraso mínimo para asegurar que el DOM se actualiza
+    }
+
     useEffect(() => {
         document.body.style.overflow = "hidden";
 
@@ -197,7 +206,7 @@ const Chat = () => {
         window.addEventListener('load', function() {
 
             // Desplaza el scroll hacia abajo
-            chat.scrollTop = chat.scrollHeight;
+            scrollToBottom();
         });
 
         if (idPaciente) {
@@ -241,7 +250,7 @@ const Chat = () => {
 
         let initialHeight = 40;
         let initialBubble= bubble.style.width;
-        const chat = chat_body.current;
+
 
         bubble.style.height= initialBubble;
         textInput.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
@@ -249,13 +258,18 @@ const Chat = () => {
 
         const messageSend = message;
 
-        chat.scrollTop = chat.scrollHeight -200;
+
 
         setMessage(""); // Limpiar el input después de enviar
 
+        scrollToBottom();
         // Enviar el mensaje al backend Flask
         await sendMessageToBackend(messageSend);
+        console.log("A");
+        scrollToBottom();
     };
+
+
 
     const sendMessageToBackend = async (userMessage) => {
         try {
@@ -270,6 +284,7 @@ const Chat = () => {
 
             // Agregar la respuesta de la IA al chat
             setMessages((prev) => [...prev, { role: "ai", content: data.response }]);
+            scrollToBottom();
         } catch (error) {
             console.error("Error al enviar el mensaje:", error);
         }
