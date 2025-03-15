@@ -55,7 +55,7 @@ for entry in data["data"]:
             time.sleep(1)
 
 # Guardar los embeddings en un archivo JSON
-with open("embeddings_notas.json", "w", encoding="utf-8") as file:
+with open("embeddings/embeddings_notas.json", "w", encoding="utf-8") as file:
     json.dump(embeddings_data, file, ensure_ascii=False, indent=4)
 
 print("Embeddings generados y guardados en embeddings.json")
