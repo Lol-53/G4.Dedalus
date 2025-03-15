@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import pandas as pd
 import os
 import re
@@ -15,6 +15,11 @@ client = openai.OpenAI(
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Habilitar CORS para todas las rutas
+
+# Asegurar que Flask sirva archivos de imágenes
+@app.route('/images/<path:filename>')
+def serve_image(filename):
+    return send_from_directory(os.getcwd(), filename)  # Sirve imágenes desde el directorio de trabajo
 
 # Configuración de LangChain con Claude-Sonnet en Bedrock
 chat_model = ChatAnthropic(
@@ -83,16 +88,21 @@ def ask_ai():
         if not user_message:
             return jsonify({"error": "Mensaje vacío"}), 400
 
-        # Identificar si es una pregunta de gráfica
+        # Recuperar contexto del paciente
+        contexto_paciente = contextos_pacientes.get(id_paciente, "")
+
+        messages = [
+            {"role": "system", "content": contexto_paciente},
+            {"role": "user", "content": user_message}
+        ]
+
+        # Verificar si la pregunta es sobre gráficos
         if any(word in user_message.lower() for word in ["gráfico", "gráfica", "grafica", "dispersión", "histograma", "barras", "boxplot", "violín", "correlación", "tendencia"]):
-            paciente_data = lab_df[lab_df["pacienteid"] == id_paciente]  # Ahora usa datos de laboratorio
+            paciente_data = lab_df[lab_df["pacienteid"] == id_paciente]
             if paciente_data.empty:
                 return jsonify({"error": "Paciente no encontrado en datos de laboratorio"}), 404
 
             df = paciente_data.drop(columns=["pacienteid"])
-            print("Columnas disponibles en el dataset:", list(df.columns))  # Depuración
-
-            # Limpiar el mensaje del usuario (eliminar signos de puntuación)
             mensaje_limpio = re.sub(r'[^\w\s]', '', user_message.lower())
             palabras_usuario = mensaje_limpio.split()
             variables_encontradas = [col for col in df.columns if any(palabra in col.lower() for palabra in palabras_usuario)]
@@ -100,41 +110,24 @@ def ask_ai():
             x = variables_encontradas[0] if len(variables_encontradas) > 0 else None
             y = variables_encontradas[1] if len(variables_encontradas) > 1 else None
 
-            print(f"Palabras en el mensaje después de limpieza: {palabras_usuario}")
-            print(f"Variables detectadas en el dataset: {variables_encontradas}")
-            print(f"Usuario pidió gráfica con x={x} y={y}")
-
             if not x or not y:
-                return jsonify({"error": f"No se encontraron suficientes variables en los datos para generar la gráfica. Variables detectadas: x={x}, y={y}"}), 400
+                return jsonify({"error": "No se encontraron suficientes variables en los datos para generar la gráfica."}), 400
 
-            graph_path = f"static/{x}_{y}_{id_paciente}.png"
+            base_filename = f"{x}_{y}_{id_paciente}.png"
+            graph_filename = base_filename
+            counter = 1
+            while os.path.exists(graph_filename):
+                graph_filename = f"{x}_{y}_{id_paciente}_{counter}.png"
+                counter += 1
 
-            if "dispersión" in user_message:
-                gd.graficaDispersion(df, x, y)
-            elif "histograma" in user_message:
-                gd.graficaHistograma(df, y)
-            elif "barras" in user_message:
-                gd.graficaBarras(df, x, y)
-            elif "boxplot" in user_message:
-                gd.graficaBoxplot(df, x)
-            elif "violín" in user_message:
-                gd.graficaViolin(df, x)
-            elif "correlación" in user_message:
-                gd.graficaCorrelacion(df)
-            elif "tendencia" in user_message:
-                gd.graficaCurvaTendencia(df, x, y)
-            else:
-                return jsonify({"error": "No se pudo detectar el tipo de gráfico."}), 400
+            graph_path = os.path.join(os.getcwd(), graph_filename)
+            gd.graficaDispersion(df, x, y)
 
             if os.path.exists(graph_path):
-                return jsonify({"message": "Gráfica generada exitosamente.", "graph_path": graph_path})
+                graph_url = f"/images/{os.path.basename(graph_filename)}"
+                return jsonify({"message": "Gráfica generada exitosamente.", "graph_url": graph_url})
             else:
                 return jsonify({"error": "La gráfica no se generó correctamente."}), 500
-
-        messages = [
-            {"role": "system", "content": contextos_pacientes.get(id_paciente, "")},
-            {"role": "user", "content": user_message}
-        ]
 
         response = client.chat.completions.create(
             model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
