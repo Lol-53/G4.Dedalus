@@ -1,0 +1,4204 @@
+{
+    "data": [
+        {
+            "title": "01/05/2023 06:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 01/05/2023 y hora 06:00. Presión Sistólica: 100 mmHg. Presión Diastólica: 65 mmHg. Frecuencia Cardíaca: 105 latidos por minuto. Temperatura: 38.8°C. Frecuencia Respiratoria: 28 respiraciones por minuto. Saturación de Oxígeno: 89%. Glucosa: 110 mg/dL. Leucocitos: 15000.0 células/mm³. Hemoglobina: 14.5 g/dL. Plaquetas: 250000.0 células/mm³. Colesterol: 180.0 mg/dL. HDL: 50.0 mg/dL. LDL: 110.0 mg/dL. Triglicéridos: 100.0 mg/dL. Sodio: 134.0 mEq/L. Potasio: 4.3 mEq/L. Cloro: 98.0 mEq/L. Creatinina: 1.1 mg/dL. Urea: 50.0 mg/dL. AST: 30.0 U/L. ALT: 28.0 U/L. Bilirrubina: 0.6 mg/dL. pH: 7.35. pCO2: 32.0 mmHg. pO2: 60.0 mmHg. HCO3: 16.0 mEq/L. Lactato: 2.5 mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 1,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 2,
+                            "answers": [
+                                {
+                                    "text": 65,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 3,
+                            "answers": [
+                                {
+                                    "text": 105,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 4,
+                            "answers": [
+                                {
+                                    "text": "38.8°C",
+                                    "answer_start": 177
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 5,
+                            "answers": [
+                                {
+                                    "text": 28,
+                                    "answer_start": 210
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 7,
+                            "answers": [
+                                {
+                                    "text": "89%",
+                                    "answer_start": 262
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 8,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 276
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 9,
+                            "answers": [
+                                {
+                                    "text": 15000.0,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 10,
+                            "answers": [
+                                {
+                                    "text": 14.5,
+                                    "answer_start": 333
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 11,
+                            "answers": [
+                                {
+                                    "text": 250000.0,
+                                    "answer_start": 355
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 12,
+                            "answers": [
+                                {
+                                    "text": 180.0,
+                                    "answer_start": 389
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 13,
+                            "answers": [
+                                {
+                                    "text": 50.0,
+                                    "answer_start": 407
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 14,
+                            "answers": [
+                                {
+                                    "text": 110.0,
+                                    "answer_start": 424
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 15,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 452
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 16,
+                            "answers": [
+                                {
+                                    "text": 134.0,
+                                    "answer_start": 472
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 17,
+                            "answers": [
+                                {
+                                    "text": 4.3,
+                                    "answer_start": 494
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 18,
+                            "answers": [
+                                {
+                                    "text": 98.0,
+                                    "answer_start": 512
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 19,
+                            "answers": [
+                                {
+                                    "text": 1.1,
+                                    "answer_start": 536
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 20,
+                            "answers": [
+                                {
+                                    "text": 50.0,
+                                    "answer_start": 407
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 21,
+                            "answers": [
+                                {
+                                    "text": 30.0,
+                                    "answer_start": 570
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 22,
+                            "answers": [
+                                {
+                                    "text": 28.0,
+                                    "answer_start": 585
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 23,
+                            "answers": [
+                                {
+                                    "text": 0.6,
+                                    "answer_start": 608
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 24,
+                            "answers": [
+                                {
+                                    "text": 7.35,
+                                    "answer_start": 623
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 25,
+                            "answers": [
+                                {
+                                    "text": 32.0,
+                                    "answer_start": 635
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 26,
+                            "answers": [
+                                {
+                                    "text": 60.0,
+                                    "answer_start": 651
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 27,
+                            "answers": [
+                                {
+                                    "text": 16.0,
+                                    "answer_start": 668
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 28,
+                            "answers": [
+                                {
+                                    "text": 2.5,
+                                    "answer_start": 689
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "01/05/2023 14:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 01/05/2023 y hora 14:00. Presión Sistólica: 105 mmHg. Presión Diastólica: 68 mmHg. Frecuencia Cardíaca: 115 latidos por minuto. Temperatura: 39.2°C. Frecuencia Respiratoria: 30 respiraciones por minuto. Saturación de Oxígeno: 95%. Glucosa: 125 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 134.0 mg/dL. Urea: null mg/dL. AST: 98.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 29,
+                            "answers": [
+                                {
+                                    "text": 105,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 30,
+                            "answers": [
+                                {
+                                    "text": 68,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 31,
+                            "answers": [
+                                {
+                                    "text": 115,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 32,
+                            "answers": [
+                                {
+                                    "text": "39.2°C",
+                                    "answer_start": 177
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 33,
+                            "answers": [
+                                {
+                                    "text": 30,
+                                    "answer_start": 210
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 35,
+                            "answers": [
+                                {
+                                    "text": "95%",
+                                    "answer_start": 262
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 36,
+                            "answers": [
+                                {
+                                    "text": 125,
+                                    "answer_start": 276
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 37,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 38,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 39,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 40,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 41,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 42,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 43,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 44,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 45,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 46,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 47,
+                            "answers": [
+                                {
+                                    "text": 134.0,
+                                    "answer_start": 516
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 48,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 49,
+                            "answers": [
+                                {
+                                    "text": 98.0,
+                                    "answer_start": 551
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 50,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 51,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 52,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 53,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 54,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 55,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 56,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "01/05/2023 22:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 01/05/2023 y hora 22:00. Presión Sistólica: 98 mmHg. Presión Diastólica: 60 mmHg. Frecuencia Cardíaca: 110 latidos por minuto. Temperatura: 39.0°C. Frecuencia Respiratoria: 26 respiraciones por minuto. Saturación de Oxígeno: 94%. Glucosa: 115 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 133.0 mg/dL. Urea: null mg/dL. AST: 50.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 57,
+                            "answers": [
+                                {
+                                    "text": 98,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 58,
+                            "answers": [
+                                {
+                                    "text": 60,
+                                    "answer_start": 109
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 59,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 139
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 60,
+                            "answers": [
+                                {
+                                    "text": "39.0°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 61,
+                            "answers": [
+                                {
+                                    "text": 26,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 63,
+                            "answers": [
+                                {
+                                    "text": "94%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 64,
+                            "answers": [
+                                {
+                                    "text": 115,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 65,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 66,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 67,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 68,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 69,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 70,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 71,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 72,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 73,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 74,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 75,
+                            "answers": [
+                                {
+                                    "text": 133.0,
+                                    "answer_start": 515
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 76,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 77,
+                            "answers": [
+                                {
+                                    "text": 50.0,
+                                    "answer_start": 550
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 78,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 79,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 80,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 81,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 82,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 83,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 84,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "02/05/2023 06:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 02/05/2023 y hora 06:00. Presión Sistólica: 105 mmHg. Presión Diastólica: 70 mmHg. Frecuencia Cardíaca: 95 latidos por minuto. Temperatura: 38.0°C. Frecuencia Respiratoria: 24 respiraciones por minuto. Saturación de Oxígeno: 94%. Glucosa: 100 mg/dL. Leucocitos: 13000.0 células/mm³. Hemoglobina: 13.8 g/dL. Plaquetas: 280000.0 células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: 136.0 mEq/L. Cloro: 4.0 mEq/L. Creatinina: 100.0 mg/dL. Urea: 1.0 mg/dL. AST: 40.0 U/L. ALT: 32.0 U/L. Bilirrubina: 30.0 mg/dL. pH: 0.7. pCO2: 7.4 mmHg. pO2: 35.0 mmHg. HCO3: 85.0 mEq/L. Lactato: 22.0 mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 85,
+                            "answers": [
+                                {
+                                    "text": 105,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 86,
+                            "answers": [
+                                {
+                                    "text": 70,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 87,
+                            "answers": [
+                                {
+                                    "text": 95,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 88,
+                            "answers": [
+                                {
+                                    "text": "38.0°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 89,
+                            "answers": [
+                                {
+                                    "text": 24,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 91,
+                            "answers": [
+                                {
+                                    "text": "94%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 92,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 93,
+                            "answers": [
+                                {
+                                    "text": 13000.0,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 94,
+                            "answers": [
+                                {
+                                    "text": 13.8,
+                                    "answer_start": 332
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 95,
+                            "answers": [
+                                {
+                                    "text": 280000.0,
+                                    "answer_start": 354
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 96,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 388
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 97,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 388
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 98,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 388
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 99,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 388
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 100,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 388
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 101,
+                            "answers": [
+                                {
+                                    "text": 136.0,
+                                    "answer_start": 484
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 102,
+                            "answers": [
+                                {
+                                    "text": 4.0,
+                                    "answer_start": 504
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 103,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 527
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 104,
+                            "answers": [
+                                {
+                                    "text": 1.0,
+                                    "answer_start": 546
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 105,
+                            "answers": [
+                                {
+                                    "text": 40.0,
+                                    "answer_start": 562
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 106,
+                            "answers": [
+                                {
+                                    "text": 32.0,
+                                    "answer_start": 577
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 107,
+                            "answers": [
+                                {
+                                    "text": 30.0,
+                                    "answer_start": 600
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 108,
+                            "answers": [
+                                {
+                                    "text": 0.7,
+                                    "answer_start": 616
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 109,
+                            "answers": [
+                                {
+                                    "text": 7.4,
+                                    "answer_start": 627
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 110,
+                            "answers": [
+                                {
+                                    "text": 35.0,
+                                    "answer_start": 642
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 111,
+                            "answers": [
+                                {
+                                    "text": 85.0,
+                                    "answer_start": 659
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 112,
+                            "answers": [
+                                {
+                                    "text": 22.0,
+                                    "answer_start": 680
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "02/05/2023 14:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 02/05/2023 y hora 14:00. Presión Sistólica: 110 mmHg. Presión Diastólica: 72 mmHg. Frecuencia Cardíaca: 100 latidos por minuto. Temperatura: 38.5°C. Frecuencia Respiratoria: 26 respiraciones por minuto. Saturación de Oxígeno: 96%. Glucosa: 110 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 136.0 mg/dL. Urea: null mg/dL. AST: 100.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 113,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 114,
+                            "answers": [
+                                {
+                                    "text": 72,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 115,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 116,
+                            "answers": [
+                                {
+                                    "text": "38.5°C",
+                                    "answer_start": 177
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 117,
+                            "answers": [
+                                {
+                                    "text": 26,
+                                    "answer_start": 210
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 119,
+                            "answers": [
+                                {
+                                    "text": "96%",
+                                    "answer_start": 262
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 120,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 121,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 122,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 123,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 124,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 125,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 126,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 127,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 128,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 129,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 130,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 131,
+                            "answers": [
+                                {
+                                    "text": 136.0,
+                                    "answer_start": 516
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 132,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 133,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 551
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 134,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 135,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 136,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 137,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 138,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 139,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 140,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 299
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "02/05/2023 22:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 02/05/2023 y hora 22:00. Presión Sistólica: 100 mmHg. Presión Diastólica: 68 mmHg. Frecuencia Cardíaca: 90 latidos por minuto. Temperatura: 38.2°C. Frecuencia Respiratoria: 22 respiraciones por minuto. Saturación de Oxígeno: 95%. Glucosa: 105 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 135.0 mg/dL. Urea: null mg/dL. AST: 40.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 141,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 142,
+                            "answers": [
+                                {
+                                    "text": 68,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 143,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 144,
+                            "answers": [
+                                {
+                                    "text": "38.2°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 145,
+                            "answers": [
+                                {
+                                    "text": 22,
+                                    "answer_start": 54
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 147,
+                            "answers": [
+                                {
+                                    "text": "95%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 148,
+                            "answers": [
+                                {
+                                    "text": 105,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 149,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 150,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 151,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 152,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 153,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 154,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 155,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 156,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 157,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 158,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 159,
+                            "answers": [
+                                {
+                                    "text": 135.0,
+                                    "answer_start": 515
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 160,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 161,
+                            "answers": [
+                                {
+                                    "text": 40.0,
+                                    "answer_start": 550
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 162,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 163,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 164,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 165,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 166,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 167,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 168,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "03/05/2023 06:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 03/05/2023 y hora 06:00. Presión Sistólica: 115 mmHg. Presión Diastólica: 75 mmHg. Frecuencia Cardíaca: 85 latidos por minuto. Temperatura: 37.2°C. Frecuencia Respiratoria: 20 respiraciones por minuto. Saturación de Oxígeno: 96%. Glucosa: 95 mg/dL. Leucocitos: 10000.0 células/mm³. Hemoglobina: 13.5 g/dL. Plaquetas: 320000.0 células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: 138.0 mEq/L. Creatinina: 4.1 mg/dL. Urea: 102.0 mg/dL. AST: 0.9 U/L. ALT: 30.0 U/L. Bilirrubina: 28.0 mg/dL. pH: 27.0. pCO2: 0.5 mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 169,
+                            "answers": [
+                                {
+                                    "text": 115,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 170,
+                            "answers": [
+                                {
+                                    "text": 75,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 171,
+                            "answers": [
+                                {
+                                    "text": 85,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 172,
+                            "answers": [
+                                {
+                                    "text": "37.2°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 173,
+                            "answers": [
+                                {
+                                    "text": 20,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 175,
+                            "answers": [
+                                {
+                                    "text": "96%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 176,
+                            "answers": [
+                                {
+                                    "text": 95,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 177,
+                            "answers": [
+                                {
+                                    "text": 10000.0,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 178,
+                            "answers": [
+                                {
+                                    "text": 13.5,
+                                    "answer_start": 331
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 179,
+                            "answers": [
+                                {
+                                    "text": 320000.0,
+                                    "answer_start": 353
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 180,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 181,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 182,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 183,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 184,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 185,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 186,
+                            "answers": [
+                                {
+                                    "text": 138.0,
+                                    "answer_start": 501
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 187,
+                            "answers": [
+                                {
+                                    "text": 4.1,
+                                    "answer_start": 526
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 188,
+                            "answers": [
+                                {
+                                    "text": 102.0,
+                                    "answer_start": 543
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 189,
+                            "answers": [
+                                {
+                                    "text": 0.9,
+                                    "answer_start": 561
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 190,
+                            "answers": [
+                                {
+                                    "text": 30.0,
+                                    "answer_start": 575
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 191,
+                            "answers": [
+                                {
+                                    "text": 28.0,
+                                    "answer_start": 598
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 192,
+                            "answers": [
+                                {
+                                    "text": 27.0,
+                                    "answer_start": 614
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 193,
+                            "answers": [
+                                {
+                                    "text": 0.5,
+                                    "answer_start": 626
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 194,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 195,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 196,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 387
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "03/05/2023 14:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 03/05/2023 y hora 14:00. Presión Sistólica: 118 mmHg. Presión Diastólica: 78 mmHg. Frecuencia Cardíaca: 90 latidos por minuto. Temperatura: 37.5°C. Frecuencia Respiratoria: 22 respiraciones por minuto. Saturación de Oxígeno: 97%. Glucosa: 100 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 138.0 mg/dL. Urea: null mg/dL. AST: 102.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 197,
+                            "answers": [
+                                {
+                                    "text": 118,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 198,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 199,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 200,
+                            "answers": [
+                                {
+                                    "text": "37.5°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 201,
+                            "answers": [
+                                {
+                                    "text": 22,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 203,
+                            "answers": [
+                                {
+                                    "text": "97%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 204,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 205,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 206,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 207,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 208,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 209,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 210,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 211,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 212,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 213,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 214,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 215,
+                            "answers": [
+                                {
+                                    "text": 138.0,
+                                    "answer_start": 515
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 216,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 217,
+                            "answers": [
+                                {
+                                    "text": 102.0,
+                                    "answer_start": 550
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 218,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 219,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 220,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 221,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 222,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 223,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 224,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "03/05/2023 22:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 03/05/2023 y hora 22:00. Presión Sistólica: 110 mmHg. Presión Diastólica: 70 mmHg. Frecuencia Cardíaca: 80 latidos por minuto. Temperatura: 37.0°C. Frecuencia Respiratoria: 18 respiraciones por minuto. Saturación de Oxígeno: 96%. Glucosa: 90 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 137.0 mg/dL. Urea: null mg/dL. AST: 100.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 225,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 226,
+                            "answers": [
+                                {
+                                    "text": 70,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 227,
+                            "answers": [
+                                {
+                                    "text": 80,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 228,
+                            "answers": [
+                                {
+                                    "text": "37.0°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 229,
+                            "answers": [
+                                {
+                                    "text": 18,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 231,
+                            "answers": [
+                                {
+                                    "text": "96%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 232,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 233,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 234,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 235,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 236,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 237,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 238,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 239,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 240,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 241,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 242,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 243,
+                            "answers": [
+                                {
+                                    "text": 137.0,
+                                    "answer_start": 514
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 244,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 245,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 549
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 246,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 247,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 248,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 249,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 250,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 251,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 252,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "04/05/2023 06:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 04/05/2023 y hora 06:00. Presión Sistólica: 120 mmHg. Presión Diastólica: 80 mmHg. Frecuencia Cardíaca: 80 latidos por minuto. Temperatura: 36.8°C. Frecuencia Respiratoria: 18 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 90 mg/dL. Leucocitos: 9000.0 células/mm³. Hemoglobina: 13.2 g/dL. Plaquetas: 300000.0 células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: 140.0 mEq/L. Creatinina: 4.2 mg/dL. Urea: 100.0 mg/dL. AST: 0.8 U/L. ALT: 25.0 U/L. Bilirrubina: 25.0 mg/dL. pH: 25.0. pCO2: 0.5 mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 253,
+                            "answers": [
+                                {
+                                    "text": 120,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 254,
+                            "answers": [
+                                {
+                                    "text": 80,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 255,
+                            "answers": [
+                                {
+                                    "text": 80,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 256,
+                            "answers": [
+                                {
+                                    "text": "36.8°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 257,
+                            "answers": [
+                                {
+                                    "text": 18,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 259,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 260,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 261,
+                            "answers": [
+                                {
+                                    "text": 9000.0,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 262,
+                            "answers": [
+                                {
+                                    "text": 13.2,
+                                    "answer_start": 330
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 263,
+                            "answers": [
+                                {
+                                    "text": 300000.0,
+                                    "answer_start": 352
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 264,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 265,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 266,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 267,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 268,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 269,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 270,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 500
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 271,
+                            "answers": [
+                                {
+                                    "text": 4.2,
+                                    "answer_start": 525
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 272,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 542
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 273,
+                            "answers": [
+                                {
+                                    "text": 0.8,
+                                    "answer_start": 560
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 274,
+                            "answers": [
+                                {
+                                    "text": 25.0,
+                                    "answer_start": 574
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 275,
+                            "answers": [
+                                {
+                                    "text": 25.0,
+                                    "answer_start": 574
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 276,
+                            "answers": [
+                                {
+                                    "text": 25.0,
+                                    "answer_start": 574
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 277,
+                            "answers": [
+                                {
+                                    "text": 0.5,
+                                    "answer_start": 625
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 278,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 279,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 280,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "04/05/2023 14:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 04/05/2023 y hora 14:00. Presión Sistólica: 125 mmHg. Presión Diastólica: 82 mmHg. Frecuencia Cardíaca: 85 latidos por minuto. Temperatura: 37.0°C. Frecuencia Respiratoria: 20 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 100 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 140.0 mg/dL. Urea: null mg/dL. AST: 98.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 281,
+                            "answers": [
+                                {
+                                    "text": 125,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 282,
+                            "answers": [
+                                {
+                                    "text": 82,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 283,
+                            "answers": [
+                                {
+                                    "text": 85,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 284,
+                            "answers": [
+                                {
+                                    "text": "37.0°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 285,
+                            "answers": [
+                                {
+                                    "text": 20,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 287,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 288,
+                            "answers": [
+                                {
+                                    "text": 100,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 289,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 290,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 291,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 292,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 293,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 294,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 295,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 296,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 297,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 298,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 299,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 515
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 300,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 301,
+                            "answers": [
+                                {
+                                    "text": 98.0,
+                                    "answer_start": 550
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 302,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 303,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 304,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 305,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 306,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 307,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 308,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 298
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "04/05/2023 22:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 04/05/2023 y hora 22:00. Presión Sistólica: 115 mmHg. Presión Diastólica: 78 mmHg. Frecuencia Cardíaca: 78 latidos por minuto. Temperatura: 36.6°C. Frecuencia Respiratoria: 16 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 95 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 140.0 mg/dL. Urea: null mg/dL. AST: 100.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 309,
+                            "answers": [
+                                {
+                                    "text": 115,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 310,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 311,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 312,
+                            "answers": [
+                                {
+                                    "text": "36.6°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 313,
+                            "answers": [
+                                {
+                                    "text": 16,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 315,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 316,
+                            "answers": [
+                                {
+                                    "text": 95,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 317,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 318,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 319,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 320,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 321,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 322,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 323,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 324,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 325,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 326,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 327,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 514
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 328,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 329,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 549
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 330,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 331,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 332,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 333,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 334,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 335,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 336,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "05/05/2023 06:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 05/05/2023 y hora 06:00. Presión Sistólica: 118 mmHg. Presión Diastólica: 78 mmHg. Frecuencia Cardíaca: 78 latidos por minuto. Temperatura: 36.5°C. Frecuencia Respiratoria: 16 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 85 mg/dL. Leucocitos: 8500.0 células/mm³. Hemoglobina: 13.0 g/dL. Plaquetas: 290000.0 células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: 140.0 mEq/L. Creatinina: 4.0 mg/dL. Urea: 100.0 mg/dL. AST: 0.8 U/L. ALT: 20.0 U/L. Bilirrubina: 25.0 mg/dL. pH: 24.0. pCO2: 0.4 mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 337,
+                            "answers": [
+                                {
+                                    "text": 118,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 338,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 339,
+                            "answers": [
+                                {
+                                    "text": 78,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 340,
+                            "answers": [
+                                {
+                                    "text": "36.5°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 341,
+                            "answers": [
+                                {
+                                    "text": 16,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 343,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 344,
+                            "answers": [
+                                {
+                                    "text": 85,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 345,
+                            "answers": [
+                                {
+                                    "text": 8500.0,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 346,
+                            "answers": [
+                                {
+                                    "text": 13.0,
+                                    "answer_start": 330
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 347,
+                            "answers": [
+                                {
+                                    "text": 290000.0,
+                                    "answer_start": 352
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 348,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 349,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 350,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 351,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 352,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 353,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 354,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 500
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 355,
+                            "answers": [
+                                {
+                                    "text": 4.0,
+                                    "answer_start": 525
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 356,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 542
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 357,
+                            "answers": [
+                                {
+                                    "text": 0.8,
+                                    "answer_start": 560
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 358,
+                            "answers": [
+                                {
+                                    "text": 20.0,
+                                    "answer_start": 574
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 359,
+                            "answers": [
+                                {
+                                    "text": 25.0,
+                                    "answer_start": 597
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 360,
+                            "answers": [
+                                {
+                                    "text": 24.0,
+                                    "answer_start": 613
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 361,
+                            "answers": [
+                                {
+                                    "text": 0.4,
+                                    "answer_start": 625
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 362,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 363,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 364,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 386
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "05/05/2023 14:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 05/05/2023 y hora 14:00. Presión Sistólica: 122 mmHg. Presión Diastólica: 80 mmHg. Frecuencia Cardíaca: 82 latidos por minuto. Temperatura: 36.7°C. Frecuencia Respiratoria: 18 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 95 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 140.0 mg/dL. Urea: null mg/dL. AST: 100.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 365,
+                            "answers": [
+                                {
+                                    "text": 122,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 366,
+                            "answers": [
+                                {
+                                    "text": 80,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 367,
+                            "answers": [
+                                {
+                                    "text": 82,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 368,
+                            "answers": [
+                                {
+                                    "text": "36.7°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 369,
+                            "answers": [
+                                {
+                                    "text": 18,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 371,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 372,
+                            "answers": [
+                                {
+                                    "text": 95,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 373,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 374,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 375,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 376,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 377,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 378,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 379,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 380,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 381,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 382,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 383,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 514
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 384,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 385,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 549
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 386,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 387,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 388,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 389,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 390,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 391,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 392,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "05/05/2023 22:00",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez el día 05/05/2023 y hora 22:00. Presión Sistólica: 115 mmHg. Presión Diastólica: 75 mmHg. Frecuencia Cardíaca: 75 latidos por minuto. Temperatura: 36.4°C. Frecuencia Respiratoria: 14 respiraciones por minuto. Saturación de Oxígeno: 98%. Glucosa: 90 mg/dL. Leucocitos: null células/mm³. Hemoglobina: null g/dL. Plaquetas: null células/mm³. Colesterol: null mg/dL. HDL: null mg/dL. LDL: null mg/dL. Triglicéridos: null mg/dL. Sodio: null mEq/L. Potasio: null mEq/L. Cloro: null mEq/L. Creatinina: 140.0 mg/dL. Urea: null mg/dL. AST: 100.0 U/L. ALT: null U/L. Bilirrubina: null mg/dL. pH: null. pCO2: null mmHg. pO2: null mmHg. HCO3: null mEq/L. Lactato: null mmol/L.",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es la presión sistólica del paciente?",
+                            "id": 393,
+                            "answers": [
+                                {
+                                    "text": 115,
+                                    "answer_start": 80
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la presión diastólica del paciente?",
+                            "id": 394,
+                            "answers": [
+                                {
+                                    "text": 75,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia cardiaca del paciente?",
+                            "id": 395,
+                            "answers": [
+                                {
+                                    "text": 75,
+                                    "answer_start": 110
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la temperatura del paciente?",
+                            "id": 396,
+                            "answers": [
+                                {
+                                    "text": "36.4°C",
+                                    "answer_start": 176
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la frecuencia respiratoria del paciente?",
+                            "id": 397,
+                            "answers": [
+                                {
+                                    "text": 14,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es la saturación de oxígeno del paciente?",
+                            "id": 399,
+                            "answers": [
+                                {
+                                    "text": "98%",
+                                    "answer_start": 261
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 400,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 275
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 401,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 402,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántas plaquetas tiene el paciente?",
+                            "id": 403,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el colesterol del paciente?",
+                            "id": 404,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HDL del paciente?",
+                            "id": 405,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de LDL del paciente?",
+                            "id": 406,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de triglicéridos del paciente?",
+                            "id": 407,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 408,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 409,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cloro del paciente?",
+                            "id": 410,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 411,
+                            "answers": [
+                                {
+                                    "text": 140.0,
+                                    "answer_start": 514
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 412,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de AST del paciente?",
+                            "id": 413,
+                            "answers": [
+                                {
+                                    "text": 100.0,
+                                    "answer_start": 549
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de ALT del paciente?",
+                            "id": 414,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de bilirrubina del paciente?",
+                            "id": 415,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 416,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pCO2 del paciente?",
+                            "id": 417,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pO2 del paciente?",
+                            "id": 418,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de HCO3 del paciente?",
+                            "id": 419,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de lactato del paciente?",
+                            "id": 420,
+                            "answers": [
+                                {
+                                    "text": null,
+                                    "answer_start": 297
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -114,6 +114,8 @@ def ask_ai():
         # Agrega el mensaje del usuario y la IA al historial
         conversation_history[id_paciente].append({"role": "user", "content": user_message})
         conversation_history[id_paciente].append({"role": "assistant", "content": ai_response})
+
+        ai_response = "<p>"+ai_response+"</p>"
         
         # Devolver respuesta
         return jsonify({"response": ai_response})
