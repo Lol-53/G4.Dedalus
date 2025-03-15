@@ -3,8 +3,6 @@ import pandas as pd
 import os
 from flask_cors import CORS
 from langchain_anthropic import ChatAnthropic
-from langchain.prompts import PromptTemplate
-from langchain.output_parsers import RegexParser
 import GraficaDatos as gd  # Importar las funciones de gráficos
 import openai  # Utilizar el proxy de litellm para Amazon Bedrock
 
@@ -22,16 +20,6 @@ chat_model = ChatAnthropic(
     model="claude-3-sonnet-20240229",
     anthropic_api_key=os.getenv("ANTHROPIC_API_KEY", "sk-lqIaTaCA6djhkYLWFx5Gww")  # Usa la variable de entorno o una clave fija
 )
-
-intent_prompt = PromptTemplate(
-    input_variables=["question"],
-    template="""
-    Analiza la siguiente pregunta del usuario y determina si es una consulta médica o una solicitud de gráfico.
-    Responde solo con "grafico" si requiere una gráfica, o "pregunta" si es una pregunta médica.
-    Pregunta: {question}
-    """,
-)
-parser = RegexParser(regex=r"(grafico|pregunta)", output_keys=["intent"], default_output_key="pregunta")
 
 # Cargar datos de pacientes
 info_pacientes_df = pd.read_csv("datos_pacientes/info_pacientes.csv")
@@ -85,7 +73,39 @@ def ask_ai():
         if not user_message:
             return jsonify({"error": "Mensaje vacío"}), 400
 
-        # Determinar si es una pregunta médica o una solicitud de gráfico
+        # Identificar si es una pregunta de gráfica
+        if any(word in user_message.lower() for word in ["gráfico", "gráfica", "grafica", "dispersión", "histograma", "barras", "boxplot", "violín", "correlación", "tendencia"]):
+            paciente_data = info_pacientes_df[info_pacientes_df["PacienteID"] == id_paciente]
+            if paciente_data.empty:
+                return jsonify({"error": "Paciente no encontrado"}), 404
+
+            df = paciente_data.drop(columns=["PacienteID"])
+            graph_type = "scatter" if "dispersión" in user_message else "histogram" if "histograma" in user_message else "bar" if "barras" in user_message else "boxplot" if "boxplot" in user_message else "violin" if "violín" in user_message else "trend" if "tendencia" in user_message else "correlation"
+            x = "edad" if "edad" in user_message else "glucosa" if "glucosa" in user_message else "presion_sanguinea" if "presión" in user_message else None
+            y = "glucosa" if "glucosa" in user_message else "presion_sanguinea" if "presión" in user_message else None
+
+            graph_path = f"static/{graph_type}_{id_paciente}.png"
+
+            if graph_type == "correlation":
+                gd.graficaCorrelacion(df)
+            elif graph_type == "scatter" and x and y:
+                gd.graficaDispersion(df, x, y)
+            elif graph_type == "histogram" and y:
+                gd.graficaHistograma(df, y)
+            elif graph_type == "bar" and x and y:
+                gd.graficaBarras(df, x, y)
+            elif graph_type == "boxplot" and x:
+                gd.graficaBoxplot(df, x)
+            elif graph_type == "violin" and x:
+                gd.graficaViolin(df, x)
+            elif graph_type == "trend" and x and y:
+                gd.graficaCurvaTendencia(df, x, y)
+            else:
+                return jsonify({"error": "No se pudo detectar el tipo de gráfico."}), 400
+
+            return jsonify({"response": graph_path})
+
+        # Preguntas generales -> Enviar a Claude-Sonnet
         messages = [
             {"role": "system", "content": contextos_pacientes.get(id_paciente, "")},
             {"role": "user", "content": user_message}
