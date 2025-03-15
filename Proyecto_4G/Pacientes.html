@@ -20,7 +20,14 @@
       <div class="position-fixed vh-100 start-0 top-0 flex-column shadow lateral ">
         <ul class="navbar-nav p-4 mt-3 w-100 d-flex flex-column">
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="index.html">Inicio</a></li>
-          <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#">Recientes </a></li>
+          <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#collapseRecientes" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseRecientes">Recientes </a></li>
+          <div class="collapse" id="collapseRecientes">
+            <ul>
+              <li><a href="Chat.html">Paciente 1</a></li>
+              <li><a href="#">Paciente 2</a></li>
+              <li><a href="#">Paciente 3</a></li>
+            </ul>
+          </div>
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" id="active" href="#">Pacientes</a></li>
           <!--        Son dos usuarios (paciente/doctor)-->
           <li class="nav-item my-1 border-bottom w-100 pe-5 "><a class="nav-link d-block w-100 pe-4" href="#">Usuario</a></li>
