@@ -1,4 +1,4 @@
-"PacienteID","Fecha","Hora","PresionSistolica","PresionDiastolica","FrecuenciaCardiaca","Temperatura","FrecuenciaRespiratoria","SaturacionOxigeno","Glucosa","Leucocitos","Hemoglobina","Plaquetas","Colesterol","HDL","LDL","Trigliceridos","Sodio","Potasio","Cloro","Creatinina","Urea","AST","ALT","Bilirrubina","pH","pCO2","pO2","HCO3","Lactato"
+"ID","Fecha","Hora","PresionSistolica","PresionDiastolica","FrecuenciaCardiaca","Temperatura","FrecuenciaRespiratoria","SaturacionOxigeno","Glucosa","Leucocitos","Hemoglobina","Plaquetas","Colesterol","HDL","LDL","Trigliceridos","Sodio","Potasio","Cloro","Creatinina","Urea","AST","ALT","Bilirrubina","pH","pCO2","pO2","HCO3","Lactato"
 "1","01/05/2023","06:00","100","65","105","38.8","28","89","110","15000","14.5","250000","180","50","110","100","134","4.3","98","1.1","50","30","28","0.6","7.35","32","60","16","2.5"
 "1","01/05/2023","14:00","105","68","115","39.2","30","95","125","","","","","","","","","","","134","","98","","","","","","",""
 "1","01/05/2023","22:00","98","60","110","39.0","26","94","115","","","","","","","","","","","133","","50","","","","","","",""

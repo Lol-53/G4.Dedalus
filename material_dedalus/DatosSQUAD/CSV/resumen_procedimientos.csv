@@ -1,4 +1,4 @@
-PacienteID,Procedimientos,Tratamientos,CirugíasPrevias,Radiologia
+ID,Procedimientos,Tratamientos,CirugíasPrevias,Radiologia
 1,"Oxigenoterapia; broncoscopia diagnóstica","Antibióticos IV; nebulizaciones con broncodilatadores","Prótesis de cadera derecha hace 2 años","Rx tórax: infiltrado en lóbulo inferior derecho compatible con neumonía"
 2,"ECG de 12 derivaciones; cateterismo cardíaco con angioplastia y stent","Oxígeno suplementario; analgesia con morfina; antiagregación y anticoagulación","Colecistectomía laparoscópica hace 5 años","Rx tórax: cardiomegalia leve y congestión pulmonar hilio-basilar"
 3,"Colocación de catéter venoso central; monitorización en UCI","Hidratación IV; infusión de insulina; reposición de potasio","Apendicectomía a los 18 años","Rx tórax: sin evidencia de infección pulmonar"
