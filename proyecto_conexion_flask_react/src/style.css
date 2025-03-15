@@ -329,7 +329,7 @@ header h2{
   background-color:#34879e;
 }
 
-#fuera-de-planta:checked + #button-fuera-de-planta{
+#fuera-de-planta:checked + #button-fuera-de-planta, .checkedPlanta{
 
   transition: background-color 0.2s linear, color 0.2s linear;
   background-color:#65a2b3;

@@ -12,6 +12,9 @@ const Pacientes = () => {
     const [tipoBusqueda, setTipoBusqueda] = useState("");
     const [textoFiltro, setTextoFiltro] = useState("");
     const [ordenSeleccionado, setOrdenSeleccionado] = useState("");
+    const [triggerOrden, setTriggerOrden] = useState(false); // Estado para disparar el useEffect
+    const [sentidoOrden, setSentidoOrden] = useState(null);
+    const [checkPlanta, setCheckPlanta] = useState(false);
 
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
@@ -35,7 +38,9 @@ const Pacientes = () => {
                                 id: row[0],       // "ID"
                                 fueraplanta: Math.round(Math.random()),
                                 color: Math.floor(Math.random() * 4) + 1,
-                                display: 1
+                                display: 1,
+                                acceso: new Date(Date.now()),
+                                creacion: new Date(Date.now()-1)
                             }));
 
                             setCards(extractedCards);
@@ -63,7 +68,7 @@ const Pacientes = () => {
 
         const updatedCards = [...cards];
 
-        if(tipoBusqueda !== 1){
+        if(tipoBusqueda !== "1"){
             switch (tipoBusqueda){
                 case "2":
                     for(let i = 0; i < updatedCards.length; i++){
@@ -103,17 +108,82 @@ const Pacientes = () => {
                     break;
             }
         }else{
+            if(checkPlanta){
+                console.log("entro");
+                setCheckPlanta(false);
+            }
             for(let i = 0; i < updatedCards.length; i++){
                 updatedCards[i].display = 1;
             }
+
+
         }
 
         setCards(updatedCards);
     }
 
-    const handleOrdenChange = (nuevoOrden) => {
-        setOrdenSeleccionado(nuevoOrden);
+    const ordenarAlfabetico = (cards) => {
+        return [...cards].sort((a, b) => a.nombre.localeCompare(b.nombre));
     };
+
+    const ordenarFecha = (cards, par) => {
+        return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par]));
+    }
+
+    const handleOrdenChange = (orden) => {
+        setOrdenSeleccionado(orden); // Establece la opción seleccionada
+        setTriggerOrden(true); // Dispara el useEffect
+    };
+
+    const handleSentidoOrden = (modo) => {
+        if(ordenSeleccionado !== ""){
+            //Hay un orden seleccionado
+            if(sentidoOrden !== modo){
+                //se cambia el modo
+                setSentidoOrden(modo)
+                //invertimos orden de cards
+                const updatedCards = [...cards].reverse();
+                setCards(updatedCards);
+            }
+        }
+    }
+
+    const handleCheckPlanta = () => {
+        setCheckPlanta(!checkPlanta); //invertimos valor
+        //filtramos
+
+        const updatedCards = [...cards];
+
+        const check = checkPlanta ? 0 : 1;
+
+        for(let i = 0; i < updatedCards.length; i++){
+            if(updatedCards[i].fueraplanta === check){
+                updatedCards[i].display = 1;
+            }else{
+                updatedCards[i].display = 0;
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (triggerOrden) {
+            let updatedCards;
+
+            if (ordenSeleccionado === "Orden alfabético") {
+                console.log("alfabetico")
+                updatedCards = ordenarAlfabetico(cards);
+            } else if (ordenSeleccionado === "Fecha de acceso") {
+                console.log("acceso")
+                updatedCards = ordenarFecha(cards, "acceso");
+            } else if (ordenSeleccionado === "Fecha de creación") {
+                console.log("creacion")
+                updatedCards = ordenarFecha(cards, "creacion");
+            }
+            setSentidoOrden(1);
+            setCards(updatedCards); // Actualiza el estado de las tarjetas
+            setTriggerOrden(false); // Restablece el trigger para evitar ejecución innecesaria
+        }
+    }, [triggerOrden, ordenSeleccionado]);
 
     useEffect(() => {
 
@@ -228,7 +298,7 @@ const Pacientes = () => {
     });
 
     return (
-        <div className="container-fluid d-flex flex-nowrap p-0 position-relative">
+        <div className="container-fluid d-flex flex-nowrap p-0 position-relative" style={{overflowY: "scroll"}}>
             <nav className="d-flex flex-nowrap navbar navbar-expand-md flex-column p-0 position-relative">
                 <div
                     className="d-flex flex-nowrap start-0 top-0 position-relative vh-100   collapse collapse-horizontal navbar-collapse lateral"
@@ -301,9 +371,9 @@ const Pacientes = () => {
 
 
                     <div className="dropdown btn-group shadow me-4 align-self-center my-2" role="group">
-                        <button type="button" className="btn btn-light border-end"><i className="bi bi-arrow-up"></i>
+                        <button type="button" className="btn btn-light border-end" onClick={() => handleSentidoOrden(1)}><i className="bi bi-arrow-up"></i>
                         </button>
-                        <button type="button" className="btn btn-light border-start border-end"><i
+                        <button type="button" className="btn btn-light border-start border-end" onClick={() => handleSentidoOrden(2)}><i
                             className="bi bi-arrow-down"></i></button>
                         <button className="btn btn-light dropdown-toggle border-start" type="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">Ordenar
@@ -325,8 +395,8 @@ const Pacientes = () => {
                     </div>
 
 
-                    <input className="btn-check" type="checkbox" id="fuera-de-planta" autoComplete="off"/>
-                    <label className="btn btn-light shadow align-self-center my-2" htmlFor="fuera-de-planta"
+                    <input className="btn-check" type="checkbox" id="fuera-de-planta" autoComplete="off" onChange={handleCheckPlanta} checked={checkPlanta}/>
+                    <label key={checkPlanta} className={`btn btn-light shadow align-self-center my-2 ${checkPlanta ? "checked" : ''}`} htmlFor="fuera-de-planta"
                            id="button-fuera-de-planta">Fuera de Planta</label>
 
 
