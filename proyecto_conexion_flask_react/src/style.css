@@ -265,17 +265,17 @@ header h2{
 
 
 #chat-body{
-  overflow-y:auto;
+  overflow-y:scroll;
+  /* transition: max-height 0.1s linear; */
 }
 
 #chat-text-area{
-  width: calc(100vw - 20%);
   max-height: 200px;
-  transition: height 0.2s linear, max-height 0.2s linear;
+
 }
 
 #campo-msg{
-  width:85%;
+  width:80%;
   max-height: 150px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -302,4 +302,47 @@ header h2{
 #generar-resumen:hover{
   background-color: var(--greenD);
   /* color:white; */
+}
+
+#buscar-paciente input{
+  width:40%
+}
+
+#tipo-busqueda:hover{
+  cursor:pointer;
+}
+
+#search-button{
+  transition: background-color 0.2s linear,  color 0.2s linear;
+}
+#search-button:hover{
+  background-color:#bee7a6 !important;
+}
+
+#accessibility-buttons .dropdown li{
+  cursor:pointer;
+  display: flex;
+  align-items: start;
+}
+
+.dropdown li.active{
+  background-color:#34879e;
+}
+
+#fuera-de-planta:checked + #button-fuera-de-planta, .checkedPlanta{
+
+  transition: background-color 0.2s linear, color 0.2s linear;
+  background-color:#65a2b3;
+  color:white;
+  border: 1px solid rgba(255, 0, 0, 0)
+}
+
+#button-fuera-de-planta:hover{
+  background-color: #bee7a6;
+  border: 1px solid rgba(255, 0, 0, 0)
+}
+
+header span{
+  font-size: 5rem;
+  max-width: 500px;
 }
