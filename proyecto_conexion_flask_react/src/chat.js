@@ -305,8 +305,7 @@ const Chat = () => {
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
                             {messages.map((msg, index) => (
-                                <div key={index} className={`chat-bubble from${msg.role} shadow`}>
-                                    <p>{msg.content}</p>
+                                <div key={index} className={`chat-bubble from${msg.role} shadow`} dangerouslySetInnerHTML={{ __html: msg.content }}>
                                 </div>
                             ))}
                         </div>
