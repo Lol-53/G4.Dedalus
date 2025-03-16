@@ -11,6 +11,7 @@ from langchain_anthropic import ChatAnthropic
 import GraficaDatos as gd  # Importar la función generarGrafica
 import openai  # Utilizar el proxy de litellm para Amazon Bedrock
 from sklearn.metrics.pairwise import cosine_similarity
+import csv
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Habilitar CORS para todas las rutas
@@ -155,12 +156,35 @@ contextos_pacientes = {}
 @app.route("/add-patient", methods=["POST"])
 def get_history():
     try:
+        # Obtener los datos del paciente desde el cuerpo de la solicitud (JSON)
         data = request.get_json()
-        id_paciente = str(data.get("id_paciente"))
-        name = str(data.get("name"))
-        with open(f"{DATA_PATH}{id_paciente}.json", "w") as f:
-            json.dump([], f)
+
+        # Extraer la información del paciente
+        id_paciente = data.get("id_paciente")
+        nombre = data.get("nombre")
+        edad = data.get("edad")
+        sexo = data.get("sexo")
+        alergias = data.get("alergias")
+        motivo_ingreso = data.get("motivoIngreso")
+        diagnostico_principal = data.get("diagnosticoPrincipal")
+        condiciones_previas = data.get("condicionesPrevias")
+        fecha_ingreso = data.get("fechaIngreso")
+        servicio = data.get("servicio")
+        estado_al_ingreso = data.get("estadoAlIngreso")
+        cama = data.get("cama")
+        nuhsa = data.get("nuhsa")
+
+        # Abre el archivo CSV en modo de adición
+        with open('patients.csv', mode='a', newline='') as infopacientes:
+            writer = csv.writer(infopacientes)
+
+            # Escribir los datos del paciente como una nueva fila en el archivo CSV
+            writer.writerow([id_paciente, nombre, edad, sexo, alergias, motivo_ingreso, diagnostico_principal,
+                             condiciones_previas, fecha_ingreso, servicio, estado_al_ingreso, cama, nuhsa])
+
         return jsonify({"message": "Paciente agregado correctamente"}), 200
+    except Exception as e:
+        return jsonify({"message": "Error al agregar paciente", "error": str(e)}), 500
 
 @app.route("/get-history", methods=["POST"])
 def get_history():
