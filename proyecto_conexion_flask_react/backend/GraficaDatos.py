@@ -32,7 +32,7 @@ def graficaCorrelacion(df,path):
     plt.title("Mapa de Calor de Correlación")
 
     path_file  = pathDirectorio(f"{path}\matrizCorrelacion",f"matrizCorrelacion-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-    path_file = os.path.join(path,path_file)
+    #path_file = os.path.join(path,path_file)
     
 
     plt.savefig(path_file)
@@ -54,7 +54,7 @@ def graficaDispersion(df: DataFrame,x:str,y:str,path:str):
         plt.ylabel(y)
 
         path_file  = pathDirectorio(f"{path}\graficaDispersion",f"graficaDispersion-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
+        #path_file = os.path.join(path,path_file)
     
 
         plt.savefig(path_file)
@@ -77,7 +77,7 @@ def graficaHistograma(df, y,path,bins=10):
         plt.ylabel("Frecuencia")
 
         path_file  = pathDirectorio(f"{path}\graficaHistograma",f"graficaHistograma-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
+        #path_file = os.path.join(path,path_file)
     
 
         plt.savefig(path_file)
@@ -97,7 +97,7 @@ def graficaBarras(df,x,y,path):
         plt.title("Gráfica de barras")
 
         path_file  = pathDirectorio(f"{path}\graficaBarras",f"graficaBarras-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
+        #path_file = os.path.join(path,path_file)
     
 
         plt.savefig(path_file)
@@ -119,7 +119,7 @@ def graficaBoxplot(df,x,path):
         plt.xlabel(x)
 
         path_file  = pathDirectorio(f"{path}\graficaBoxplot",f"graficaBoxplot-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
+        #path_file = os.path.join(path,path_file)
     
 
         plt.savefig(path_file)
@@ -138,13 +138,13 @@ def graficaViolin(df, x,path):
         sns.set_theme(style="whitegrid")
         sns.violinplot(x=df[x], color= color1)
         plt.title("diagramaViolin")
-        print("tengo el grafico")
+        #print("tengo el grafico")
         path_file  = pathDirectorio(f"{path}\graficaViolin",f"graficaViolin-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
         #path_file = os.path.join(path,path_file)
-        print(path_file)
+        #print(path_file)
 
         plt.savefig(path_file)
-        print("guarde el grafico en el path" + path_file)
+        #print("guarde el grafico en el path" + path_file)
         limpiar()
         return path_file
     else:
@@ -270,15 +270,16 @@ def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str 
 
     for g in graphics:
         if g == "graficaCorrelacion":
-            lista_paths.append(graficaCorrelacion(df,path))
+            res=graficaCorrelacion(df,path)
         elif g =="graficaDispersion":
-            lista_paths.append(graficaDispersion(df,x,y,path))
+            res=graficaDispersion(df,x,y,path)
         elif g =="graficaHistograma":
-            lista_paths.append(graficaHistograma(df,x,path=path))
+            res=graficaHistograma(df,x,path=path)
         elif g =="graficaBarras":
-            lista_paths.append(graficaBarras(df,x,y,path))
+            res=graficaBarras(df,x,y,path)
         elif g =="graficaBoxplot" :
-            lista_paths.append(graficaBoxplot(df,x,path))
+            res=graficaBoxplot(df,x,path)
+            #lista_paths.append(graficaBoxplot(df,x,path))
         elif g == "graficaViolin":
             res = graficaViolin(df,x,path)
         elif g == "graficaCurvaTendencia":
