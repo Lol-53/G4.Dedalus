@@ -274,7 +274,7 @@ header h2{
 
 }
 
-#campo-msg{
+#campo-msg, #pacientes form input{
   width:80%;
   max-height: 150px;
   overflow-wrap: break-word;
@@ -282,6 +282,10 @@ header h2{
   overflow-y: hidden;
   resize: none;
   transition: height 0.2s linear, max-height 0.2s linear;
+}
+
+#pacientes form span{
+  width:35%;
 }
 
 #text-bubble{
@@ -299,8 +303,14 @@ header h2{
   color:white;
 }
 
-#generar-resumen:hover{
+#botonnuevopaciente{
+  border: 0px;
+}
+
+#generar-resumen:hover, #botonnuevopaciente:hover{
   background-color: var(--greenD);
+  transition: background-color 0.2s linear,  color 0.2s linear;
+  border: 0px;
   /* color:white; */
 }
 
