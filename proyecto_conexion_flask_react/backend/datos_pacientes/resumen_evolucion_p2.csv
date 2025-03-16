@@ -1,4 +1,4 @@
-"PacienteID","Fecha","Hora","PresionSistolica","PresionDiastolica","FrecuenciaCardiaca","Temperatura","FrecuenciaRespiratoria","SaturacionOxigeno","Glucosa","Leucocitos","Hemoglobina","Plaquetas","Colesterol","HDL","LDL","Trigliceridos","Sodio","Potasio","Cloro","Creatinina","Urea","AST","ALT","Bilirrubina","pH","pCO2","pO2","HCO3","Lactato"
+"ID","Fecha","Hora","PresionSistolica","PresionDiastolica","FrecuenciaCardiaca","Temperatura","FrecuenciaRespiratoria","SaturacionOxigeno","Glucosa","Leucocitos","Hemoglobina","Plaquetas","Colesterol","HDL","LDL","Trigliceridos","Sodio","Potasio","Cloro","Creatinina","Urea","AST","ALT","Bilirrubina","pH","pCO2","pO2","HCO3","Lactato"
 2,"10/07/2023","06:00",100,60,95,37.2,20,95,150,12000,13,230000,240,40,170,150,138,4.2,100,0.9,30,45,30,0.8,7.3,28,60,14,4
 2,"10/07/2023","14:00",105,65,100,37.2,18,98,180,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,138,NA,100,NA,NA,NA,NA,NA,7.35,32
 2,"10/07/2023","22:00",95,58,90,37.5,16,96,160,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,137,NA,95,NA,NA,NA,NA,NA,7.35,34

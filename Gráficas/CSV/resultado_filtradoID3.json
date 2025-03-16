@@ -1,0 +1,95 @@
+[
+    [
+        {
+            "ID": 3,
+            "Glucosa": 450,
+            "pH": 7.1,
+            "Cetonas": 5.0,
+            "Creatinina": 1.6,
+            "Hemoglobina": 16.0,
+            "Leucocitos": 18000,
+            "Sodio": 130,
+            "Potasio": 5.5,
+            "Urea": 60,
+            "Amilasa": 95
+        }
+    ],
+    [
+        {
+            "ID": 3,
+            "Medicamento": "Insulina regular",
+            "Dosis": "0.1 U/kg/h",
+            "Via": "IV perfusión"
+        },
+        {
+            "ID": 3,
+            "Medicamento": "Cloruro de potasio",
+            "Dosis": "20 mEq",
+            "Via": "IV c/4h"
+        },
+        {
+            "ID": 3,
+            "Medicamento": "Suero fisiológico",
+            "Dosis": "1000 ml",
+            "Via": "IV rápido"
+        },
+        {
+            "ID": 3,
+            "Medicamento": "Bicarbonato de sodio",
+            "Dosis": "50 mEq",
+            "Via": "IV una dosis"
+        },
+        {
+            "ID": 3,
+            "Medicamento": "Insulina glargina",
+            "Dosis": "20 U",
+            "Via": "SC nocte"
+        }
+    ],
+    [
+        {
+            "ID": 3,
+            "Fecha": "20/10/2023",
+            "Nota": "Se ha programado una revisión para evaluar la respuesta al tratamiento en una semana. No se observan signos de infección en la evaluación clínica realizada hoy. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. Se recomienda continuar con el uso del inhalador según indicaciones médicas. Se recomienda aumentar la ingesta de líquidos y seguir una dieta balanceada. La presión arterial se encuentra estable tras el ajuste en la dosis de antihipertensivos. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. No se reportan signos de inflamación en la zona afectada. No se observan signos de infección en la evaluación clínica realizada hoy."
+        },
+        {
+            "ID": 3,
+            "Fecha": "31/08/2024",
+            "Nota": "La presión arterial se encuentra estable tras el ajuste en la dosis de antihipertensivos. Se recomienda aumentar la ingesta de líquidos y seguir una dieta balanceada. Se aconseja descanso adecuado y reducción del estrés para mejorar la calidad del sueño. Se aconseja descanso adecuado y reducción del estrés para mejorar la calidad del sueño. Se recomienda continuar con el uso del inhalador según indicaciones médicas. Se aconseja descanso adecuado y reducción del estrés para mejorar la calidad del sueño. No se presentan reacciones adversas al medicamento administrado. Se ha programado una revisión para evaluar la respuesta al tratamiento en una semana. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. Se recomienda continuar con el uso del inhalador según indicaciones médicas."
+        },
+        {
+            "ID": 3,
+            "Fecha": "26/06/2024",
+            "Nota": "No se reportan signos de inflamación en la zona afectada. El examen físico muestra parámetros dentro de los rangos normales para su edad y condición. No se presentan reacciones adversas al medicamento administrado. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. No se presentan reacciones adversas al medicamento administrado. No se presentan reacciones adversas al medicamento administrado. El paciente presenta síntomas de fatiga persistente y mareos ocasionales. La presión arterial se encuentra estable tras el ajuste en la dosis de antihipertensivos. El paciente sigue en observación por posibles complicaciones respiratorias. El paciente refiere haber experimentado episodios de ansiedad en los últimos días."
+        },
+        {
+            "ID": 3,
+            "Fecha": "17/03/2024",
+            "Nota": "Se recomienda continuar con el uso del inhalador según indicaciones médicas. El paciente sigue en observación por posibles complicaciones respiratorias. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. El paciente presenta síntomas de fatiga persistente y mareos ocasionales. Se recomienda continuar con la medicación prescrita y realizar controles periódicos. No se reportan signos de inflamación en la zona afectada. No se presentan reacciones adversas al medicamento administrado. El paciente sigue en observación por posibles complicaciones respiratorias. Se aconseja descanso adecuado y reducción del estrés para mejorar la calidad del sueño. No se reportan signos de inflamación en la zona afectada."
+        }
+    ],
+    [
+        {
+            "ID": 3,
+            "Nombre": "Carlos García",
+            "Edad": 22,
+            "Sexo": "Masculino",
+            "Alergias": "Ninguna",
+            "MotivoIngreso": "Polidipsia, poliuria, vómitos y confusión",
+            "DiagnosticoPrincipal": 420422005,
+            "CondicionesPrevias": "Diabetes mellitus tipo 1 mal controlada",
+            "FechaIngreso": "20/09/2023",
+            "Servicio": "UCI",
+            "EstadoAlIngreso": "Deshidratación severa, respiración de Kussmaul"
+        }
+    ],
+    [
+        {
+            "ID": 3,
+            "Procedimientos": "Colocación de catéter venoso central; monitorización en UCI",
+            "Tratamientos": "Hidratación IV; infusión de insulina; reposición de potasio",
+            "CirugíasPrevias": "Apendicectomía a los 18 años",
+            "Radiologia": "Rx tórax: sin evidencia de infección pulmonar"
+        }
+    ]
+]
