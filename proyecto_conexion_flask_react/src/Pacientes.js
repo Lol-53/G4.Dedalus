@@ -32,11 +32,6 @@ const Pacientes = () => {
     const [nuevoCama, setNuevoCama]=useState(0);
     const [nuevoNUHSA, setNuevoNUHSA]=useState("");
 
-
-
-
-
-
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
@@ -331,13 +326,62 @@ const Pacientes = () => {
 
     });
 
+    const accesoAPaciente = (paciente) => {
+        //TODO
+        console.log(`Accedo a: ${paciente.nombre}`)
+    }
+
     const actualizarAcceso = (paciente) => {
         paciente.acceso=new Date(Date.now());
         updtRecientes();
     }
 
-    const crearNuevoPaciente = () =>{
-        //TODO
+    const crearNuevoPaciente = async () => {
+        //anyadir a cards / CSV
+        //crear el chat y redigir allí
+        const nuevoId = cards.length > 0 ? Math.max(...cards.map(p => p.id)) + 1 : 1;
+        const nuevoPaciente = {
+            nombre: nuevoNombre,   // "Nombre"
+            nuhsa: nuevoNUHSA,   // "NUHSA"
+            cama: nuevoCama,    // "Cama"
+            id: nuevoId,       // "ID"
+            fueraplanta: Math.round(Math.random()),
+            color: Math.floor(Math.random() * 4) + 1,
+            display: 1,
+            acceso: new Date(Date.now()),
+            creacion: new Date(Date.now())
+        }
+
+        const nuevoCards = [...cards, nuevoPaciente];
+        setCards(nuevoCards);
+
+
+
+        try {
+            await fetch("http://localhost:5000/add-patient", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    id_paciente: nuevoPaciente.id,
+                    nombre: nuevoNombre,
+                    edad: nuevoEdad,
+                    sexo: nuevoSexo,
+                    alergias: nuevoAlergias,
+                    motivoIngreso: nuevoMotivo,
+                    diagnosticoPrincipal: nuevoDiagnostico,
+                    condicionesPrevias: nuevoCondiciones,
+                    fechaIngreso: nuevoFechaIngreso,
+                    servicio: nuevoServicio,
+                    estadoAlIngreso: nuevoEstado,
+                    cama: nuevoCama ,
+                    nuhsa: nuevoNUHSA,
+                }),
+            });
+        } catch (error) {
+            console.error("Error al crear el paciente:", error);
+        }
+
+        // accesoAPaciente(nuevoPaciente);
     }
 
     return (
@@ -466,14 +510,14 @@ const Pacientes = () => {
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Edad: </span><input onChange={(e) => setNuevoEdad(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Edad"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Sexo: </span>
-                                               <div className={" ms-5 d-flex flex-grow-1 justify-content-around"}>
-                                                   <input type="radio" id="Masculino" value="Masculino" name="Sexo" autoComplete="off"
-                                                          className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Masculino"}/>
-                                                   <label className={"btn me-1"} htmlFor="Masculino">Masculino</label>
-                                                   <input type="radio" id="Femenino" value="Femenino" name="Sexo" autoComplete="off"
-                                                          className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Femenino"}/>
-                                                   <label className={"btn ms-1"} htmlFor="Femenino">Femenino</label>
-                                               </div>
+                                                <div className={" ms-5 d-flex flex-grow-1 justify-content-around"}>
+                                                    <input type="radio" id="Masculino" value="Masculino" name="Sexo" autoComplete="off"
+                                                           className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Masculino"}/>
+                                                    <label className={"btn me-1"} htmlFor="Masculino">Masculino</label>
+                                                    <input type="radio" id="Femenino" value="Femenino" name="Sexo" autoComplete="off"
+                                                           className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Femenino"}/>
+                                                    <label className={"btn ms-1"} htmlFor="Femenino">Femenino</label>
+                                                </div>
                                             </div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Alergias: </span><input onChange={(e) => setNuevoAlergias(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Alergias"/></div>
@@ -514,7 +558,7 @@ const Pacientes = () => {
                         </div>
                     </div>
                     {cards.map((card, index) => (
-                        <div key={index} className={`card shadow ${card.display === 0 ? 'd-none' : ''}`}>
+                        <div key={index} className={`card shadow ${card.display === 0 ? 'd-none' : ''}`} onClick={() =>accesoAPaciente(card)}>
                             <a href="#">
                                 <div className={`card-gradient gr${card.color} card-img-top`}></div>
                                 <div className="card-body mt-0 pt-2">
