@@ -18,7 +18,7 @@ from pandas import DataFrame
 color2 = "#c5e86c"  # greenD
 color1 = "#4298b5"  # azul1D Actual
 
- 
+PATH="pacientes"
 
 #Funciones de gráficas
 def grafica(df, path):
@@ -176,7 +176,7 @@ def graficaCurvaTendencia(df,x,y,path):
 def pathDirectorio(dir_name,filename= "non"):
     # Crea el directorio si no existe
     os.makedirs(dir_name, exist_ok=True) 
-    file_path = os.path.realpath(dir_name)
+    file_path = os.path.relpath(dir_name)
 
     if filename != "non": #si se genera una imagen
         file_path = os.path.join(dir_name, f"{filename}.png")
@@ -230,11 +230,36 @@ def cargarDatos(tipoDatos):
     df = pd.read_csv(path)
     return df
 
+def generarRutaPublicPacientes():
+    # Obtener la ruta absoluta de la carpeta 'backend'
+    ruta_backend = os.path.dirname(os.path.abspath(__file__))
 
+    # Construir la ruta de la carpeta 'public'
+    ruta_public = os.path.join(ruta_backend, "..", "public", "pacientes")
+
+    # Crear el directorio si no existe
+    os.makedirs(ruta_public, exist_ok=True)
+
+    print(f"backend: {ruta_backend} y public: {ruta_public}")
+    return os.path.relpath(ruta_public)
+
+def modificarPath(path_orig):
+    palabra ="pacientes"
+    while palabra not in path_orig:
+        path_orig = path_orig[1:]  # Elimina el primer caracter de la cadena (izquierda a derecha)
+    
+
+    return path_orig
 
 #FUNCION GENERAL A LLAMAR
 def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str | list)=[]):
-    path = pathDirectorio(id_patient) #Se genera directorio si no existe
+
+    path_ruta_pacientes = generarRutaPublicPacientes()
+
+    path = os.path.join(path_ruta_pacientes,id_patient)
+    print(f"Path con directorio paciente id: {path}")
+
+    path = pathDirectorio(path) #Se genera directorio si no existe
 
     df = cargarDatos(data_name)
 
@@ -242,6 +267,7 @@ def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str 
         return graficaCorrelacion(df,path)
     
     lista_paths = []
+    res=-1
 
     for g in graphics:
         if g == "graficaCorrelacion":
@@ -255,13 +281,23 @@ def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str 
         elif g =="graficaBoxplot" :
             lista_paths.append(graficaBoxplot(df,x,path))
         elif g == "graficaViolin":
-            lista_paths.append(graficaViolin(df,x,path))
+            res = graficaViolin(df,x,path)
         elif g == "graficaCurvaTendencia":
             lista_paths.append(graficaCurvaTendencia(df,x,y,path))
         else :
             lista_paths.append(" ")
 
+
+        if res != -1:
+            path_new = modificarPath(res)
+            lista_paths.append(path_new)
+
+
+
+
     return lista_paths
+
+    
 
     
 

@@ -45,13 +45,19 @@ def set_context():
     """Carga el contexto del paciente y lo almacena en memoria."""
     try:
         data = request.get_json()
+#        print("he aceptado Data")
         id_paciente = str(data.get("id_paciente"))
+#        print(f"{id_paciente}he encontrado id_paciente")
+
 
         if id_paciente in contextos_pacientes:
+ #           print("Existe paciente")
             return jsonify({"message": "Contexto ya cargado"})
 
-        paciente_info = info_pacientes_df[info_pacientes_df["PacienteID"] == int(id_paciente)]
-        notas_paciente = notas_df[notas_df["PacienteID"] == int(id_paciente)].head(2)
+        paciente_info = info_pacientes_df[info_pacientes_df["ID"] == int(id_paciente)]
+ #       print("Carga info")
+        notas_paciente = notas_df[notas_df["ID"] == int(id_paciente)].head(2)
+ #       print("Carga notas")
 
         if paciente_info.empty:
             return jsonify({"error": "Paciente no encontrado"}), 404
@@ -125,7 +131,8 @@ def ask_ai():
             # Llamar a la función generarGrafica
             paths_imagenes = gd.generarGrafica("lab_iniciales", id_paciente, x, y, graficos_seleccionados)
             #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
-            ai_response2 = "<p>"+"<img src="+ '"' + paths_imagenes[0]+ '"' + ">" +"</p>"
+            ai_response2 = "<p><img src=" + '"' + paths_imagenes[0] + '"' + "></p>"
+            print(paths_imagenes[0])
             return jsonify({"response": ai_response2})
 
         # Si no es una pregunta sobre gráficos, usar Claude-Sonnet
@@ -138,6 +145,7 @@ def ask_ai():
         return jsonify({"response": ai_response})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 if __name__ == "__main__":
     app.run(debug=True)
