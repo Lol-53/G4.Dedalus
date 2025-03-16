@@ -131,9 +131,10 @@ def ask_ai():
             # Llamar a la función generarGrafica
             paths_imagenes = gd.generarGrafica("lab_iniciales", id_paciente, x, y, graficos_seleccionados)
             #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
-            ai_response2 = "<p><img src=" + '"' + paths_imagenes[0] + '"' + "></p>"
+            ai_response2 = f'{"image:" + paths_imagenes[0]}'
             print(paths_imagenes[0])
-            return jsonify({"response": ai_response2})
+            print(ai_response2)
+            return jsonify({"response": ai_response2, "type": "image"})
 
         # Si no es una pregunta sobre gráficos, usar Claude-Sonnet
         response = client.chat.completions.create(
@@ -142,7 +143,7 @@ def ask_ai():
         )
 
         ai_response = response.choices[0].message.content
-        return jsonify({"response": ai_response})
+        return jsonify({"response": ai_response, "type": "text"})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

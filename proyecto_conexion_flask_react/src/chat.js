@@ -3,6 +3,8 @@ import "./style.css"; // Importa los estilos específicos del chat
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Importar iconos de Bootstrap
+import DOMPurify from 'dompurify';
+import {type} from "@testing-library/user-event/dist/type";
 
 const Chat = () => {
 
@@ -217,6 +219,10 @@ const Chat = () => {
         };
     }, [idPaciente]);
 
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages, scrollToBottom]);
+
     const setContext = async (idPaciente) => {
         try {
             const response = await fetch("http://localhost:5000/set-context", {
@@ -242,7 +248,7 @@ const Chat = () => {
         if (!message.trim()) return; // Evita enviar mensajes vacíos
 
         // Agregar el mensaje del usuario al chat
-        setMessages([...messages, { role: "user", content: `<p>${message}</p>` }]);
+        setMessages(prevMessages => [...prevMessages, { role: "user", content: message, type: "text" }]);
 
         const bubble = text_bubble.current;
         const textInput = campo_msg.current;
@@ -265,7 +271,6 @@ const Chat = () => {
         scrollToBottom();
         // Enviar el mensaje al backend Flask
         await sendMessageToBackend(messageSend);
-        console.log("A");
         scrollToBottom();
     };
 
@@ -283,10 +288,28 @@ const Chat = () => {
             const data = await response.json();
 
             // Agregar la respuesta de la IA al chat
-            setMessages((prev) => [...prev, { role: "ai", content: data.response }]);
+            setMessages(prevMessages => [...prevMessages, {  role: "ai", content: data.response, type: data.type }]);
             scrollToBottom();
         } catch (error) {
             console.error("Error al enviar el mensaje:", error);
+        }
+    };
+
+    const renderMessageContent = (msg) => {
+        if (msg.type === "image") {
+            return (
+                <img
+                    src={msg.content}
+                    alt="Imagen recibida"
+                    loading="lazy"
+                    onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = "/placeholder-image.png";
+                    }}
+                />
+            );
+        } else {
+            return <p>{msg.content}</p>;
         }
     };
 
@@ -345,7 +368,8 @@ const Chat = () => {
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
                             {messages.map((msg, index) => (
-                                <div key={index} className={`chat-bubble from${msg.role} shadow`} dangerouslySetInnerHTML={{ __html: msg.content }}>
+                                <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
+                                    {renderMessageContent(msg)}
                                 </div>
                             ))}
                         </div>
