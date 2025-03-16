@@ -1,4 +1,4 @@
-PacienteID,Medicamento,Dosis,Via
+ID,Medicamento,Dosis,Via
 1,Ceftriaxona,2 g,IV cada 24h
 1,Azitromicina,500 mg,VO cada 24h
 1,Salbutamol,5 mg,Nebulizado c/6h

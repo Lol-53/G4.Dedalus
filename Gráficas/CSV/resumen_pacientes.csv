@@ -1,4 +1,4 @@
-PacienteID,Nombre,Edad,Sexo,Alergias,MotivoIngreso,DiagnosticoPrincipal,CondicionesPrevias,FechaIngreso,Servicio,EstadoAlIngreso
+ID,Nombre,Edad,Sexo,Alergias,MotivoIngreso,DiagnosticoPrincipal,CondicionesPrevias,FechaIngreso,Servicio,EstadoAlIngreso
 1,Juan Pérez,68,Masculino,Ninguna conocida,"Fiebre alta y tos productiva",233604007,"EPOC (fumador crónico), Hipertensión arterial","01/05/2023",Neumología,"Estable, disnea moderada"
 2,María López,75,Femenino,Penicilina,"Dolor torácico opresivo irradiado a brazo izquierdo",22298006,"Hipertensión arterial, hipercolesterolemia","10/07/2023",Cardiología,"Hipotensa, diaforética (PA 90/60)"
 3,Carlos García,22,Masculino,Ninguna,"Polidipsia, poliuria, vómitos y confusión",420422005,"Diabetes mellitus tipo 1 mal controlada","20/09/2023",UCI,"Deshidratación severa, respiración de Kussmaul"

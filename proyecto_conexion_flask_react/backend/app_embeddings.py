@@ -5,6 +5,7 @@ from flask_cors import CORS
 import numpy as np
 import requests
 import json
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
 CORS(app)  # Esto habilita CORS para todas las rutas de Flask
@@ -33,8 +34,8 @@ for emb in embeddingFiles:
             all_embeddings.append(item)
 
 # Función para calcular la similitud coseno entre dos vectores
-def cosine_similarity(vec1, vec2):
-    return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
+# def cosine_similarity(vec1, vec2):
+#     return np.dot(vec1, vec2) / (np.linalg.norm(vec1) * np.linalg.norm(vec2))
 
 # Configurar la conexión con Bedrock usando litellm
 client = openai.OpenAI(
@@ -76,7 +77,7 @@ def generarEmbedding(user_message, id_paciente):
         response_json = response.json()
         user_embedding = response_json["data"][0]["embedding"]
 
-    if(user_embedding):
+    if user_embedding:
         best_match = None
         best_score = -1
         second_best_match = None
@@ -86,21 +87,22 @@ def generarEmbedding(user_message, id_paciente):
             if item["key"] == str(id_paciente).strip():
                 stored_embedding = item["embedding"]
 
-                # Convertir los embeddings en matrices 2D de forma (1, 1024)
-                user_embedding_flat = np.array(user_embedding).reshape(-1)
-                stored_embedding_flat = np.array(stored_embedding).reshape(-1)
+                # Convert embeddings to numpy arrays
+                user_embedding_array = np.array(user_embedding)
+                stored_embedding_array = np.array(stored_embedding)
 
-                print(user_embedding_flat.shape)
-                print(stored_embedding_flat.shape)
+                # Ensure they are 2D arrays for cosine_similarity
+                if user_embedding_array.ndim == 1:
+                    user_embedding_array = user_embedding_array.reshape(1, -1)
+                if stored_embedding_array.ndim == 1:
+                    stored_embedding_array = stored_embedding_array.reshape(1, -1)
 
-                print(user_embedding_flat.size)
-                print(stored_embedding_flat.size)
+                # Calculate cosine similarity
+                similarity = cosine_similarity(user_embedding_array, stored_embedding_array)[0][0]
 
-                # Calcular la similitud del coseno
-                similarity = cosine_similarity(user_embedding_flat, stored_embedding_flat)[0][0]
-
+                # Update best matches
                 if similarity > best_score:
-                    # El mejor match actual se convierte en el segundo mejor
+                    # Current best becomes second best
                     second_best_score = best_score
                     second_best_match = best_match
 
@@ -111,24 +113,27 @@ def generarEmbedding(user_message, id_paciente):
                     second_best_score = similarity
                     second_best_match = item
 
-        # Mostrar la respuesta más relevante
+        # Return the most relevant responses
         if best_match:
-            print("se ha encontrado un best match: " + best_match)
+            print("se ha encontrado un best match: " + str(best_match))
             embeddings["content"] += f"Pregunta más similar encontrada: {best_match['question']} "
             embeddings["content"] += f"Respuesta: {best_match['answer']} "
-            embeddings["content"] +=f"Contexto: {best_match['context']} "
+            embeddings["content"] += f"Contexto: {best_match['context']} "
         if second_best_match:
-            print("se ha encontrado un second best match: " + second_best_match)
-            embeddings["content"] +=f"\nSegunda mejor coincidencia encontrada: {second_best_match['question']} "
-            embeddings["content"] +=f"Respuesta: {second_best_match['answer']} "
-            embeddings["content"] +=f"Contexto: {second_best_match['context']}"
+            print("se ha encontrado un second best match: " + str(second_best_match))
+            embeddings["content"] += f"\nSegunda mejor coincidencia encontrada: {second_best_match['question']} "
+            embeddings["content"] += f"Respuesta: {second_best_match['answer']} "
+            embeddings["content"] += f"Contexto: {second_best_match['context']}"
         else:
             print("no se encontraron matches relevantes")
-            embeddings["content"] +="No se encontraron coincidencias relevantes."
+            embeddings["content"] += "No se encontraron coincidencias relevantes."
     else:
         print("no se encontraron embeddings")
-        embeddings["content"] +="No se encontraron embeddings."
+        embeddings["content"] += "No se encontraron embeddings."
+    print(embeddings)
     return embeddings
+
+
 
 @app.route("/set-context", methods=["POST"])
 def set_context():
@@ -138,7 +143,7 @@ def set_context():
         id_paciente = int(data.get("id_paciente"))  # Convertir a entero
 
         if not id_paciente:
-            print(jsonify({"error": "ID de paciente vacío"}), 400) 
+            print(jsonify({"error": "ID de paciente vacío"}), 400)
 
         # Si ya existe el contexto, no lo recarga
         if id_paciente in contextos_pacientes:
@@ -149,7 +154,7 @@ def set_context():
             paciente_info = info_pacientes_df[info_pacientes_df["ID"] == id_paciente]
             notas_paciente = notas_df[notas_df["ID"] == id_paciente].head(2)  # Solo las dos primeras notas
 
-            
+
             print(info_pacientes_df.head())  # Verifica que la columna y los datos están bien cargados
             print(info_pacientes_df.columns)
 
@@ -162,16 +167,21 @@ def set_context():
 
             # Generar contexto
             contexto = f"""
-            Eres una IA que asiste a personal sanitario para responder preguntas, generar informes, gráficas y orientar sobre un paciente concreto. 
+            Eres una IA que asiste a personal sanitario para responder preguntas, generar informes, gráficas y orientar sobre un paciente concreto.
             Como contexto inicial, te proporcionaré los siguientes datos del paciente:
             {info_texto}
-    
+
             Y algunas notas tomadas:
             {notas_texto}
-            
+
             Cuando se te haga una pregunta concreta, responderás con los datos proporcionados a eso y SOLO a eso, lo mismo con las gráficas, recuperarás
             solo los datos necesarios, cuando se te pida un resumen, resumirás en base a todos los datos que tengas y cuando se te pida consejo
             sobre pasos a seguir o recomendaciones para el paciente, recuperarás información relevante según el ámbito sobre el que se te pregunte.
+            
+            También se te proporcionan otros datos que el sistema encuentra en base a la pregunta del usuario y vienen con el siguiete prefijo:
+            "información relevante ofrecida en formato json SQUaD:"
+            Pon especial atención a esos datos para responder preguntas concretas sobre dosis del paciente, mediciones, anomalías, todo lo que
+            se incluya en ese mensaje, es información relevante que debes tener en cuenta para responder.
             """
 
             # Guardar contexto en memoria
@@ -202,6 +212,8 @@ def ask_ai():
         messages.append({"role": "system", "content": contextos_pacientes[id_paciente]})
 
         messages.append(generarEmbedding(user_message, id_paciente))
+
+        print(messages)
 
         if id_paciente not in conversation_history:
             conversation_history[id_paciente] = []
