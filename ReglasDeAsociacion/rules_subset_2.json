@@ -1,0 +1,2290 @@
+[
+  {
+    "rules": "{Fever=No} => {Difficulty.Breathing=No}",
+    "support": 0.4298,
+    "confidence": 0.8621,
+    "coverage": 0.4986,
+    "lift": 1.1527,
+    "count": 150
+  },
+  {
+    "rules": "{Cough=No} => {Difficulty.Breathing=No}",
+    "support": 0.4384,
+    "confidence": 0.8407,
+    "coverage": 0.5215,
+    "lift": 1.1241,
+    "count": 153
+  },
+  {
+    "rules": "{Difficulty.Breathing=Yes,Cholesterol.Level=Normal} => {Cough=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8182,
+    "coverage": 0.1261,
+    "lift": 1.7099,
+    "count": 36
+  },
+  {
+    "rules": "{Difficulty.Breathing=Yes,Blood.Pressure=Normal} => {Cough=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8182,
+    "coverage": 0.1261,
+    "lift": 1.7099,
+    "count": 36
+  },
+  {
+    "rules": "{Difficulty.Breathing=Yes,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.9231,
+    "coverage": 0.1117,
+    "lift": 1.3312,
+    "count": 36
+  },
+  {
+    "rules": "{Difficulty.Breathing=Yes,Outcome.Variable=Positive} => {Fever=Yes}",
+    "support": 0.1375,
+    "confidence": 0.8889,
+    "coverage": 0.1547,
+    "lift": 1.7727,
+    "count": 48
+  },
+  {
+    "rules": "{Fatigue=No,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1461,
+    "confidence": 0.8361,
+    "coverage": 0.1748,
+    "lift": 1.118,
+    "count": 51
+  },
+  {
+    "rules": "{Fatigue=No,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1261,
+    "confidence": 0.9778,
+    "coverage": 0.1289,
+    "lift": 1.3074,
+    "count": 44
+  },
+  {
+    "rules": "{Fatigue=No,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.925,
+    "coverage": 0.1146,
+    "lift": 1.2369,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Fatigue=No} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8723,
+    "coverage": 0.1347,
+    "lift": 1.1665,
+    "count": 41
+  },
+  {
+    "rules": "{Fatigue=No,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1318,
+    "confidence": 0.8519,
+    "coverage": 0.1547,
+    "lift": 1.1391,
+    "count": 46
+  },
+  {
+    "rules": "{Cough=No,Fatigue=No} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.881,
+    "coverage": 0.1203,
+    "lift": 1.178,
+    "count": 37
+  },
+  {
+    "rules": "{Age=Senior,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.1143,
+    "count": 35
+  },
+  {
+    "rules": "{Age=Senior,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.8167,
+    "coverage": 0.1719,
+    "lift": 1.092,
+    "count": 49
+  },
+  {
+    "rules": "{Age=Senior,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.8596,
+    "coverage": 0.1633,
+    "lift": 1.1495,
+    "count": 49
+  },
+  {
+    "rules": "{Fever=No,Age=Senior} => {Difficulty.Breathing=No}",
+    "support": 0.1719,
+    "confidence": 0.8955,
+    "coverage": 0.192,
+    "lift": 1.1975,
+    "count": 60
+  },
+  {
+    "rules": "{Age=Senior,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.8167,
+    "coverage": 0.1719,
+    "lift": 1.092,
+    "count": 49
+  },
+  {
+    "rules": "{Cough=No,Age=Senior} => {Fatigue=Yes}",
+    "support": 0.1519,
+    "confidence": 0.8413,
+    "coverage": 0.1805,
+    "lift": 1.2132,
+    "count": 53
+  },
+  {
+    "rules": "{Cough=No,Age=Senior} => {Difficulty.Breathing=No}",
+    "support": 0.1519,
+    "confidence": 0.8413,
+    "coverage": 0.1805,
+    "lift": 1.1249,
+    "count": 53
+  },
+  {
+    "rules": "{Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.2063,
+    "confidence": 0.8182,
+    "coverage": 0.2521,
+    "lift": 1.094,
+    "count": 72
+  },
+  {
+    "rules": "{Fever=No,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1605,
+    "confidence": 0.8615,
+    "coverage": 0.1862,
+    "lift": 1.152,
+    "count": 56
+  },
+  {
+    "rules": "{Cough=No,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1862,
+    "confidence": 0.8904,
+    "coverage": 0.2092,
+    "lift": 1.1906,
+    "count": 65
+  },
+  {
+    "rules": "{Cholesterol.Level=High,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8039,
+    "coverage": 0.1461,
+    "lift": 1.075,
+    "count": 41
+  },
+  {
+    "rules": "{Blood.Pressure=High,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1461,
+    "confidence": 0.8095,
+    "coverage": 0.1805,
+    "lift": 1.0825,
+    "count": 51
+  },
+  {
+    "rules": "{Fever=No,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.2264,
+    "confidence": 0.8144,
+    "coverage": 0.2779,
+    "lift": 1.089,
+    "count": 79
+  },
+  {
+    "rules": "{Gender=Female,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1605,
+    "confidence": 0.8,
+    "coverage": 0.2006,
+    "lift": 1.0697,
+    "count": 56
+  },
+  {
+    "rules": "{Cough=No,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.2063,
+    "confidence": 0.8571,
+    "coverage": 0.2407,
+    "lift": 1.1461,
+    "count": 72
+  },
+  {
+    "rules": "{Blood.Pressure=Normal,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.84,
+    "coverage": 0.1433,
+    "lift": 1.1232,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.2436,
+    "confidence": 0.8763,
+    "coverage": 0.2779,
+    "lift": 1.1717,
+    "count": 85
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=Normal} => {Fatigue=Yes}",
+    "support": 0.1805,
+    "confidence": 0.8077,
+    "coverage": 0.2235,
+    "lift": 1.1648,
+    "count": 63
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.2006,
+    "confidence": 0.8974,
+    "coverage": 0.2235,
+    "lift": 1.2,
+    "count": 70
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.149,
+    "confidence": 0.8254,
+    "coverage": 0.1805,
+    "lift": 1.7353,
+    "count": 52
+  },
+  {
+    "rules": "{Fever=No,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.2235,
+    "confidence": 0.8864,
+    "coverage": 0.2521,
+    "lift": 1.1852,
+    "count": 78
+  },
+  {
+    "rules": "{Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.2063,
+    "confidence": 0.8571,
+    "coverage": 0.2407,
+    "lift": 1.1461,
+    "count": 72
+  },
+  {
+    "rules": "{Cough=No,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.2206,
+    "confidence": 0.837,
+    "coverage": 0.2636,
+    "lift": 1.1191,
+    "count": 77
+  },
+  {
+    "rules": "{Age=Middle-aged,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.2034,
+    "confidence": 0.8161,
+    "coverage": 0.2493,
+    "lift": 1.0912,
+    "count": 71
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1576,
+    "confidence": 0.873,
+    "coverage": 0.1805,
+    "lift": 1.259,
+    "count": 55
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1519,
+    "confidence": 0.8413,
+    "coverage": 0.1805,
+    "lift": 1.1249,
+    "count": 53
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.2006,
+    "confidence": 0.8333,
+    "coverage": 0.2407,
+    "lift": 1.1143,
+    "count": 70
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.2149,
+    "confidence": 0.8065,
+    "coverage": 0.2665,
+    "lift": 1.0784,
+    "count": 75
+  },
+  {
+    "rules": "{Blood.Pressure=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.2464,
+    "confidence": 0.8269,
+    "coverage": 0.298,
+    "lift": 1.1925,
+    "count": 86
+  },
+  {
+    "rules": "{Fever=No,Gender=Male} => {Difficulty.Breathing=No}",
+    "support": 0.2063,
+    "confidence": 0.8471,
+    "coverage": 0.2436,
+    "lift": 1.1327,
+    "count": 72
+  },
+  {
+    "rules": "{Fever=No,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.2235,
+    "confidence": 0.8764,
+    "coverage": 0.255,
+    "lift": 1.1719,
+    "count": 78
+  },
+  {
+    "rules": "{Fever=No,Cough=No} => {Fatigue=Yes}",
+    "support": 0.2521,
+    "confidence": 0.8627,
+    "coverage": 0.2923,
+    "lift": 1.2442,
+    "count": 88
+  },
+  {
+    "rules": "{Fever=No,Cough=No} => {Difficulty.Breathing=No}",
+    "support": 0.2722,
+    "confidence": 0.9314,
+    "coverage": 0.2923,
+    "lift": 1.2454,
+    "count": 95
+  },
+  {
+    "rules": "{Fever=No,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1777,
+    "confidence": 0.8052,
+    "coverage": 0.2206,
+    "lift": 1.1612,
+    "count": 62
+  },
+  {
+    "rules": "{Fever=No,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.2034,
+    "confidence": 0.9221,
+    "coverage": 0.2206,
+    "lift": 1.233,
+    "count": 71
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.2292,
+    "confidence": 0.8421,
+    "coverage": 0.2722,
+    "lift": 1.126,
+    "count": 80
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes} => {Difficulty.Breathing=No}",
+    "support": 0.3123,
+    "confidence": 0.8583,
+    "coverage": 0.3639,
+    "lift": 1.1476,
+    "count": 109
+  },
+  {
+    "rules": "{Cough=No,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.2378,
+    "confidence": 0.9022,
+    "coverage": 0.2636,
+    "lift": 1.2064,
+    "count": 83
+  },
+  {
+    "rules": "{Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.2464,
+    "confidence": 0.8113,
+    "coverage": 0.3037,
+    "lift": 1.17,
+    "count": 86
+  },
+  {
+    "rules": "{Cough=No,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.2321,
+    "confidence": 0.8265,
+    "coverage": 0.2808,
+    "lift": 1.192,
+    "count": 81
+  },
+  {
+    "rules": "{Cough=No,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.2321,
+    "confidence": 0.8265,
+    "coverage": 0.2808,
+    "lift": 1.1052,
+    "count": 81
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.2407,
+    "confidence": 0.8235,
+    "coverage": 0.2923,
+    "lift": 1.1012,
+    "count": 84
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes} => {Difficulty.Breathing=No}",
+    "support": 0.3324,
+    "confidence": 0.8286,
+    "coverage": 0.4011,
+    "lift": 1.1079,
+    "count": 116
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=Yes,Outcome.Variable=Positive} => {Fever=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8571,
+    "coverage": 0.1203,
+    "lift": 1.7094,
+    "count": 36
+  },
+  {
+    "rules": "{Age=Senior,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.1143,
+    "count": 35
+  },
+  {
+    "rules": "{Fatigue=Yes,Age=Senior,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.878,
+    "coverage": 0.1175,
+    "lift": 1.1741,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Age=Senior} => {Fatigue=Yes}",
+    "support": 0.1003,
+    "confidence": 0.9211,
+    "coverage": 0.1089,
+    "lift": 1.3283,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Age=Senior} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.9474,
+    "coverage": 0.1089,
+    "lift": 1.2668,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Age=Senior} => {Difficulty.Breathing=No}",
+    "support": 0.1232,
+    "confidence": 0.8958,
+    "coverage": 0.1375,
+    "lift": 1.1979,
+    "count": 43
+  },
+  {
+    "rules": "{Age=Senior,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8571,
+    "coverage": 0.1203,
+    "lift": 1.2361,
+    "count": 36
+  },
+  {
+    "rules": "{Fatigue=Yes,Age=Senior,Gender=Female} => {Outcome.Variable=Positive}",
+    "support": 0.1032,
+    "confidence": 0.8182,
+    "coverage": 0.1261,
+    "lift": 1.5352,
+    "count": 36
+  },
+  {
+    "rules": "{Age=Senior,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.1143,
+    "count": 35
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Age=Senior} => {Difficulty.Breathing=No}",
+    "support": 0.1232,
+    "confidence": 0.8113,
+    "coverage": 0.1519,
+    "lift": 1.0849,
+    "count": 43
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Age=Senior} => {Fatigue=Yes}",
+    "support": 0.1232,
+    "confidence": 0.8113,
+    "coverage": 0.1519,
+    "lift": 1.17,
+    "count": 43
+  },
+  {
+    "rules": "{Blood.Pressure=Normal,Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8367,
+    "coverage": 0.1404,
+    "lift": 1.1189,
+    "count": 41
+  },
+  {
+    "rules": "{Gender=Male,Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8367,
+    "coverage": 0.1404,
+    "lift": 1.1189,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.8571,
+    "coverage": 0.1404,
+    "lift": 1.1461,
+    "count": 42
+  },
+  {
+    "rules": "{Cough=No,Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1232,
+    "confidence": 0.9348,
+    "coverage": 0.1318,
+    "lift": 1.25,
+    "count": 43
+  },
+  {
+    "rules": "{Fatigue=Yes,Cholesterol.Level=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1318,
+    "confidence": 0.8519,
+    "coverage": 0.1547,
+    "lift": 1.1391,
+    "count": 46
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Fatigue=Yes}",
+    "support": 0.1089,
+    "confidence": 0.8444,
+    "coverage": 0.1289,
+    "lift": 1.2178,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.9111,
+    "coverage": 0.1289,
+    "lift": 1.2183,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.9535,
+    "coverage": 0.1232,
+    "lift": 1.275,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Gender=Male,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8974,
+    "coverage": 0.1117,
+    "lift": 1.2,
+    "count": 35
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Male,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.84,
+    "coverage": 0.1433,
+    "lift": 1.1232,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1117,
+    "confidence": 0.9512,
+    "coverage": 0.1175,
+    "lift": 1.2719,
+    "count": 39
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1261,
+    "confidence": 0.9167,
+    "coverage": 0.1375,
+    "lift": 1.2257,
+    "count": 44
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.8372,
+    "coverage": 0.1232,
+    "lift": 1.1195,
+    "count": 36
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.9245,
+    "coverage": 0.1519,
+    "lift": 1.2362,
+    "count": 49
+  },
+  {
+    "rules": "{Gender=Male,Blood.Pressure=Normal,Outcome.Variable=Negative} => {Fatigue=Yes}",
+    "support": 0.1175,
+    "confidence": 0.8039,
+    "coverage": 0.1461,
+    "lift": 1.1594,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1375,
+    "confidence": 0.8136,
+    "coverage": 0.1691,
+    "lift": 1.0879,
+    "count": 48
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.881,
+    "coverage": 0.1203,
+    "lift": 1.178,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Outcome.Variable=Negative} => {Gender=Male}",
+    "support": 0.1146,
+    "confidence": 0.8163,
+    "coverage": 0.1404,
+    "lift": 1.6468,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Male} => {Outcome.Variable=Negative}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.7129,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.8333,
+    "coverage": 0.1719,
+    "lift": 1.1143,
+    "count": 50
+  },
+  {
+    "rules": "{Cough=No,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1318,
+    "confidence": 0.8364,
+    "coverage": 0.1576,
+    "lift": 1.1184,
+    "count": 46
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1519,
+    "confidence": 0.803,
+    "coverage": 0.1891,
+    "lift": 1.0738,
+    "count": 53
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9184,
+    "coverage": 0.1404,
+    "lift": 1.228,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1519,
+    "confidence": 0.8154,
+    "coverage": 0.1862,
+    "lift": 1.0903,
+    "count": 53
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8542,
+    "coverage": 0.1375,
+    "lift": 1.1422,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1461,
+    "confidence": 0.8644,
+    "coverage": 0.1691,
+    "lift": 1.1559,
+    "count": 51
+  },
+  {
+    "rules": "{Fever=No,Gender=Male,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.8824,
+    "coverage": 0.1461,
+    "lift": 1.1799,
+    "count": 45
+  },
+  {
+    "rules": "{Cough=No,Gender=Male,Blood.Pressure=Normal} => {Fatigue=Yes}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.2018,
+    "count": 35
+  },
+  {
+    "rules": "{Cough=No,Gender=Male,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.8571,
+    "coverage": 0.1203,
+    "lift": 1.1461,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8696,
+    "coverage": 0.1318,
+    "lift": 1.1628,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=Normal} => {Fatigue=Yes}",
+    "support": 0.1375,
+    "confidence": 0.9231,
+    "coverage": 0.149,
+    "lift": 1.3312,
+    "count": 48
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.9615,
+    "coverage": 0.149,
+    "lift": 1.2857,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=Normal,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.9737,
+    "coverage": 0.1089,
+    "lift": 1.302,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.8571,
+    "coverage": 0.1404,
+    "lift": 1.1461,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1777,
+    "confidence": 0.8857,
+    "coverage": 0.2006,
+    "lift": 1.1843,
+    "count": 62
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.8409,
+    "coverage": 0.1261,
+    "lift": 1.1244,
+    "count": 37
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1633,
+    "confidence": 0.9048,
+    "coverage": 0.1805,
+    "lift": 1.2098,
+    "count": 57
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Blood.Pressure=Normal} => {Fatigue=Yes}",
+    "support": 0.1633,
+    "confidence": 0.8143,
+    "coverage": 0.2006,
+    "lift": 1.1743,
+    "count": 57
+  },
+  {
+    "rules": "{Cough=Yes,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.1537,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1089,
+    "confidence": 0.9048,
+    "coverage": 0.1203,
+    "lift": 1.9022,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1032,
+    "confidence": 0.9231,
+    "coverage": 0.1117,
+    "lift": 1.9407,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1289,
+    "confidence": 0.8654,
+    "coverage": 0.149,
+    "lift": 1.248,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1289,
+    "confidence": 0.8182,
+    "coverage": 0.1576,
+    "lift": 1.7202,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.8654,
+    "coverage": 0.149,
+    "lift": 1.1572,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1289,
+    "confidence": 0.8491,
+    "coverage": 0.1519,
+    "lift": 1.7851,
+    "count": 45
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High} => {Blood.Pressure=High}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.6719,
+    "count": 40
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.6819,
+    "count": 40
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1433,
+    "confidence": 0.8197,
+    "coverage": 0.1748,
+    "lift": 1.538,
+    "count": 50
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1433,
+    "confidence": 0.8772,
+    "coverage": 0.1633,
+    "lift": 1.8442,
+    "count": 50
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1404,
+    "confidence": 0.8033,
+    "coverage": 0.1748,
+    "lift": 1.1584,
+    "count": 49
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.149,
+    "confidence": 0.8525,
+    "coverage": 0.1748,
+    "lift": 1.1399,
+    "count": 52
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1375,
+    "confidence": 0.8136,
+    "coverage": 0.1691,
+    "lift": 1.7104,
+    "count": 48
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1576,
+    "confidence": 0.8209,
+    "coverage": 0.192,
+    "lift": 1.0977,
+    "count": 55
+  },
+  {
+    "rules": "{Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.192,
+    "confidence": 0.8272,
+    "coverage": 0.2321,
+    "lift": 1.1929,
+    "count": 67
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1777,
+    "confidence": 0.8052,
+    "coverage": 0.2206,
+    "lift": 1.6928,
+    "count": 62
+  },
+  {
+    "rules": "{Age=Middle-aged,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1404,
+    "confidence": 0.8033,
+    "coverage": 0.1748,
+    "lift": 1.1584,
+    "count": 49
+  },
+  {
+    "rules": "{Age=Middle-aged,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.8197,
+    "coverage": 0.1748,
+    "lift": 1.096,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Gender=Male,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.1143,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1232,
+    "confidence": 0.9348,
+    "coverage": 0.1318,
+    "lift": 1.25,
+    "count": 43
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1404,
+    "confidence": 0.9074,
+    "coverage": 0.1547,
+    "lift": 1.3086,
+    "count": 49
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.9259,
+    "coverage": 0.1547,
+    "lift": 1.2381,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.149,
+    "confidence": 0.9286,
+    "coverage": 0.1605,
+    "lift": 1.2417,
+    "count": 52
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.913,
+    "coverage": 0.1318,
+    "lift": 1.2209,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1547,
+    "confidence": 0.8438,
+    "coverage": 0.1834,
+    "lift": 1.1282,
+    "count": 54
+  },
+  {
+    "rules": "{Fever=Yes,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1375,
+    "confidence": 0.8136,
+    "coverage": 0.1691,
+    "lift": 1.1733,
+    "count": 48
+  },
+  {
+    "rules": "{Fever=Yes,Fatigue=Yes,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1375,
+    "confidence": 0.8421,
+    "coverage": 0.1633,
+    "lift": 1.5801,
+    "count": 48
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1175,
+    "confidence": 0.82,
+    "coverage": 0.1433,
+    "lift": 1.5386,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.1537,
+    "count": 40
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9,
+    "coverage": 0.1433,
+    "lift": 1.2034,
+    "count": 45
+  },
+  {
+    "rules": "{Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1605,
+    "confidence": 0.8485,
+    "coverage": 0.1891,
+    "lift": 1.2236,
+    "count": 56
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1605,
+    "confidence": 0.875,
+    "coverage": 0.1834,
+    "lift": 1.6418,
+    "count": 56
+  },
+  {
+    "rules": "{Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1662,
+    "confidence": 0.8788,
+    "coverage": 0.1891,
+    "lift": 1.1751,
+    "count": 58
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1662,
+    "confidence": 0.8056,
+    "coverage": 0.2063,
+    "lift": 1.5115,
+    "count": 58
+  },
+  {
+    "rules": "{Age=Middle-aged,Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1117,
+    "confidence": 0.907,
+    "coverage": 0.1232,
+    "lift": 1.2128,
+    "count": 39
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.149,
+    "confidence": 0.8125,
+    "coverage": 0.1834,
+    "lift": 1.0864,
+    "count": 52
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1117,
+    "confidence": 0.8125,
+    "coverage": 0.1375,
+    "lift": 1.5245,
+    "count": 39
+  },
+  {
+    "rules": "{Cough=No,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1576,
+    "confidence": 0.8209,
+    "coverage": 0.192,
+    "lift": 1.1839,
+    "count": 55
+  },
+  {
+    "rules": "{Cough=No,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1633,
+    "confidence": 0.8507,
+    "coverage": 0.192,
+    "lift": 1.1376,
+    "count": 57
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8542,
+    "coverage": 0.1375,
+    "lift": 1.1422,
+    "count": 41
+  },
+  {
+    "rules": "{Age=Middle-aged,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.149,
+    "confidence": 0.8,
+    "coverage": 0.1862,
+    "lift": 1.0697,
+    "count": 52
+  },
+  {
+    "rules": "{Cough=Yes,Blood.Pressure=High,Outcome.Variable=Positive} => {Fever=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.5954,
+    "count": 36
+  },
+  {
+    "rules": "{Cough=Yes,Blood.Pressure=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1117,
+    "confidence": 0.8667,
+    "coverage": 0.1289,
+    "lift": 1.2499,
+    "count": 39
+  },
+  {
+    "rules": "{Cough=Yes,Age=Middle-aged,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8182,
+    "coverage": 0.1261,
+    "lift": 1.1799,
+    "count": 36
+  },
+  {
+    "rules": "{Gender=Male,Blood.Pressure=High,Outcome.Variable=Positive} => {Fever=Yes}",
+    "support": 0.1089,
+    "confidence": 0.8085,
+    "coverage": 0.1347,
+    "lift": 1.6124,
+    "count": 38
+  },
+  {
+    "rules": "{Age=Middle-aged,Gender=Male,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1203,
+    "confidence": 0.8077,
+    "coverage": 0.149,
+    "lift": 1.1648,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1117,
+    "confidence": 0.9286,
+    "coverage": 0.1203,
+    "lift": 1.3391,
+    "count": 39
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1089,
+    "confidence": 0.9048,
+    "coverage": 0.1203,
+    "lift": 1.2098,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.8182,
+    "coverage": 0.1576,
+    "lift": 1.094,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1289,
+    "confidence": 0.8491,
+    "coverage": 0.1519,
+    "lift": 1.2245,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=Yes,Gender=Female,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8163,
+    "coverage": 0.1404,
+    "lift": 1.0916,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=Yes,Blood.Pressure=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.149,
+    "confidence": 0.8,
+    "coverage": 0.1862,
+    "lift": 1.1537,
+    "count": 52
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1175,
+    "confidence": 0.82,
+    "coverage": 0.1433,
+    "lift": 1.1826,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1261,
+    "confidence": 0.88,
+    "coverage": 0.1433,
+    "lift": 1.1767,
+    "count": 44
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1404,
+    "confidence": 0.8596,
+    "coverage": 0.1633,
+    "lift": 1.2397,
+    "count": 49
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1375,
+    "confidence": 0.8421,
+    "coverage": 0.1633,
+    "lift": 1.126,
+    "count": 48
+  },
+  {
+    "rules": "{Age=Middle-aged,Gender=Female,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8537,
+    "coverage": 0.1175,
+    "lift": 1.1415,
+    "count": 35
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8163,
+    "coverage": 0.1404,
+    "lift": 1.0916,
+    "count": 40
+  },
+  {
+    "rules": "{Cough=Yes,Age=Middle-aged,Outcome.Variable=Positive} => {Fever=Yes}",
+    "support": 0.1117,
+    "confidence": 0.8125,
+    "coverage": 0.1375,
+    "lift": 1.6204,
+    "count": 39
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Male} => {Fatigue=Yes}",
+    "support": 0.1261,
+    "confidence": 0.88,
+    "coverage": 0.1433,
+    "lift": 1.2691,
+    "count": 44
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Male} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9,
+    "coverage": 0.1433,
+    "lift": 1.2034,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged,Gender=Male} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.8409,
+    "coverage": 0.1261,
+    "lift": 1.1244,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Gender=Male} => {Difficulty.Breathing=No}",
+    "support": 0.1547,
+    "confidence": 0.8571,
+    "coverage": 0.1805,
+    "lift": 1.1461,
+    "count": 54
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Female} => {Outcome.Variable=Positive}",
+    "support": 0.1232,
+    "confidence": 0.8269,
+    "coverage": 0.149,
+    "lift": 1.5516,
+    "count": 43
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1232,
+    "confidence": 0.8269,
+    "coverage": 0.149,
+    "lift": 1.5857,
+    "count": 43
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Outcome.Variable=Positive} => {Gender=Female}",
+    "support": 0.1232,
+    "confidence": 0.8113,
+    "coverage": 0.1519,
+    "lift": 1.6088,
+    "count": 43
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Female} => {Fatigue=Yes}",
+    "support": 0.1261,
+    "confidence": 0.8462,
+    "coverage": 0.149,
+    "lift": 1.2203,
+    "count": 44
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.9615,
+    "coverage": 0.149,
+    "lift": 1.2857,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1289,
+    "confidence": 0.8654,
+    "coverage": 0.149,
+    "lift": 1.248,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.9423,
+    "coverage": 0.149,
+    "lift": 1.26,
+    "count": 49
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1232,
+    "confidence": 0.8431,
+    "coverage": 0.1461,
+    "lift": 1.1274,
+    "count": 43
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1576,
+    "confidence": 0.8594,
+    "coverage": 0.1834,
+    "lift": 1.1491,
+    "count": 55
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1433,
+    "confidence": 0.9434,
+    "coverage": 0.1519,
+    "lift": 1.3605,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1433,
+    "confidence": 0.8065,
+    "coverage": 0.1777,
+    "lift": 1.5464,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1433,
+    "confidence": 0.9434,
+    "coverage": 0.1519,
+    "lift": 1.2615,
+    "count": 50
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Age=Middle-aged} => {Fatigue=Yes}",
+    "support": 0.1375,
+    "confidence": 0.8136,
+    "coverage": 0.1691,
+    "lift": 1.1733,
+    "count": 48
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.1547,
+    "confidence": 0.9153,
+    "coverage": 0.1691,
+    "lift": 1.2238,
+    "count": 54
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes} => {Difficulty.Breathing=No}",
+    "support": 0.2378,
+    "confidence": 0.9432,
+    "coverage": 0.2521,
+    "lift": 1.2612,
+    "count": 83
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No} => {Fatigue=Yes}",
+    "support": 0.2378,
+    "confidence": 0.8737,
+    "coverage": 0.2722,
+    "lift": 1.26,
+    "count": 83
+  },
+  {
+    "rules": "{Fever=No,Age=Middle-aged,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.9231,
+    "coverage": 0.1117,
+    "lift": 1.2343,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1605,
+    "confidence": 0.9032,
+    "coverage": 0.1777,
+    "lift": 1.2078,
+    "count": 56
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.1662,
+    "confidence": 0.8406,
+    "coverage": 0.1977,
+    "lift": 1.124,
+    "count": 58
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1576,
+    "confidence": 0.873,
+    "coverage": 0.1805,
+    "lift": 1.259,
+    "count": 55
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1633,
+    "confidence": 0.9048,
+    "coverage": 0.1805,
+    "lift": 1.2098,
+    "count": 57
+  },
+  {
+    "rules": "{Cough=No,Age=Middle-aged,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9375,
+    "coverage": 0.1375,
+    "lift": 1.2536,
+    "count": 45
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1805,
+    "confidence": 0.8873,
+    "coverage": 0.2034,
+    "lift": 1.1865,
+    "count": 63
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.192,
+    "confidence": 0.8171,
+    "coverage": 0.235,
+    "lift": 1.1783,
+    "count": 67
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1862,
+    "confidence": 0.8025,
+    "coverage": 0.2321,
+    "lift": 1.073,
+    "count": 65
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1862,
+    "confidence": 0.8025,
+    "coverage": 0.2321,
+    "lift": 1.1573,
+    "count": 65
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.1691,
+    "confidence": 0.8194,
+    "coverage": 0.2063,
+    "lift": 1.0957,
+    "count": 59
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.9737,
+    "coverage": 0.1089,
+    "lift": 1.302,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Fatigue=Yes}",
+    "support": 0.106,
+    "confidence": 0.9024,
+    "coverage": 0.1175,
+    "lift": 1.3015,
+    "count": 37
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=No,Blood.Pressure=Normal,Cholesterol.Level=Normal} => {Fever=No}",
+    "support": 0.106,
+    "confidence": 0.8043,
+    "coverage": 0.1318,
+    "lift": 1.6133,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Difficulty.Breathing=No,Cholesterol.Level=Normal} => {Blood.Pressure=Normal}",
+    "support": 0.106,
+    "confidence": 0.8409,
+    "coverage": 0.1261,
+    "lift": 1.7895,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=Normal,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8333,
+    "coverage": 0.1203,
+    "lift": 1.1143,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.9,
+    "coverage": 0.1146,
+    "lift": 1.2034,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Outcome.Variable=Negative} => {Gender=Male}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.6139,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Gender=Male} => {Outcome.Variable=Negative}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.7129,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8696,
+    "coverage": 0.1318,
+    "lift": 1.1628,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Gender=Male,Outcome.Variable=Negative} => {Fatigue=Yes}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.1537,
+    "count": 40
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Male,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.8605,
+    "coverage": 0.1232,
+    "lift": 1.1506,
+    "count": 37
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Gender=Male,Outcome.Variable=Negative} => {Fatigue=Yes}",
+    "support": 0.106,
+    "confidence": 0.8043,
+    "coverage": 0.1318,
+    "lift": 1.16,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Outcome.Variable=Negative} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.9474,
+    "coverage": 0.1089,
+    "lift": 1.2668,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Outcome.Variable=Negative} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.1537,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Blood.Pressure=Normal} => {Difficulty.Breathing=No}",
+    "support": 0.1347,
+    "confidence": 0.9792,
+    "coverage": 0.1375,
+    "lift": 1.3093,
+    "count": 47
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Blood.Pressure=Normal} => {Fatigue=Yes}",
+    "support": 0.1347,
+    "confidence": 0.94,
+    "coverage": 0.1433,
+    "lift": 1.3556,
+    "count": 47
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Difficulty.Breathing=No,Blood.Pressure=Normal} => {Fever=No}",
+    "support": 0.1347,
+    "confidence": 0.8246,
+    "coverage": 0.1633,
+    "lift": 1.6539,
+    "count": 47
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1003,
+    "confidence": 0.9211,
+    "coverage": 0.1089,
+    "lift": 1.3283,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1003,
+    "confidence": 0.8974,
+    "coverage": 0.1117,
+    "lift": 1.8868,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1089,
+    "confidence": 0.8444,
+    "coverage": 0.1289,
+    "lift": 1.1292,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Blood.Pressure=High,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1089,
+    "confidence": 0.8444,
+    "coverage": 0.1289,
+    "lift": 1.2178,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Difficulty.Breathing=No,Blood.Pressure=High} => {Cholesterol.Level=High}",
+    "support": 0.1089,
+    "confidence": 0.8444,
+    "coverage": 0.1289,
+    "lift": 1.7754,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=Yes,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.1537,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=Yes,Fatigue=Yes,Blood.Pressure=High,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1032,
+    "confidence": 0.8372,
+    "coverage": 0.1232,
+    "lift": 1.5709,
+    "count": 36
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.875,
+    "coverage": 0.1146,
+    "lift": 1.17,
+    "count": 35
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1203,
+    "confidence": 0.84,
+    "coverage": 0.1433,
+    "lift": 1.2114,
+    "count": 42
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1203,
+    "confidence": 0.8571,
+    "coverage": 0.1404,
+    "lift": 1.6083,
+    "count": 42
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1203,
+    "confidence": 0.8571,
+    "coverage": 0.1404,
+    "lift": 1.8021,
+    "count": 42
+  },
+  {
+    "rules": "{Gender=Female,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1261,
+    "confidence": 0.88,
+    "coverage": 0.1433,
+    "lift": 1.1767,
+    "count": 44
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1261,
+    "confidence": 0.8462,
+    "coverage": 0.149,
+    "lift": 1.5877,
+    "count": 44
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1261,
+    "confidence": 0.9167,
+    "coverage": 0.1375,
+    "lift": 1.9272,
+    "count": 44
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8163,
+    "coverage": 0.1404,
+    "lift": 1.0916,
+    "count": 40
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1089,
+    "confidence": 0.8085,
+    "coverage": 0.1347,
+    "lift": 1.6998,
+    "count": 38
+  },
+  {
+    "rules": "{Cough=No,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.8542,
+    "coverage": 0.1375,
+    "lift": 1.1422,
+    "count": 41
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1175,
+    "confidence": 0.8723,
+    "coverage": 0.1347,
+    "lift": 1.834,
+    "count": 41
+  },
+  {
+    "rules": "{Age=Middle-aged,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.8,
+    "coverage": 0.1289,
+    "lift": 1.0697,
+    "count": 36
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Age=Middle-aged,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1032,
+    "confidence": 0.8372,
+    "coverage": 0.1232,
+    "lift": 1.7602,
+    "count": 36
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=No,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1375,
+    "confidence": 0.8,
+    "coverage": 0.1719,
+    "lift": 1.6819,
+    "count": 48
+  },
+  {
+    "rules": "{Fever=No,Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.9722,
+    "coverage": 0.1032,
+    "lift": 1.3,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1003,
+    "confidence": 0.814,
+    "coverage": 0.1232,
+    "lift": 1.5273,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.9231,
+    "coverage": 0.1117,
+    "lift": 1.3312,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Cholesterol.Level=High,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1032,
+    "confidence": 0.8372,
+    "coverage": 0.1232,
+    "lift": 1.6054,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.106,
+    "confidence": 0.9487,
+    "coverage": 0.1117,
+    "lift": 1.2686,
+    "count": 37
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9184,
+    "coverage": 0.1404,
+    "lift": 1.228,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Cholesterol.Level=High} => {Fatigue=Yes}",
+    "support": 0.1289,
+    "confidence": 0.9,
+    "coverage": 0.1433,
+    "lift": 1.2979,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Difficulty.Breathing=No,Cholesterol.Level=High} => {Cough=No}",
+    "support": 0.1289,
+    "confidence": 0.8333,
+    "coverage": 0.1547,
+    "lift": 1.598,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1117,
+    "confidence": 0.907,
+    "coverage": 0.1232,
+    "lift": 1.2128,
+    "count": 39
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.878,
+    "coverage": 0.1175,
+    "lift": 1.2663,
+    "count": 36
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1032,
+    "confidence": 0.9,
+    "coverage": 0.1146,
+    "lift": 1.6887,
+    "count": 36
+  },
+  {
+    "rules": "{Cough=No,Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1089,
+    "confidence": 0.9268,
+    "coverage": 0.1175,
+    "lift": 1.2393,
+    "count": 38
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1089,
+    "confidence": 0.8444,
+    "coverage": 0.1289,
+    "lift": 1.5845,
+    "count": 38
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Female,Cholesterol.Level=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.875,
+    "coverage": 0.1146,
+    "lift": 1.17,
+    "count": 35
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1375,
+    "confidence": 0.8571,
+    "coverage": 0.1605,
+    "lift": 1.1461,
+    "count": 48
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1375,
+    "confidence": 0.8276,
+    "coverage": 0.1662,
+    "lift": 1.1935,
+    "count": 48
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=No,Gender=Female,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1375,
+    "confidence": 0.9231,
+    "coverage": 0.149,
+    "lift": 1.732,
+    "count": 48
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.8182,
+    "coverage": 0.1576,
+    "lift": 1.094,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8974,
+    "coverage": 0.1117,
+    "lift": 1.2,
+    "count": 35
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Blood.Pressure=High} => {Fatigue=Yes}",
+    "support": 0.1003,
+    "confidence": 0.9211,
+    "coverage": 0.1089,
+    "lift": 1.3283,
+    "count": 35
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Female,Blood.Pressure=High} => {Difficulty.Breathing=No}",
+    "support": 0.1003,
+    "confidence": 0.8537,
+    "coverage": 0.1175,
+    "lift": 1.1415,
+    "count": 35
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1146,
+    "confidence": 0.8163,
+    "coverage": 0.1404,
+    "lift": 1.0916,
+    "count": 40
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1146,
+    "confidence": 0.8333,
+    "coverage": 0.1375,
+    "lift": 1.2018,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Gender=Male} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.9318,
+    "coverage": 0.1261,
+    "lift": 1.246,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Gender=Male} => {Fatigue=Yes}",
+    "support": 0.1175,
+    "confidence": 0.9111,
+    "coverage": 0.1289,
+    "lift": 1.314,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1146,
+    "confidence": 0.9302,
+    "coverage": 0.1232,
+    "lift": 1.3415,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Gender=Female} => {Outcome.Variable=Positive}",
+    "support": 0.1146,
+    "confidence": 0.9091,
+    "coverage": 0.1261,
+    "lift": 1.7058,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Gender=Female,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1146,
+    "confidence": 0.8889,
+    "coverage": 0.1289,
+    "lift": 1.7045,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Outcome.Variable=Positive} => {Gender=Female}",
+    "support": 0.1146,
+    "confidence": 0.8,
+    "coverage": 0.1433,
+    "lift": 1.5864,
+    "count": 40
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1175,
+    "confidence": 0.9535,
+    "coverage": 0.1232,
+    "lift": 1.275,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Gender=Female} => {Outcome.Variable=Positive}",
+    "support": 0.1175,
+    "confidence": 0.82,
+    "coverage": 0.1433,
+    "lift": 1.5386,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1175,
+    "confidence": 0.8367,
+    "coverage": 0.1404,
+    "lift": 1.6045,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Outcome.Variable=Positive} => {Gender=Female}",
+    "support": 0.1175,
+    "confidence": 0.82,
+    "coverage": 0.1433,
+    "lift": 1.626,
+    "count": 41
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Gender=Female} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.9545,
+    "coverage": 0.1261,
+    "lift": 1.2764,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Gender=Female} => {Fatigue=Yes}",
+    "support": 0.1203,
+    "confidence": 0.84,
+    "coverage": 0.1433,
+    "lift": 1.2114,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1203,
+    "confidence": 0.9333,
+    "coverage": 0.1289,
+    "lift": 1.248,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1203,
+    "confidence": 0.8571,
+    "coverage": 0.1404,
+    "lift": 1.2361,
+    "count": 42
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1347,
+    "confidence": 0.94,
+    "coverage": 0.1433,
+    "lift": 1.2569,
+    "count": 47
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1347,
+    "confidence": 0.94,
+    "coverage": 0.1433,
+    "lift": 1.3556,
+    "count": 47
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Difficulty.Breathing=No,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1347,
+    "confidence": 0.8393,
+    "coverage": 0.1605,
+    "lift": 1.6094,
+    "count": 47
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Age=Middle-aged} => {Difficulty.Breathing=No}",
+    "support": 0.1289,
+    "confidence": 0.9375,
+    "coverage": 0.1375,
+    "lift": 1.2536,
+    "count": 45
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Age=Middle-aged} => {Fatigue=Yes}",
+    "support": 0.1289,
+    "confidence": 0.8333,
+    "coverage": 0.1547,
+    "lift": 1.2018,
+    "count": 45
+  },
+  {
+    "rules": "{Cough=No,Fatigue=Yes,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1404,
+    "confidence": 0.8909,
+    "coverage": 0.1576,
+    "lift": 1.1913,
+    "count": 49
+  },
+  {
+    "rules": "{Cough=No,Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1404,
+    "confidence": 0.8596,
+    "coverage": 0.1633,
+    "lift": 1.2397,
+    "count": 49
+  },
+  {
+    "rules": "{Fatigue=Yes,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1032,
+    "confidence": 0.8571,
+    "coverage": 0.1203,
+    "lift": 1.1461,
+    "count": 36
+  },
+  {
+    "rules": "{Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1032,
+    "confidence": 0.8182,
+    "coverage": 0.1261,
+    "lift": 1.1799,
+    "count": 36
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Cholesterol.Level=High} => {Outcome.Variable=Positive}",
+    "support": 0.1032,
+    "confidence": 0.9,
+    "coverage": 0.1146,
+    "lift": 1.6887,
+    "count": 36
+  },
+  {
+    "rules": "{Fatigue=Yes,Difficulty.Breathing=No,Gender=Female,Blood.Pressure=High,Outcome.Variable=Positive} => {Cholesterol.Level=High}",
+    "support": 0.1032,
+    "confidence": 0.9,
+    "coverage": 0.1146,
+    "lift": 1.8922,
+    "count": 36
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Gender=Female,Outcome.Variable=Positive} => {Difficulty.Breathing=No}",
+    "support": 0.1089,
+    "confidence": 0.95,
+    "coverage": 0.1146,
+    "lift": 1.2703,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Fatigue=Yes}",
+    "support": 0.1089,
+    "confidence": 0.9268,
+    "coverage": 0.1175,
+    "lift": 1.3366,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Difficulty.Breathing=No,Gender=Female} => {Outcome.Variable=Positive}",
+    "support": 0.1089,
+    "confidence": 0.9048,
+    "coverage": 0.1203,
+    "lift": 1.6976,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Fatigue=Yes,Difficulty.Breathing=No,Gender=Female,Outcome.Variable=Positive} => {Cough=No}",
+    "support": 0.1089,
+    "confidence": 0.9048,
+    "coverage": 0.1203,
+    "lift": 1.735,
+    "count": 38
+  },
+  {
+    "rules": "{Fever=No,Cough=No,Fatigue=Yes,Difficulty.Breathing=No,Outcome.Variable=Positive} => {Gender=Female}",
+    "support": 0.1089,
+    "confidence": 0.8085,
+    "coverage": 0.1347,
+    "lift": 1.6032,
+    "count": 38
+  }
+]
