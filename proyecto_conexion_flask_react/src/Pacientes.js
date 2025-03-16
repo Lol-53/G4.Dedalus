@@ -18,6 +18,25 @@ const Pacientes = () => {
     const [checkPlanta, setCheckPlanta] = useState(false);
     const [pacientesRecientes, setPacientesRecientes] = useState([]);
 
+    //NUEVO PACIENTE
+    const [nuevoNombre, setNuevoNombre]=useState("");
+    const [nuevoEdad, setNuevoEdad]=useState(0);
+    const [nuevoSexo, setNuevoSexo]=useState("Masculino");
+    const [nuevoAlergias, setNuevoAlergias]=useState("");
+    const [nuevoMotivo, setNuevoMotivo]=useState("");
+    const [nuevoDiagnostico, setNuevoDiagnostico]=useState("");
+    const [nuevoCondiciones, setNuevoCondiciones]=useState("");
+    const [nuevoFechaIngreso, setNuevoFechaIngreso]=useState("");
+    const [nuevoServicio, setNuevoServicio]=useState("");
+    const [nuevoEstado, setNuevoEstado]=useState("");
+    const [nuevoCama, setNuevoCama]=useState(0);
+    const [nuevoNUHSA, setNuevoNUHSA]=useState("");
+
+
+
+
+
+
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
@@ -317,6 +336,10 @@ const Pacientes = () => {
         updtRecientes();
     }
 
+    const crearNuevoPaciente = () =>{
+        //TODO
+    }
+
     return (
         <div className="container-fluid d-flex flex-nowrap p-0 position-relative" style={{overflowY: "scroll"}}>
             <nav className="d-flex flex-nowrap navbar navbar-expand-md flex-column p-0 position-relative">
@@ -422,11 +445,73 @@ const Pacientes = () => {
 
                 </div>
 
-                <div className="container-fluid d-flex flex-wrap justify-content-start" id="pacientes">
-                    <div className="card shadow" id="newPaciente">
+                <div className={"container-fluid d-flex flex-wrap justify-content-start"} id="pacientes"  >
+                    <div className={"card shadow"} id="newPaciente" data-bs-toggle="modal" data-bs-target="#nuevo-paciente">
                         <a>
                             <i className="bi bi-plus"></i>
                         </a>
+                    </div>
+                    <div className="modal fade" tabIndex="-1" id="nuevo-paciente">
+                        <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div className="modal-content">
+                                <div className="modal-header">
+                                    <h3 className="modal-title">Nuevo paciente</h3>
+                                    <button type="button" className="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div className="modal-body w-100" style={{overflowX:"hidden"}}>
+                                    <form className={"m-3"} onSubmit={crearNuevoPaciente}>
+                                        <div className={"mb-5 d-flex flex-column w-100"}>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Nombre: </span><input onChange={(e) => setNuevoNombre(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Nombre"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Edad: </span><input onChange={(e) => setNuevoEdad(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Edad"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Sexo: </span>
+                                               <div className={" ms-5 d-flex flex-grow-1 justify-content-around"}>
+                                                   <input type="radio" id="Masculino" value="Masculino" name="Sexo" autoComplete="off"
+                                                          className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Masculino"}/>
+                                                   <label className={"btn me-1"} htmlFor="Masculino">Masculino</label>
+                                                   <input type="radio" id="Femenino" value="Femenino" name="Sexo" autoComplete="off"
+                                                          className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Femenino"}/>
+                                                   <label className={"btn ms-1"} htmlFor="Femenino">Femenino</label>
+                                               </div>
+                                            </div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Alergias: </span><input onChange={(e) => setNuevoAlergias(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Alergias"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Motivo de Ingreso: </span><input onChange={(e) => setNuevoFechaIngreso(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="MotivoIngreso"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Diagnóstico Principal: </span><input onChange={(e) => setNuevoDiagnostico(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="DiagnosticoPrincipal"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Condiciones Previas: </span><input onChange={(e) => setNuevoCondiciones(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="CondicionesPrevias"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Fecha de Ingreso: </span><input onChange={(e) => setNuevoFechaIngreso(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="date" name="FechaIngreso"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Servicio: </span>
+                                                <select id="Servicio" className={" ms-5 flex-grow-1 border-0 border-bottom form-select"} onChange={(e) => setNuevoServicio(e.target.value)}>
+                                                    <option value="Neumología">Neumología</option>
+                                                    <option value="Cardiología">Cardiología</option>
+                                                    <option value="UCI">UCI</option>
+                                                    <option value="Cirugía General">Cirugía General</option>
+                                                    <option value="Medicina Interna">Medicina Interna</option>
+                                                    <option value="Neurología">Neurología</option>
+                                                    <option value="Gastroenterología">Gastroenterología</option>
+                                                </select></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Estado al ingreso: </span><input onChange={(e) => setNuevoEstado(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="EstadoAlIngreso"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>Número de Cama: </span><input onChange={(e) => setNuevoCama(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Cama"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
+                                                className={"fw-semibold"}>NUHSA: </span><input onChange={(e) => setNuevoNUHSA(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="NUHSA"/></div>
+
+                                        </div>
+                                        <div className="modal-footer w-100">
+                                            <input type="submit" className={"btn btn-primary w-100"} value="Crear Conversación" id="botonnuevopaciente"/>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                     {cards.map((card, index) => (
                         <div key={index} className={`card shadow ${card.display === 0 ? 'd-none' : ''}`}>
