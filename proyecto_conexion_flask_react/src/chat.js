@@ -8,9 +8,14 @@ import {type} from "@testing-library/user-event/dist/type";
 
 const Chat = () => {
 
+    const idPaciente=1;
+
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
-    const [messages, setMessages] = useState([]); // Guarda el historial del chat
-    const idPaciente = 1;
+    const [messages, setMessages] = useState((e) => {
+        const historial = localStorage.getItem(`historial_chat_${idPaciente}`);
+
+        return historial ? JSON.parse(historial) : [];
+    });
 
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
@@ -32,6 +37,10 @@ const Chat = () => {
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
+
+        if (idPaciente) {
+            localStorage.setItem(`historial_chat_${idPaciente}`, JSON.stringify(messages));
+        }
 
         const sidebar = navBarCollapsed.current;
         const page = page_element.current;
@@ -217,11 +226,9 @@ const Chat = () => {
         return () => {
             document.body.style.overflow = "hidden";
         };
-    }, [idPaciente]);
+    }, [idPaciente, messages]);
 
-    useEffect(() => {
-        scrollToBottom();
-    }, [messages, scrollToBottom]);
+
 
     const setContext = async (idPaciente) => {
         try {
@@ -275,7 +282,6 @@ const Chat = () => {
     };
 
 
-
     const sendMessageToBackend = async (userMessage) => {
         try {
             const response = await fetch("http://localhost:5000/ask-ai", {
@@ -297,11 +303,12 @@ const Chat = () => {
 
     const renderMessageContent = (msg) => {
         if (msg.type === "image") {
+            setTimeout(function(){},100);
             return (
                 <img
                     src={msg.content}
                     alt="Imagen recibida"
-                    loading="lazy"
+                    loading="eager"
                     onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = "/placeholder-image.png";
@@ -394,7 +401,7 @@ const Chat = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export default Chat;

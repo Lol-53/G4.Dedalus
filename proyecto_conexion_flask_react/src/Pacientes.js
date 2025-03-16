@@ -3,7 +3,8 @@ import Papa from "papaparse";
 import "./style.css"; // Importa los estilos específicos del chat
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Importar iconos de Bootstrap
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import {getTTFB} from "web-vitals"; // Importar iconos de Bootstrap
 
 const Pacientes = () => {
 
@@ -15,10 +16,29 @@ const Pacientes = () => {
     const [triggerOrden, setTriggerOrden] = useState(false); // Estado para disparar el useEffect
     const [sentidoOrden, setSentidoOrden] = useState(null);
     const [checkPlanta, setCheckPlanta] = useState(false);
+    const [pacientesRecientes, setPacientesRecientes] = useState([]);
 
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
+
+    const ordenarAlfabetico = (cards) => {
+        return [...cards].sort((a, b) => a.nombre.localeCompare(b.nombre));
+    };
+
+    const ordenarFecha = (cards, par) => {
+        return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par])).reverse();
+    }
+
+    const getSetterRecientes = (pacientes) => {
+        let ordenados = ordenarFecha(pacientes, "acceso");
+        ordenados = ordenados.slice(0,3);
+        setPacientesRecientes(ordenados);
+    }
+
+    function updtRecientes(){
+        getSetterRecientes(cards);
+    }
 
     // Maneja la carga del archivo CSV
     const handleFiles = () => {
@@ -44,6 +64,7 @@ const Pacientes = () => {
                             }));
 
                             setCards(extractedCards);
+                            getSetterRecientes(extractedCards);
                         } else {
                             alert("Formato de CSV incorrecto");
                         }
@@ -122,13 +143,7 @@ const Pacientes = () => {
         setCards(updatedCards);
     }
 
-    const ordenarAlfabetico = (cards) => {
-        return [...cards].sort((a, b) => a.nombre.localeCompare(b.nombre));
-    };
 
-    const ordenarFecha = (cards, par) => {
-        return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par]));
-    }
 
     const handleOrdenChange = (orden) => {
         setOrdenSeleccionado(orden); // Establece la opción seleccionada
@@ -297,6 +312,11 @@ const Pacientes = () => {
 
     });
 
+    const actualizarAcceso = (paciente) => {
+        paciente.acceso=new Date(Date.now());
+        updtRecientes();
+    }
+
     return (
         <div className="container-fluid d-flex flex-nowrap p-0 position-relative" style={{overflowY: "scroll"}}>
             <nav className="d-flex flex-nowrap navbar navbar-expand-md flex-column p-0 position-relative">
@@ -312,10 +332,10 @@ const Pacientes = () => {
                                 data-bs-toggle="collapse" role="button" aria-expanded="false"
                                 aria-controls="collapseRecientes">Recientes </a></li>
                             <div className="collapse" id="collapseRecientes">
-                                <ul>
-                                    <li><a href="Chat.html">Paciente 1</a></li>
-                                    <li><a href="#">Paciente 2</a></li>
-                                    <li><a href="#">Paciente 3</a></li>
+                                <ul ref={pacientesRecientes}>
+                                    {pacientesRecientes.map((paciente) => (
+                                        <li><a>{paciente.nombre}</a></li>
+                                    ))}
                                 </ul>
                             </div>
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a

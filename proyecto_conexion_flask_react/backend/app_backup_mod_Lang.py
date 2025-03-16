@@ -131,7 +131,7 @@ def ask_ai():
             # Llamar a la función generarGrafica
             paths_imagenes = gd.generarGrafica("lab_iniciales", id_paciente, x, y, graficos_seleccionados)
             #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
-            ai_response2 = f'{"image:" + paths_imagenes[0]}'
+            ai_response2 = f'{paths_imagenes[0]}'
             print(paths_imagenes[0])
             print(ai_response2)
             return jsonify({"response": ai_response2, "type": "image"})
