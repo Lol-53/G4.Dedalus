@@ -3,7 +3,6 @@ import "./style.css"; // Importa los estilos específicos del chat
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Importar iconos de Bootstrap
-import DOMPurify from 'dompurify';
 import {type} from "@testing-library/user-event/dist/type";
 
 const Chat = () => {

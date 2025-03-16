@@ -32,11 +32,6 @@ const Pacientes = () => {
     const [nuevoCama, setNuevoCama]=useState(0);
     const [nuevoNUHSA, setNuevoNUHSA]=useState("");
 
-
-
-
-
-
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
@@ -337,7 +332,23 @@ const Pacientes = () => {
     }
 
     const crearNuevoPaciente = () =>{
-        //TODO
+        //anyadir a cards / CSV
+        //crear el chat y redigir allí
+        const nuevoId = cards.length > 0 ? Math.max(...cards.map(p => p.id)) + 1 : 1;
+        const nuevoPaciente = {
+            nombre: nuevoNombre,   // "Nombre"
+            nuhsa: nuevoNUHSA,   // "NUHSA"
+            cama: nuevoCama,    // "Cama"
+            id: nuevoId,       // "ID"
+            fueraplanta: Math.round(Math.random()),
+            color: Math.floor(Math.random() * 4) + 1,
+            display: 1,
+            acceso: new Date(Date.now()),
+            creacion: new Date(Date.now())
+        }
+
+        const nuevoCards = [...cards, nuevoPaciente];
+        setCards(nuevoCards);
     }
 
     return (

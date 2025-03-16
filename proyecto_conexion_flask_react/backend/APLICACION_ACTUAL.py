@@ -152,6 +152,16 @@ lab_df.columns = lab_df.columns.str.lower()
 # Almacenar contexto de pacientes en memoria
 contextos_pacientes = {}
 
+@app.route("/add-patient", methods=["POST"])
+def get_history():
+    try:
+        data = request.get_json()
+        id_paciente = str(data.get("id_paciente"))
+        name = str(data.get("name"))
+        with open(f"{DATA_PATH}{id_paciente}.json", "w") as f:
+            json.dump([], f)
+        return jsonify({"message": "Paciente agregado correctamente"}), 200
+
 @app.route("/get-history", methods=["POST"])
 def get_history():
     try:
