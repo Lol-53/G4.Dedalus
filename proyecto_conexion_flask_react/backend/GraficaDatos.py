@@ -138,13 +138,13 @@ def graficaViolin(df, x,path):
         sns.set_theme(style="whitegrid")
         sns.violinplot(x=df[x], color= color1)
         plt.title("diagramaViolin")
-
+        print("tengo el grafico")
         path_file  = pathDirectorio(f"{path}\graficaViolin",f"graficaViolin-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
-    
+        #path_file = os.path.join(path,path_file)
+        print(path_file)
 
         plt.savefig(path_file)
-
+        print("guarde el grafico en el path" + path_file)
         limpiar()
         return path_file
     else:
@@ -160,7 +160,7 @@ def graficaCurvaTendencia(df,x,y,path):
         plt.title("curvaTendencia")
 
         path_file  = pathDirectorio(f"{path}\graficaCurvaTendencia",f"graficaCurvaTendencia-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}")
-        path_file = os.path.join(path,path_file)
+        #path_file = os.path.join(path,path_file)
     
 
         plt.savefig(path_file)
@@ -244,11 +244,10 @@ def generarRutaPublicPacientes():
     return os.path.relpath(ruta_public)
 
 def modificarPath(path_orig):
-    palabra ="pacientes"
-    while palabra not in path_orig:
-        path_orig = path_orig[1:]  # Elimina el primer caracter de la cadena (izquierda a derecha)
-    
-
+    #palabra ="pacientes"
+    #while palabra not in path_orig:
+    #    path_orig = path_orig[1:]  # Elimina el primer caracter de la cadena (izquierda a derecha)
+    path_orig = path_orig.replace('..\\public\\', "")
     return path_orig
 
 #FUNCION GENERAL A LLAMAR
@@ -283,13 +282,14 @@ def generarGrafica(data_name: str,id_patient:str,x:str,y:str=None,graphics:(str 
         elif g == "graficaViolin":
             res = graficaViolin(df,x,path)
         elif g == "graficaCurvaTendencia":
-            lista_paths.append(graficaCurvaTendencia(df,x,y,path))
+            res = graficaCurvaTendencia(df,x,y,path)
         else :
             lista_paths.append(" ")
 
 
         if res != -1:
             path_new = modificarPath(res)
+            #print("path new es " + path_new)
             lista_paths.append(path_new)
 
 
