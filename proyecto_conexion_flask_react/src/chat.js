@@ -11,11 +11,9 @@ const Chat = () => {
     const idPaciente=1;
 
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
-    const [messages, setMessages] = useState((e) => {
-        const historial = localStorage.getItem(`historial_chat_${idPaciente}`);
+    const [messages, setMessages] = useState([]);
 
-        return historial ? JSON.parse(historial) : [];
-    });
+    const [convHistory, setConvHistory] = useState([]);
 
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
@@ -35,12 +33,40 @@ const Chat = () => {
         }, 0); // Retraso mínimo para asegurar que el DOM se actualiza
     }
 
+    async function getHistory() {
+        try {
+            const response = await fetch("http://localhost:5000/get-history", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({id_paciente: idPaciente}),
+            });
+
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+                console.error("El historial no es un array:", data);
+                return [];
+            }
+
+            console.log("Historial cargado:", data);
+            return data; // Devuelve el historial de mensajes
+        } catch (error) {
+            console.error("Error al obtener historial:", error);
+            return [];
+        }
+
+        scrollToBottom();
+    }
+
+    async function fetchHistory() {
+        const history = await getHistory();
+        setConvHistory(history); // Guardamos el historial en el estado
+    }
+
     useEffect(() => {
         document.body.style.overflow = "hidden";
 
-        if (idPaciente) {
-            localStorage.setItem(`historial_chat_${idPaciente}`, JSON.stringify(messages));
-        }
+        fetchHistory();
 
         const sidebar = navBarCollapsed.current;
         const page = page_element.current;
@@ -226,7 +252,7 @@ const Chat = () => {
         return () => {
             document.body.style.overflow = "hidden";
         };
-    }, [idPaciente, messages]);
+    }, [idPaciente, chat_body, chat_text_area, text_bubble, campo_msg, contenido_Chat, menu_button, page_element, navBarCollapsed]);
 
 
 
@@ -255,7 +281,7 @@ const Chat = () => {
         if (!message.trim()) return; // Evita enviar mensajes vacíos
 
         // Agregar el mensaje del usuario al chat
-        setMessages(prevMessages => [...prevMessages, { role: "user", content: message, type: "text" }]);
+        fetchHistory();
 
         const bubble = text_bubble.current;
         const textInput = campo_msg.current;
@@ -270,8 +296,6 @@ const Chat = () => {
         chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
 
         const messageSend = message;
-
-
 
         setMessage(""); // Limpiar el input después de enviar
 
@@ -293,8 +317,8 @@ const Chat = () => {
 
             const data = await response.json();
 
-            // Agregar la respuesta de la IA al chat
-            setMessages(prevMessages => [...prevMessages, {  role: "ai", content: data.response, type: data.type }]);
+            fetchHistory();
+
             scrollToBottom();
         } catch (error) {
             console.error("Error al enviar el mensaje:", error);
@@ -302,8 +326,9 @@ const Chat = () => {
     };
 
     const renderMessageContent = (msg) => {
+        console.log(msg);
         if (msg.type === "image") {
-            setTimeout(function(){},100);
+            scrollToBottom();
             return (
                 <img
                     src={msg.content}
@@ -316,6 +341,7 @@ const Chat = () => {
                 />
             );
         } else {
+            scrollToBottom();
             return <p>{msg.content}</p>;
         }
     };
@@ -374,7 +400,7 @@ const Chat = () => {
 
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
-                            {messages.map((msg, index) => (
+                            {convHistory.map((msg, index) => (
                                 <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
                                     {renderMessageContent(msg)}
                                 </div>

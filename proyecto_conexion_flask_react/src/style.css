@@ -346,3 +346,8 @@ header span{
   font-size: 5rem;
   max-width: 500px;
 }
+
+#chat-body img{
+  width:80%;
+  align-self: center;
+}
