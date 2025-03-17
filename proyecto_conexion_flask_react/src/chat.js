@@ -676,6 +676,7 @@ const Chat = () => {
         if (!message.trim()) return; // Evita enviar mensajes vacíos
 
         // Agregar el mensaje del usuario al chat
+        setLoading(true);
         fetchHistory();
 
         const bubble = text_bubble.current;
@@ -696,7 +697,7 @@ const Chat = () => {
 
         scrollToBottom();
         // Enviar el mensaje al backend Flask
-        setLoading(true);
+
         await sendMessageToBackend(messageSend);
         scrollToBottom();
         setLoading(false);
@@ -779,11 +780,27 @@ const Chat = () => {
     };
 
     const generarResumen = async () => {
-        await fetch("http://localhost:5000/generate-report", {
+        const response=await fetch("http://localhost:5000/generate-report", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({id_paciente: idPaciente}),
         });
+
+        if (response.ok) {
+            // Una vez que la solicitud es exitosa, redirigimos al archivo estático
+            const link = document.createElement('a');
+            link.href = "http://localhost:5000/resumen_paciente.pdf";  // URL del archivo en 'public/'
+            link.download = "resumen_paciente.pdf";  // Nombre del archivo descargado
+
+            // Añadimos el enlace al DOM, pero no es visible para el usuario
+            document.body.appendChild(link);
+            link.click();  // Simula el clic en el enlace para iniciar la descarga
+
+            // Eliminamos el enlace del DOM después de hacer el clic
+            document.body.removeChild(link);
+        } else {
+            console.error("Error al generar el reporte.");
+        }
     }
 
     const deRecientesAChat = (paciente) => {
@@ -854,7 +871,7 @@ const Chat = () => {
                                            <span className="visually-hidden">Loading...</span>
                                        </div>
                                    </div>
-                               
+
                             {convHistory.map((msg, index) => (
                                 <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
                                     {renderMessageContent(msg)}
