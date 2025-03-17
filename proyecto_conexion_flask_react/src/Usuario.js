@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Importar iconos de Bootstrap
 import {type} from "@testing-library/user-event/dist/type";
 import Papa from "papaparse";
+import { useNavigate } from "react-router-dom";
 
 const Usuario = () => {
 
@@ -14,6 +15,8 @@ const Usuario = () => {
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
+
+    const navigate = useNavigate();
 
     const ordenarFecha = (cards, par) => {
         return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par])).reverse();
@@ -25,55 +28,60 @@ const Usuario = () => {
         setPacientesRecientes(ordenados);
     }
 
-    // Maneja la carga del archivo CSV
-    const handleFiles = () => {
-        fetch("/info_pacientes.csv")
-            .then(response => response.text()) // Obtiene el contenido del CSV
-            .then(csvText => {
-                Papa.parse(csvText, {
-                    complete: (result) => {
-                        const data = result.data;
-                        console.log(data[0]);
-                        // Verifica si hay datos y si la cabecera es válida
-                        if (data.length > 1 && data[0][0] === "ID") {
-                            const extractedCards = data.slice(1).map((row) => ({
-                                nombre: row[1],   // "Nombre"
-                                nuhsa: row[12],   // "NUHSA"
-                                cama: row[11],    // "Cama"
-                                id: row[0],       // "ID"
-                                fueraplanta: Math.round(Math.random()),
-                                color: Math.floor(Math.random() * 4) + 1,
-                                display: 1,
-                                acceso: new Date(Date.now()),
-                                creacion: new Date(Date.now()-1)
-                            }));
+    const recibirRecientes = () => {
+        let recientes = localStorage.getItem('recientes');
+        if(recientes){
+            recientes = JSON.parse(recientes);
+            setPacientesRecientes(recientes);
+        }
+    }
 
-                            setCards(extractedCards);
-                            getSetterRecientes(extractedCards);
-                        } else {
-                            alert("Formato de CSV incorrecto");
-                        }
-                    },
-                    header: false, // La primera fila contiene los encabezados
-                    skipEmptyLines: true,
-                });
-            })
-        console.log("datos de las tarjetas cargados correctamente: " + cards);
+    const actualizarPaciente = (pacienteActualizado) => {
+        let cargadas = localStorage.getItem('recientes');
+        cargadas=JSON.parse(cargadas);
+        const nuevasCards = (cartas) =>
+            cartas.map((paciente) =>
+                paciente.id === pacienteActualizado.id ? pacienteActualizado : paciente);
+
+        const ids = new Set();
+        let nuevas = [pacienteActualizado, ...cargadas]
+        const duplicados = nuevas.filter((paciente) => {
+            if (ids.has(paciente.id)) {
+                return true; // Si ya existe el id, es un duplicado
+            } else {
+                ids.add(paciente.id);
+                return false;
+            }
+        });
+        ;
+        if(duplicados.length>0){
+            nuevas=[...cargadas];
+            nuevas=nuevasCards(nuevas); //Sustituimos y ya
+            nuevas=ordenarFecha(nuevas, "acceso");
+        }else{
+            nuevas.slice(0,3);
+        }
+
+        console.log(nuevas);
+        setPacientesRecientes(nuevas);
+        localStorage.setItem('recientes', JSON.stringify(nuevas));
     };
 
+    const deRecientesAChat = (paciente) => {
+        paciente.acceso = new Date(Date.now());
+        actualizarPaciente(paciente);
+        localStorage.setItem('paciente', JSON.stringify(paciente));
+        navigate("/chat");
+    }
 
 
     useEffect(() => {
 
+        recibirRecientes();
+
         const sidebar = navBarCollapsed.current;
         const page = page_element.current;
         const button = menu_button.current;
-
-
-
-        if(cards.length === 0){
-            handleFiles();
-        }
 
         console.log("script.js cargado correctamente en React.");
 
@@ -193,10 +201,10 @@ const Usuario = () => {
                                 data-bs-toggle="collapse" role="button" aria-expanded="false"
                                 aria-controls="collapseRecientes">Recientes </a></li>
                             <div className="collapse" id="collapseRecientes">
-                                <ul>
-                                    <li><a href="Chat.html">Paciente 1</a></li>
-                                    <li><a href="#">Paciente 2</a></li>
-                                    <li><a href="#">Paciente 3</a></li>
+                                <ul ref={pacientesRecientes}>
+                                    {pacientesRecientes.map((paciente) => (
+                                        <li><a onClick={() => deRecientesAChat(paciente)}>{paciente.nombre}</a></li>
+                                    ))}
                                 </ul>
                             </div>
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a

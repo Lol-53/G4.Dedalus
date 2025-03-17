@@ -3,12 +3,14 @@ import "./style.css"; // Importa los estilos específicos del chat
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
 import 'bootstrap-icons/font/bootstrap-icons.css'; // Importar iconos de Bootstrap
+import { useNavigate } from "react-router-dom";
 import {type} from "@testing-library/user-event/dist/type";
 
 const Chat = () => {
 
     const [idPaciente, setIdPaciente]= useState(0);
     const [nombrePaciente, setNombrePaciente] = useState("");
+    const [pacientesRecientes, setPacientesRecientes] = useState([]);
 
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
     const [messages, setMessages] = useState([]);
@@ -23,6 +25,8 @@ const Chat = () => {
     const text_bubble = useRef(null);
     const campo_msg = useRef(null);
     const chat_text_area = useRef(null);
+
+    const navigate = useNavigate();
 
     function scrollToBottom() {
         const chat = chat_body.current;
@@ -63,7 +67,7 @@ const Chat = () => {
         setConvHistory(history); // Guardamos el historial en el estado
     }
 
-    useEffect(() => {
+    const infoPacientes = () => {
         let paciente = localStorage.getItem('paciente');
 
         if(paciente){
@@ -71,11 +75,17 @@ const Chat = () => {
             setIdPaciente(paciente.id);
             setNombrePaciente(paciente.nombre);
         }
-    }, []);
+
+        let recientes = localStorage.getItem('recientes');
+        if(recientes){
+            recientes = JSON.parse(recientes);
+            setPacientesRecientes(recientes);
+        }
+    };
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
-
+        infoPacientes()
         fetchHistory();
 
         const sidebar = navBarCollapsed.current;
@@ -264,6 +274,380 @@ const Chat = () => {
         };
     }, [idPaciente, chat_body, chat_text_area, text_bubble, campo_msg, contenido_Chat, menu_button, page_element, navBarCollapsed]);
 
+    useEffect(() => {
+        const sidebar = navBarCollapsed.current;
+        const page = page_element.current;
+        const button = menu_button.current;
+        const chat = chat_body.current;
+        const contenidoChat = contenido_Chat.current;
+        const bubble = text_bubble.current;
+        const textInput = campo_msg.current;
+        const chatTextArea = chat_text_area.current;
+
+        console.log("script.js cargado correctamente en React.");
+
+        // Verificamos si el sidebar está disponible
+        if (!sidebar) {
+            console.error("El elemento #navBarCollapsed no se encuentra en el DOM.");
+            return;
+        }
+
+        if(page.offsetHeight > window.innerHeight){
+            sidebar.style.height = page.offsetHeight + "px";
+        }else{
+            sidebar.style.height = window.offsetHeight + "px";
+        }
+
+        if(window.innerWidth < 768 && (!sidebar.classList.contains("hidden"))){
+            sidebar.classList.add("hidden");
+            page.classList.add("expanded");
+            if(chat){
+                chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+            }
+        }
+
+        if(chat && (window.innerWidth < 768 && (sidebar.classList.contains("hidden")))){
+            chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+        }
+
+        if(window.innerWidth >= 768){
+            if(chat){
+                chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+            }
+        }
+
+        if(window.innerWidth < 768){
+            button.classList.add("expanded");
+        }
+
+        if(chat){
+            chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+        }
+
+        button.addEventListener("click", function(event){
+
+            event.preventDefault();
+            sidebar.style.display="flex";
+
+            if (sidebar.classList.contains("hidden")){
+
+
+                // page.classList.add("hidden");
+                sidebar.classList.remove("hidden");
+                if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+                }
+                page.classList.remove("expanded");
+
+            }else{
+                event.preventDefault();
+
+
+                page.classList.add("expanded");
+                sidebar.classList.add("hidden");
+                if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+                }
+
+            }
+        });
+
+        // Detectamos el cambio de tamaño de la ventana para simular el colapso
+        window.addEventListener("resize", function (event) {
+
+            // Si el navbar está colapsado (según el tamaño de la pantalla)
+
+
+
+            if (window.innerWidth < 768 ) {
+                // Aplicamos la animación de deslizamiento
+                if(chat){
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important")}, 100);
+                }
+                sidebar.classList.add("hidden");
+                page.classList.add("expanded");
+                if(!button.classList.contains("expanded")){
+                    button.classList.add("expanded");
+                    button.classList.remove("hidden");
+                }
+
+                page.style.width = "calc("+page.style.width+"px + 200px)"
+
+
+                if(page.offsetHeight > window.innerHeight){
+                    sidebar.style.height = page.offsetHeight + "px";
+                }else{
+                    sidebar.style.height = window.innerHeight + "px";
+                }
+                setTimeout(function(){if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+                }},30);
+
+            } else if (window.innerWidth >= 768) {
+                // Si el tamaño de la pantalla es mayor y el navbar está oculto, lo mostramos
+                if(chat){
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+                        chat.style.setProperty("width", (window.innerWidth-250) + "px", "important")
+                    }, 100);
+                }
+
+                sidebar.classList.remove("hidden");
+                page.classList.remove("expanded");
+                button.classList.remove("expanded");
+                button.classList.add("hidden");
+
+                if(page.offsetHeight > window.innerHeight){
+                    sidebar.style.height = page.offsetHeight + "px";
+                }else{
+                    sidebar.style.height = window.innerHeight + "px";
+                }
+            }
+
+            if(contenidoChat){
+
+                contenidoChat.style.height=window.innerHeight-100 + "px";
+            }
+        });
+
+        if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
+
+        // Ajustar la altura inicial
+        let initialHeight = bubble.offsetHeight - 40;
+        let initialBubble= bubble.style.width;
+        textInput.style.height = `${bubble.offsetHeight - 40}px`;
+        contenidoChat.style.height=window.innerHeight-100 + "px";
+
+        textInput.addEventListener("input", function () {
+
+            if (this.value.trim() === "") {
+                bubble.style.height= initialBubble;
+                this.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
+                chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
+                return;
+            }
+
+            this.style.height = "auto"; // Restablece la altura para recalcular
+            this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
+            chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
+            bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+            // Ajustar el contenedor principal (chat_text_area)
+            if (this.scrollHeight< 150) {
+                console.log("B");
+                this.style.height=this.scrollHeight;
+                // chatTextArea.style.height = `${this.scrollHeight -150}px`;
+                chatTextArea.style.height = "auto";
+                this.style.overflowY = "hidden";
+            } else {
+                console.log("C");
+                chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
+                this.style.overflowY = "auto";
+                this.style.height="120px";
+                chatTextArea.style.height="150px";
+            }
+            bubble.style.height = `calc(${this.innerHeight}px + ${initialBubble}px)`;
+        });
+
+        window.addEventListener('load', function() {
+
+            // Desplaza el scroll hacia abajo
+            scrollToBottom();
+        });
+
+        if (idPaciente) {
+            setContext(idPaciente);
+        }
+        return () => {
+            document.body.style.overflow = "hidden";
+        };
+    }, []);
+
+
+    useEffect(() => {
+        const sidebar = navBarCollapsed.current;
+        const page = page_element.current;
+        const button = menu_button.current;
+        const chat = chat_body.current;
+        const contenidoChat = contenido_Chat.current;
+        const bubble = text_bubble.current;
+        const textInput = campo_msg.current;
+        const chatTextArea = chat_text_area.current;
+
+        console.log("script.js cargado correctamente en React.");
+
+        // Verificamos si el sidebar está disponible
+        if (!sidebar) {
+            console.error("El elemento #navBarCollapsed no se encuentra en el DOM.");
+            return;
+        }
+
+        if(page.offsetHeight > window.innerHeight){
+            sidebar.style.height = page.offsetHeight + "px";
+        }else{
+            sidebar.style.height = window.offsetHeight + "px";
+        }
+
+        if(window.innerWidth < 768 && (!sidebar.classList.contains("hidden"))){
+            sidebar.classList.add("hidden");
+            page.classList.add("expanded");
+            if(chat){
+                chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+            }
+        }
+
+        if(chat && (window.innerWidth < 768 && (sidebar.classList.contains("hidden")))){
+            chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+        }
+
+        if(window.innerWidth >= 768){
+            if(chat){
+                chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+            }
+        }
+
+        if(window.innerWidth < 768){
+            button.classList.add("expanded");
+        }
+
+        if(chat){
+            chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+        }
+
+        button.addEventListener("click", function(event){
+
+            event.preventDefault();
+            sidebar.style.display="flex";
+
+            if (sidebar.classList.contains("hidden")){
+
+
+                // page.classList.add("hidden");
+                sidebar.classList.remove("hidden");
+                if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-250) + "px", "important");
+                }
+                page.classList.remove("expanded");
+
+            }else{
+                event.preventDefault();
+
+
+                page.classList.add("expanded");
+                sidebar.classList.add("hidden");
+                if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+                }
+
+            }
+        });
+
+        // Detectamos el cambio de tamaño de la ventana para simular el colapso
+        window.addEventListener("resize", function (event) {
+
+            // Si el navbar está colapsado (según el tamaño de la pantalla)
+
+
+
+            if (window.innerWidth < 768 ) {
+                // Aplicamos la animación de deslizamiento
+                if(chat){
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important")}, 100);
+                }
+                sidebar.classList.add("hidden");
+                page.classList.add("expanded");
+                if(!button.classList.contains("expanded")){
+                    button.classList.add("expanded");
+                    button.classList.remove("hidden");
+                }
+
+                page.style.width = "calc("+page.style.width+"px + 200px)"
+
+
+                if(page.offsetHeight > window.innerHeight){
+                    sidebar.style.height = page.offsetHeight + "px";
+                }else{
+                    sidebar.style.height = window.innerHeight + "px";
+                }
+                setTimeout(function(){if(chat){
+                    chat.style.setProperty("width", (window.innerWidth-50) + "px", "important");
+                }},30);
+
+            } else if (window.innerWidth >= 768) {
+                // Si el tamaño de la pantalla es mayor y el navbar está oculto, lo mostramos
+                if(chat){
+                    setTimeout(function(){chat.style.setProperty("max-height", (window.innerHeight-200) + "px", "important");
+                        chat.style.setProperty("width", (window.innerWidth-250) + "px", "important")
+                    }, 100);
+                }
+
+                sidebar.classList.remove("hidden");
+                page.classList.remove("expanded");
+                button.classList.remove("expanded");
+                button.classList.add("hidden");
+
+                if(page.offsetHeight > window.innerHeight){
+                    sidebar.style.height = page.offsetHeight + "px";
+                }else{
+                    sidebar.style.height = window.innerHeight + "px";
+                }
+            }
+
+            if(contenidoChat){
+
+                contenidoChat.style.height=window.innerHeight-100 + "px";
+            }
+        });
+
+        if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
+
+        // Ajustar la altura inicial
+        let initialHeight = bubble.offsetHeight - 40;
+        let initialBubble= bubble.style.width;
+        textInput.style.height = `${bubble.offsetHeight - 40}px`;
+        contenidoChat.style.height=window.innerHeight-100 + "px";
+
+        textInput.addEventListener("input", function () {
+
+            if (this.value.trim() === "") {
+                bubble.style.height= initialBubble;
+                this.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
+                chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
+                return;
+            }
+
+            this.style.height = "auto"; // Restablece la altura para recalcular
+            this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
+            chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
+            bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+            // Ajustar el contenedor principal (chat_text_area)
+            if (this.scrollHeight< 150) {
+                console.log("B");
+                this.style.height=this.scrollHeight;
+                // chatTextArea.style.height = `${this.scrollHeight -150}px`;
+                chatTextArea.style.height = "auto";
+                this.style.overflowY = "hidden";
+            } else {
+                console.log("C");
+                chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
+                this.style.overflowY = "auto";
+                this.style.height="120px";
+                chatTextArea.style.height="150px";
+            }
+            bubble.style.height = `calc(${this.innerHeight}px + ${initialBubble}px)`;
+        });
+
+        window.addEventListener('load', function() {
+
+            // Desplaza el scroll hacia abajo
+            scrollToBottom();
+        });
+
+        if (idPaciente) {
+            setContext(idPaciente);
+        }
+        return () => {
+            document.body.style.overflow = "hidden";
+        };
+    }, [idPaciente]);
 
 
     const setContext = async (idPaciente) => {
@@ -356,6 +740,50 @@ const Chat = () => {
         }
     };
 
+    const ordenarFecha = (cards, par) => {
+        return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par])).reverse();
+    }
+
+    const actualizarPaciente = (pacienteActualizado) => {
+        let cargadas = localStorage.getItem('recientes');
+        cargadas=JSON.parse(cargadas);
+        const nuevasCards = (cartas) =>
+            cartas.map((paciente) =>
+                paciente.id === pacienteActualizado.id ? pacienteActualizado : paciente);
+
+        const ids = new Set();
+        let nuevas = [pacienteActualizado, ...cargadas]
+        const duplicados = nuevas.filter((paciente) => {
+            if (ids.has(paciente.id)) {
+                return true; // Si ya existe el id, es un duplicado
+            } else {
+                ids.add(paciente.id);
+                return false;
+            }
+        });
+        ;
+        if(duplicados.length>0){
+            nuevas=[...cargadas];
+            nuevas=nuevasCards(nuevas); //Sustituimos y ya
+            nuevas=ordenarFecha(nuevas, "acceso");
+        }else{
+            nuevas.slice(0,3);
+        }
+
+        console.log(nuevas);
+        setPacientesRecientes(nuevas);
+        localStorage.setItem('recientes', JSON.stringify(nuevas));
+    };
+
+    const deRecientesAChat = (paciente) => {
+        paciente.acceso=new Date(Date.now());
+        actualizarPaciente(paciente);
+        localStorage.setItem('paciente', JSON.stringify(paciente));
+        setIdPaciente(paciente.id);
+        setNombrePaciente(paciente.nombre);
+        navigate("/chat");
+    }
+
     return (
         <div style={{overflow: 'hidden'}}>
             <div className="container-fluid d-flex flex-nowrap p-0 position-relative">
@@ -369,10 +797,10 @@ const Chat = () => {
                                     data-bs-toggle="collapse" role="button" aria-expanded="false"
                                     aria-controls="collapseRecientes">Recientes </a></li>
                                 <div className="collapse" id="collapseRecientes">
-                                    <ul>
-                                        <li><a href="Chat.html">Paciente 1</a></li>
-                                        <li><a href="#">Paciente 2</a></li>
-                                        <li><a href="#">Paciente 3</a></li>
+                                    <ul ref={pacientesRecientes}>
+                                        {pacientesRecientes.map((paciente) => (
+                                            <li><a onClick={() => deRecientesAChat(paciente)}>{paciente.nombre}</a></li>
+                                        ))}
                                     </ul>
                                 </div>
                                 <li className="nav-item my-1 border-bottom w-100 pe-5 "><a

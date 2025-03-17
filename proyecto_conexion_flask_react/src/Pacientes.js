@@ -50,7 +50,8 @@ const Pacientes = () => {
     const getSetterRecientes = (pacientes) => {
         let ordenados = ordenarFecha(pacientes, "acceso");
         ordenados = ordenados.slice(0,3);
-        setPacientesRecientes(ordenados);
+        //setPacientesRecientes(ordenados);
+
     }
 
     function updtRecientes(){
@@ -81,7 +82,14 @@ const Pacientes = () => {
                             }));
 
                             setCards(extractedCards);
-                            getSetterRecientes(extractedCards);
+                            let recientes = localStorage.getItem('recientes');
+                            if(recientes){
+                                recientes=JSON.parse(recientes);
+                                setPacientesRecientes(recientes)
+                            }else{
+                                getSetterRecientes(extractedCards);
+                                localStorage.setItem('recientes', JSON.stringify(extractedCards));
+                            }
                         } else {
                             alert("Formato de CSV incorrecto");
                         }
@@ -341,8 +349,40 @@ const Pacientes = () => {
         navigate("/chat");
     }
 
+    const actualizarPaciente = (pacienteActualizado) => {
+        let cargadas = localStorage.getItem('recientes');
+        cargadas=JSON.parse(cargadas);
+        const nuevasCards = (cartas) =>
+            cartas.map((paciente) =>
+                paciente.id === pacienteActualizado.id ? pacienteActualizado : paciente);
+
+        const ids = new Set();
+        let nuevas = [pacienteActualizado, ...cargadas]
+        const duplicados = nuevas.filter((paciente) => {
+            if (ids.has(paciente.id)) {
+                return true; // Si ya existe el id, es un duplicado
+            } else {
+                ids.add(paciente.id);
+                return false;
+            }
+        });
+        ;
+        if(duplicados.length>0){
+            nuevas=[...cargadas];
+            nuevas=nuevasCards(nuevas); //Sustituimos y ya
+            nuevas=ordenarFecha(nuevas, "acceso");
+        }else{
+            nuevas.slice(0,3);
+        }
+
+        console.log(nuevas);
+        setPacientesRecientes(nuevas);
+        localStorage.setItem('recientes', JSON.stringify(nuevas));
+    };
+
     const actualizarAcceso = (paciente) => {
         paciente.acceso=new Date(Date.now());
+        actualizarPaciente(paciente);
         updtRecientes();
     }
 
@@ -394,6 +434,12 @@ const Pacientes = () => {
         // accesoAPaciente(nuevoPaciente);
     }
 
+    const deRecientesAChat = (paciente) => {
+        paciente.acceso = new Date(Date.now());
+        actualizarPaciente(paciente);
+        localStorage.setItem('paciente', JSON.stringify(paciente));
+        navigate("/chat");
+    }
 
     return (
         <div className="container-fluid d-flex flex-nowrap p-0 position-relative" style={{overflowY: "scroll"}}>
@@ -412,7 +458,7 @@ const Pacientes = () => {
                             <div className="collapse" id="collapseRecientes">
                                 <ul ref={pacientesRecientes}>
                                     {pacientesRecientes.map((paciente) => (
-                                        <li><a>{paciente.nombre}</a></li>
+                                        <li><a onClick={() => deRecientesAChat(paciente)}>{paciente.nombre}</a></li>
                                     ))}
                                 </ul>
                             </div>
