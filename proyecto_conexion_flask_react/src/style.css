@@ -361,3 +361,39 @@ header span{
   width:80%;
   align-self: center;
 }
+
+.carousel, .carousel-inner, .carousel-item {
+  height: 100vh; /* 100% del alto de la ventana */
+  width:100vw;
+}
+
+.carousel-item img {
+  object-fit: cover; /* Asegura que la imagen cubra toda la pantalla */
+  height: 100%;
+  width: 100%;
+  /* scale:calc(1.10); */
+  /* object-fit: none; */
+  filter: brightness(65%);
+}
+
+#presentacion{
+  width:30%;
+  min-width:400px;
+  left:0;
+  height:100%;
+  background: linear-gradient(to bottom, white, #d3f7e6)
+}
+
+#button-start{
+  background: linear-gradient(to left, #c5e86c, #4298b5);
+  background-size: 200% 200%;
+  transition: background-position 0.5s ease-in-out;
+  transition: background-position 0.2s linear;
+  border: 0px solid rgba(255, 255, 255, 0);
+}
+
+#button-start:hover{
+  /* filter:brightness(85%) */
+  background-position: right bottom;
+
+}

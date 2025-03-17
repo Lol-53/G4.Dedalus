@@ -328,7 +328,13 @@ const Pacientes = () => {
 
     const accesoAPaciente = (paciente) => {
         //TODO
-        console.log(`Accedo a: ${paciente.nombre}`)
+        console.log(`Accedo a: ${paciente.nombre}`);
+        actualizarAcceso(paciente);
+
+        //Guardar datos del paciente en Localstorage
+        localStorage.setItem('paciente', JSON.stringify(paciente));
+
+        //Ir al chat y cargar los datos ALLÍ
     }
 
     const actualizarAcceso = (paciente) => {
@@ -393,7 +399,7 @@ const Pacientes = () => {
                     <div className="position-fixed vh-100 start-0 top-0 flex-column shadow lateral ">
                         <ul className="navbar-nav p-4 mt-3 w-100 d-flex flex-column">
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
-                                className="nav-link d-block w-100 pe-4" href="index.html">Inicio</a></li>
+                                className="nav-link d-block w-100 pe-4" href="/">Inicio</a></li>
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
                                 className="nav-link d-block w-100 pe-4" href="#collapseRecientes"
                                 data-bs-toggle="collapse" role="button" aria-expanded="false"
@@ -408,7 +414,7 @@ const Pacientes = () => {
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
                                 className="nav-link d-block w-100 pe-4" id="active" href="#">Pacientes</a></li>
                             <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
-                                className="nav-link d-block w-100 pe-4" href="Usuario.html">Usuario</a></li>
+                                className="nav-link d-block w-100 pe-4" href="/usuario">Usuario</a></li>
                         </ul>
                     </div>
                 </div>

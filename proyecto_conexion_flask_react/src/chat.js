@@ -352,7 +352,7 @@ const Chat = () => {
                     <div className="d-flex flex-nowrap start-0 top-0 position-relative vh-100 collapse collapse-horizontal navbar-collapse lateral"  ref={navBarCollapsed} id="navBarCollapsed">
                         <div className="position-fixed vh-100 start-0 top-0 flex-column shadow lateral ">
                             <ul className="navbar-nav p-4 mt-3 w-100 d-flex flex-column">
-                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="/Prueba.html">Inicio</a></li>
+                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="/">Inicio</a></li>
                                 <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
                                     className="nav-link d-block w-100 pe-4" href="#collapseRecientes"
                                     data-bs-toggle="collapse" role="button" aria-expanded="false"
@@ -365,8 +365,8 @@ const Chat = () => {
                                     </ul>
                                 </div>
                                 <li className="nav-item my-1 border-bottom w-100 pe-5 "><a
-                                    className="nav-link d-block w-100 pe-4" href="/Pacientes.html">Pacientes</a></li>
-                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="#">Usuario</a></li>
+                                    className="nav-link d-block w-100 pe-4" href="/pacientes">Pacientes</a></li>
+                                <li className="nav-item my-1 border-bottom w-100 pe-5 "><a className="nav-link d-block w-100 pe-4" href="/usuario">Usuario</a></li>
                             </ul>
                         </div>
                     </div>
