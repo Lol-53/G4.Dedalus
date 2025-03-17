@@ -1,1 +1,91 @@
-Buenas tardes. ¿En qué puedo ayudarte hoy?
+Aquí tienes el resumen clínico generado con los datos del paciente:
+
+Resumen Clínico de Juan Pérez
+Fecha de ingreso: 01/05/2023
+
+Datos del paciente:
+
+Nombre completo: Juan Pérez
+Edad: 68 años
+Sexo: Masculino
+Identificador: 1
+Cama: 1
+Código NUHSA: NA 58386840
+
+Motivo de Ingreso:
+
+El paciente ingresó por fiebre alta y tos productiva. Se diagnosticó una neumonía adquirida en la comunidad.
+
+Antecedentes médicos:
+
+- EPOC (Enfermedad Pulmonar Obstructiva Crónica) debido a tabaquismo crónico
+- Hipertensión arterial
+- Cirugía previa: Prótesis de cadera derecha hace 2 años
+- Alergias: Ninguna conocida
+
+Estado clínico actual:
+
+Al ingreso, el paciente presentaba disnea moderada, fiebre de 38.8°C, saturación de oxígeno del 88% al aire ambiente y crepitantes basales derechos. El diagnóstico inicial fue neumonía en lóbulo inferior derecho. Durante su estancia, el paciente mostró una evolución favorable, con mejoría progresiva de los síntomas respiratorios y la fiebre. Al alta, el paciente se encontraba estable, afebril y sin dificultad respiratoria en reposo.
+
+Pruebas realizadas:
+
+1. Laboratorio inicial (01/05/2023):
+   - Leucocitos: 15,000/µL con neutrofilia
+   - PCR: Elevada (valor específico no proporcionado)
+   - Hemoglobina: 14.5 g/dL
+   - Plaquetas: 250,000/µL
+   - Glucosa: 110 mg/dL
+   - Creatinina: 1.1 mg/dL
+   - Sodio: 134 mEq/L
+   - Potasio: 4.3 mEq/L
+   - Urea: 50 mg/dL
+   - pH: 7.35
+
+2. Radiología:
+   - Rx tórax: Infiltrado en lóbulo inferior derecho compatible con neumonía
+
+3. Otros procedimientos:
+   - Broncoscopia diagnóstica
+   - Hemocultivos: Sin crecimiento
+
+Notas médicas:
+
+01/05/2023: Ingreso del paciente. Se inicia oxigenoterapia con mascarilla reservorio, antibioterapia empírica (ceftriaxona + azitromicina) y broncodilatadores inhalados.
+
+02/05/2023: Mejoría leve. Persiste tos con esputo purulento, pero la disnea ha mejorado. Temperatura máxima 38.5°C.
+
+03/05/2023: Evolución favorable. Afebril en las últimas 24h. Se retiró oxigenoterapia. Mejoría notable de la disnea y la tos.
+
+04/05/2023: Paciente en franca mejoría, sin dificultad respiratoria en reposo ni fiebre. Se decide cambiar antibiótico a vía oral.
+
+05/05/2023: Alta hospitalaria. Paciente estable y sin quejas. Se optimiza broncodilatador de mantenimiento y se indica continuar tiotropio inhalado en domicilio.
+
+09/08/2024: Seguimiento. El paciente presenta fatiga persistente y mareos ocasionales. Se detectan niveles elevados de glucosa en sangre.
+
+30/01/2025: Control. El paciente reporta mejoría en el dolor articular tras el tratamiento con antiinflamatorios.
+
+Tratamiento y recomendaciones:
+
+1. Tratamiento administrado durante la hospitalización:
+   - Ceftriaxona 2 g IV cada 24h
+   - Azitromicina 500 mg VO cada 24h
+   - Salbutamol 5 mg nebulizado cada 6h
+   - Paracetamol 1 g VO cada 8h
+   - Oxigenoterapia
+   - Fisioterapia respiratoria
+
+2. Recomendaciones al alta:
+   - Completar 2 días más de antibiótico VO (azitromicina)
+   - Continuar con tiotropio inhalado en domicilio
+   - Control con su médico de cabecera en una semana
+   - Seguimiento por neumología debido a EPOC
+   - Educación sobre signos de alarma
+   - Optimización del tratamiento broncodilatador de mantenimiento
+
+3. Seguimiento a largo plazo:
+   - Ajuste de la medicación para el control de la glucemia
+   - Continuar con el uso del inhalador según indicaciones médicas
+   - Mantener controles periódicos
+   - Descanso adecuado y reducción del estrés para mejorar la calidad del sueño
+
+Este resumen clínico proporciona una visión general del caso del paciente Juan Pérez, incluyendo su ingreso por neumonía, evolución durante la hospitalización, tratamiento recibido y recomendaciones para su cuidado posterior al alta.

@@ -373,7 +373,7 @@ def generate_report():
     try:
         data = request.get_json()
 
-        messages2 = [{"role": "user", "content":"buenas tardes"}]
+        #messages2 = [{"role": "user", "content":"buenas tardes"}]
 
         messages = [{"role": "system", "content":"""
             Genera el contenido un pdf con el resumen clínico detallado basado en la evolución del paciente, de los datos de laboratorio iniciales, de la medicación, de las notas, procedimientos e información médica relacionada con el paciente.
@@ -486,7 +486,7 @@ def generate_report():
 
         response = client.chat.completions.create(
             model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
-            messages=messages2
+            messages=messages
         )
         print("he creado response")
 

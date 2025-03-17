@@ -780,6 +780,7 @@ const Chat = () => {
     };
 
     const generarResumen = async () => {
+
         const response=await fetch("http://localhost:5000/generate-report", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -787,19 +788,34 @@ const Chat = () => {
         });
 
         if (response.ok) {
-            // Una vez que la solicitud es exitosa, redirigimos al archivo estático
-            const link = document.createElement('a');
-            link.href = "http://localhost:5000/resumen_paciente.pdf";  // URL del archivo en 'public/'
-            link.download = "resumen_paciente.pdf";  // Nombre del archivo descargado
+            const fileResponse = await fetch("/informe_generado.pdf");
 
-            // Añadimos el enlace al DOM, pero no es visible para el usuario
-            document.body.appendChild(link);
-            link.click();  // Simula el clic en el enlace para iniciar la descarga
+            // Verificar si el archivo se obtuvo correctamente
+            if (fileResponse.ok) {
+                // const blob = await fileResponse.blob();  // Crear un Blob con el archivo recibido
+                // const url = URL.createObjectURL(blob);   // Crear una URL de objeto para el Blob
+                //
+                // // Usar la URL del objeto para crear un "pseudo-enlace" sin necesidad de <a>
+                // const fileName = "informe_generado.pdf"; // Nombre del archivo a descargar
+                // window.open( `/${fileName}`, "_blank");
 
-            // Eliminamos el enlace del DOM después de hacer el clic
-            document.body.removeChild(link);
-        } else {
-            console.error("Error al generar el reporte.");
+                const blob = await fileResponse.blob();
+                const url = URL.createObjectURL(blob);
+
+// Crear enlace oculto
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = "informe_generado.pdf"; // Nombre con el que quieres guardar el archivo
+                document.body.appendChild(link);
+
+// Simular clic
+                link.click();
+
+// Limpiar
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url); // Liberar memoria
+
+           }
         }
     }
 
