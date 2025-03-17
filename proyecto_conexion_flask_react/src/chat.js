@@ -13,6 +13,7 @@ const Chat = () => {
     const [pacientesRecientes, setPacientesRecientes] = useState([]);
 
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
+    const [msgTemporal, setMsgTemporal] = useState("");
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -249,13 +250,11 @@ const Chat = () => {
             bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
-                console.log("B");
                 this.style.height=this.scrollHeight;
                 // chatTextArea.style.height = `${this.scrollHeight -150}px`;
                 chatTextArea.style.height = "auto";
                 this.style.overflowY = "hidden";
             } else {
-                console.log("C");
                 chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
                 this.style.overflowY = "auto";
                 this.style.height="120px";
@@ -436,13 +435,13 @@ const Chat = () => {
             bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
-                console.log("B");
+
                 this.style.height=this.scrollHeight;
                 // chatTextArea.style.height = `${this.scrollHeight -150}px`;
                 chatTextArea.style.height = "auto";
                 this.style.overflowY = "hidden";
             } else {
-                console.log("C");
+
                 chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
                 this.style.overflowY = "auto";
                 this.style.height="120px";
@@ -466,7 +465,6 @@ const Chat = () => {
             document.body.style.overflow = "hidden";
         };
     }, []);
-
 
     useEffect(() => {
         const sidebar = navBarCollapsed.current;
@@ -626,13 +624,13 @@ const Chat = () => {
             bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
-                console.log("B");
+
                 this.style.height=this.scrollHeight;
                 // chatTextArea.style.height = `${this.scrollHeight -150}px`;
                 chatTextArea.style.height = "auto";
                 this.style.overflowY = "hidden";
             } else {
-                console.log("C");
+
                 chatTextArea.style.height = "150px"; // Mantiene el tamaño máximo
                 this.style.overflowY = "auto";
                 this.style.height="120px";
@@ -682,6 +680,7 @@ const Chat = () => {
 
         // Agregar el mensaje del usuario al chat
         setLoading(true);
+        setMsgTemporal(message);
         fetchHistory();
 
         const bubble = text_bubble.current;
@@ -925,6 +924,9 @@ const Chat = () => {
                                 <div className="spinner-grow spinner-grow-sm ms-2 text-body-secondary" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
+                            </div>
+                            <div className={`chat-bubble fromuser shadow ${loading ? "d-inline" : "d-none"}`}>
+                                {msgTemporal}
                             </div>
                         </div>
                         <div ref={chat_text_area} id="chat-text-area"
