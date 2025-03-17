@@ -1,5 +1,24 @@
 from fpdf import FPDF
 from tkinter import Tk, filedialog, messagebox
+import os
+
+
+def GeneraPDF(contenido):
+    exportar_txt_a_pdf(guardar_string_como_txt(contenido, "archivo"))
+
+
+def leer_txt_como_string(ruta_archivo):
+    with open(ruta_archivo, "r", encoding="utf-8") as archivo:
+        contenido = archivo.read()
+    return contenido
+
+def guardar_string_como_txt(contenido, nombre_archivo):
+    ruta = os.path.abspath(f"{nombre_archivo}.txt")
+    with open(ruta, "w", encoding="utf-8") as archivo:
+        archivo.write(contenido)
+    print(f"Archivo '{ruta}' guardado correctamente.")
+    return ruta
+
 
 def exportar_txt_a_pdf(txt_path):
     # Ocultamos la ventana principal de tkinter

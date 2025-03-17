@@ -1,5 +1,5 @@
 """
-Genera un pdf con el resumen clínico detallado basado en la evolución del paciente, de los datos de laboratorio iniciales, de la medicación, de las notas, procedimientos e información médica relacionada con el paciente.
+Genera el contenido un pdf con el resumen clínico detallado basado en la evolución del paciente, de los datos de laboratorio iniciales, de la medicación, de las notas, procedimientos e información médica relacionada con el paciente.
 
 El resumen tiene que tener como título "Resumen Clínico de " con el nombre del paciente. Luego un subtítulo con la fecha del ingreso del paciente. El resto de secciones debe de seguir el formato de Heading1.
 

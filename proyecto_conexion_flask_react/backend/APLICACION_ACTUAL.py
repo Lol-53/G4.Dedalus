@@ -9,6 +9,7 @@ import unicodedata
 from flask_cors import CORS
 from langchain_anthropic import ChatAnthropic
 import GraficaDatos as gd  # Importar la función generarGrafica
+import GeneraPDF as gpdf  # Importar la función generarGrafica
 import openai  # Utilizar el proxy de litellm para Amazon Bedrock
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
@@ -364,6 +365,22 @@ def ask_ai():
         return conversation_history
     except Exception as e:
         print(e.args)
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/generate-report", methods=["POST"])
+def generate_report():
+    try:
+
+        messages = [{"role": "system", "content":}]
+            response = client.chat.completions.create(
+            model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
+            messages=messages
+        )
+        ai_response = response.choices[0].message.content
+        gpdf.GeneraPDF(ai_response)
+
+        return jsonify({"informe": informe})
+    except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 
