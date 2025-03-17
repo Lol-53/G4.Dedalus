@@ -69,7 +69,7 @@ const Usuario = () => {
         const page = page_element.current;
         const button = menu_button.current;
 
-        console.log(button);
+
 
         if(cards.length === 0){
             handleFiles();
@@ -80,7 +80,7 @@ const Usuario = () => {
         // Verificamos si el sidebar está disponible
         if (!sidebar) {
             console.error("El elemento #navBarCollapsed no se encuentra en el DOM.");
-            return;
+            //return;
         }
 
         page.style.width = `calc( ${window.innerWidth} + 200px)`;
@@ -105,6 +105,7 @@ const Usuario = () => {
         button.addEventListener("click", function(event){
 
             event.preventDefault();
+            //console.log(button);
             sidebar.style.display="flex";
 
             if (sidebar.classList.contains("hidden")){
@@ -175,7 +176,7 @@ const Usuario = () => {
         });
 
 
-    });
+    },[]);
 
     return (
         <div className="container-fluid d-flex flex-nowrap p-0 position-relative">

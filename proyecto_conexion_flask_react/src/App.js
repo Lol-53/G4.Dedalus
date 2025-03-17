@@ -12,7 +12,7 @@ const App = () => {
                 <Route path="/" element={<Inicio />} /> {}
                 <Route path="/pacientes" element={<Pacientes />} />  {/* Página principal */}
                 <Route path="/chat" element={<Chat />} />    {/* Nueva página Chat */}
-                <Route path="/usuario" element={<Usuario />} />    {/* Nueva página Chat */}
+                <Route path="/usuario" element={<Usuario     />} />    {/* Nueva página Chat */}
             </Routes>
         </Router>
     );

@@ -7,7 +7,8 @@ import {type} from "@testing-library/user-event/dist/type";
 
 const Chat = () => {
 
-    const idPaciente=1;
+    const [idPaciente, setIdPaciente]= useState(0);
+    const [nombrePaciente, setNombrePaciente] = useState("");
 
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
     const [messages, setMessages] = useState([]);
@@ -61,6 +62,16 @@ const Chat = () => {
         const history = await getHistory();
         setConvHistory(history); // Guardamos el historial en el estado
     }
+
+    useEffect(() => {
+        let paciente = localStorage.getItem('paciente');
+
+        if(paciente){
+            paciente = JSON.parse(paciente);
+            setIdPaciente(paciente.id);
+            setNombrePaciente(paciente.nombre);
+        }
+    }, []);
 
     useEffect(() => {
         document.body.style.overflow = "hidden";
@@ -376,7 +387,7 @@ const Chat = () => {
                     <div className="position-relative d-flex" id="navigation-buttons">
 
                         <button id="button-back" className="mx-2 btn btn-light mt-2">
-                            <a href="/Pacientes.html">
+                            <a href="/pacientes">
                                 <i className="bi bi-arrow-left"></i>
                             </a>
                         </button>
@@ -394,7 +405,7 @@ const Chat = () => {
                     </div>
 
                     <header>
-                        <h2>Paciente 1</h2>
+                        <h2>{nombrePaciente}</h2>
                     </header>
 
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">

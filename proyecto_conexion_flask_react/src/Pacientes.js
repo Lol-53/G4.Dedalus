@@ -4,6 +4,7 @@ import "./style.css"; // Importa los estilos específicos del chat
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importar estilos
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importar JS de Bootstrap
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { useNavigate } from "react-router-dom";
 import {getTTFB} from "web-vitals"; // Importar iconos de Bootstrap
 
 const Pacientes = () => {
@@ -35,6 +36,8 @@ const Pacientes = () => {
     const navBarCollapsed = useRef(null);
     const page_element = useRef(null);
     const menu_button = useRef(null);
+
+    const navigate = useNavigate();
 
     const ordenarAlfabetico = (cards) => {
         return [...cards].sort((a, b) => a.nombre.localeCompare(b.nombre));
@@ -324,10 +327,10 @@ const Pacientes = () => {
         });
 
 
-    });
+    }, []);
 
     const accesoAPaciente = (paciente) => {
-        //TODO
+
         console.log(`Accedo a: ${paciente.nombre}`);
         actualizarAcceso(paciente);
 
@@ -335,6 +338,7 @@ const Pacientes = () => {
         localStorage.setItem('paciente', JSON.stringify(paciente));
 
         //Ir al chat y cargar los datos ALLÍ
+        navigate("/chat");
     }
 
     const actualizarAcceso = (paciente) => {
@@ -389,6 +393,7 @@ const Pacientes = () => {
 
         // accesoAPaciente(nuevoPaciente);
     }
+
 
     return (
         <div className="container-fluid d-flex flex-nowrap p-0 position-relative" style={{overflowY: "scroll"}}>
@@ -528,7 +533,7 @@ const Pacientes = () => {
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Alergias: </span><input onChange={(e) => setNuevoAlergias(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Alergias"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Motivo de Ingreso: </span><input onChange={(e) => setNuevoFechaIngreso(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="MotivoIngreso"/></div>
+                                                className={"fw-semibold"}>Motivo de Ingreso: </span><input onChange={(e) => setNuevoMotivo(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="MotivoIngreso"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Diagnóstico Principal: </span><input onChange={(e) => setNuevoDiagnostico(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="DiagnosticoPrincipal"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
