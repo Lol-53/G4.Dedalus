@@ -229,16 +229,16 @@ const Chat = () => {
         if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
 
         // Ajustar la altura inicial
-        let initialHeight = bubble.offsetHeight - 40;
+        let initialHeight =  40;
         let initialBubble= bubble.style.width;
-        textInput.style.height = `${bubble.offsetHeight - 20}px`;
+        textInput.style.height = textInput.value === "" ? "40px" : `${bubble.offsetHeight}px`;
         contenidoChat.style.height=window.innerHeight-100 + "px";
 
         textInput.addEventListener("input", function () {
 
             if (this.value.trim() === "") {
                 bubble.style.height= initialBubble;
-                this.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
+                textInput.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
                 chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
                 return;
             }
@@ -246,7 +246,7 @@ const Chat = () => {
             this.style.height = "auto"; // Restablece la altura para recalcular
             this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
             chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
-            bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+            bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
                 console.log("B");
@@ -416,16 +416,16 @@ const Chat = () => {
         if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
 
         // Ajustar la altura inicial
-        let initialHeight = bubble.offsetHeight - 40;
+        let initialHeight = 40;
         let initialBubble= bubble.style.width;
-        textInput.style.height = `${bubble.offsetHeight - 40}px`;
+        textInput.style.height = textInput.value === "" ? "40px" : `${bubble.offsetHeight}px`;
         contenidoChat.style.height=window.innerHeight-100 + "px";
 
         textInput.addEventListener("input", function () {
 
             if (this.value.trim() === "") {
                 bubble.style.height= initialBubble;
-                this.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
+                textInput.style.height = `${initialHeight}px`; // Vuelve a la altura inicial si está vacío
                 chatTextArea.style.height = "auto"; // Resetea la altura del contenedor también
                 return;
             }
@@ -433,7 +433,7 @@ const Chat = () => {
             this.style.height = "auto"; // Restablece la altura para recalcular
             this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
             chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
-            bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+            bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
                 console.log("B");
@@ -450,6 +450,8 @@ const Chat = () => {
             }
             bubble.style.height = `calc(${this.innerHeight}px + ${initialBubble}px)`;
         });
+
+
 
         window.addEventListener('load', function() {
 
@@ -604,9 +606,9 @@ const Chat = () => {
         if (!bubble || !textInput || !chatTextArea) return; // Evita errores si algún elemento no existe
 
         // Ajustar la altura inicial
-        let initialHeight = bubble.offsetHeight - 40;
+        let initialHeight = 40;
         let initialBubble= bubble.style.width;
-        textInput.style.height = `${bubble.offsetHeight - 40}px`;
+        textInput.style.height = textInput.value === "" ? "40px" : `${bubble.offsetHeight}px`;
         contenidoChat.style.height=window.innerHeight-100 + "px";
 
         textInput.addEventListener("input", function () {
@@ -621,7 +623,7 @@ const Chat = () => {
             this.style.height = "auto"; // Restablece la altura para recalcular
             this.style.height = `${this.scrollHeight-15}px`; // Ajusta según el contenido
             chat.styleheight =`${window.innerHeight-200-this.scrollHeight-50}px !important`
-            bubble.style.height = `calc(${this.style.height} + ${textInput.style.fontSize})`;
+            bubble.style.height = `calc(40px + ${textInput.style.fontSize})`;
             // Ajustar el contenedor principal (chat_text_area)
             if (this.scrollHeight< 150) {
                 console.log("B");
@@ -674,7 +676,7 @@ const Chat = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Evita que la página se recargue
+        if (e && e.preventDefault) e.preventDefault(); // Evita que la página se recargue
 
         if (!message.trim()) return; // Evita enviar mensajes vacíos
 
@@ -705,6 +707,17 @@ const Chat = () => {
         scrollToBottom();
         setLoading(false);
     };
+
+    useEffect(() => {
+        const textInput = campo_msg.current;
+        textInput.addEventListener("keydown", function(event){
+            if(event.key === "Enter" && !event.shiftKey && !event.ctrlKey && !event.altKey){
+                event.preventDefault();
+                console.log("hola");
+                handleSubmit(event);
+            }
+        });
+    }, [campo_msg]);
 
 
     const sendMessageToBackend = async (userMessage) => {
