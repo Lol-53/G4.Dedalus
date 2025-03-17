@@ -154,7 +154,7 @@ lab_df.columns = lab_df.columns.str.lower()
 contextos_pacientes = {}
 
 @app.route("/add-patient", methods=["POST"])
-def get_history():
+def get_paciente():
     try:
         # Obtener los datos del paciente desde el cuerpo de la solicitud (JSON)
         data = request.get_json()
