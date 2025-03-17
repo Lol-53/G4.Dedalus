@@ -307,7 +307,7 @@ header h2{
   border: 0px;
 }
 
-#generar-resumen:hover, #botonnuevopaciente:hover{
+#generar-resumen:hover{
   background-color: var(--greenD);
   transition: background-color 0.2s linear,  color 0.2s linear;
   border: 0px;
@@ -384,16 +384,23 @@ header span{
   background: linear-gradient(to bottom, white, #d3f7e6)
 }
 
-#button-start{
+#button-start, #botonnuevopaciente{
   background: linear-gradient(to left, #c5e86c, #4298b5);
   background-size: 200% 200%;
   transition: background-position 0.5s ease-in-out;
-  transition: background-position 0.2s linear;
   border: 0px solid rgba(255, 255, 255, 0);
 }
 
-#button-start:hover{
-  /* filter:brightness(85%) */
+#button-start:hover, #botonnuevopaciente:hover{
   background-position: right bottom;
+  transition: background-position 0.5s ease-in-out;
+
+}
+
+input:focus, textarea:focus {
+  outline: none; /* Evita el borde azul predeterminado */
+  box-shadow: none; /* Evita efectos de sombra */
+  border: inherit; /* Mantiene el borde original */
+  background: inherit; /* Mantiene el fondo original */
 
 }
