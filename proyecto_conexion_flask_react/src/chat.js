@@ -46,6 +46,8 @@ const Chat = () => {
                 body: JSON.stringify({id_paciente: idPaciente}),
             });
 
+            console.log("Paso " + idPaciente);
+
             const data = await response.json();
 
             if (!Array.isArray(data)) {
@@ -73,6 +75,7 @@ const Chat = () => {
 
         if(paciente){
             paciente = JSON.parse(paciente);
+            console.log(paciente.id);
             setIdPaciente(paciente.id);
             setNombrePaciente(paciente.nombre);
         }
@@ -228,7 +231,7 @@ const Chat = () => {
         // Ajustar la altura inicial
         let initialHeight = bubble.offsetHeight - 40;
         let initialBubble= bubble.style.width;
-        textInput.style.height = `${bubble.offsetHeight - 40}px`;
+        textInput.style.height = `${bubble.offsetHeight - 20}px`;
         contenidoChat.style.height=window.innerHeight-100 + "px";
 
         textInput.addEventListener("input", function () {
@@ -893,14 +896,24 @@ const Chat = () => {
                                 </div>
 
                             ))}
-                            <div className={`chat-bubble fromai shadow ${loading ? "d-inline" : "d-none"}`}>
-                                <div className="spinner-grow" role="status">
+                            <div className={`chat-bubble fromassistant shadow flex-wrap flex-row ${loading ? "d-flex" : "d-none"}`}>
+                                <div className="spinner-grow d-flex spinner-grow-sm me-2 text-body-secondary"
+                                     role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm text-body-secondary" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                                <div className="spinner-grow spinner-grow-sm ms-2 text-body-secondary" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
                             </div>
                         </div>
-                        <div ref={chat_text_area} id="chat-text-area" className="d-flex flex-wrap align-items-center mb-3 align-items-center mt-0 flex-grow-1">
-                            <form onSubmit={handleSubmit} className="d-flex flex-wrap flex-column flex-fill bg-body-tertiary rounded-pill shadow d-flex position-relative align-self-center m-2 mt-0" ref={text_bubble} id="text-bubble">
+                        <div ref={chat_text_area} id="chat-text-area"
+                             className="d-flex flex-wrap align-items-center mb-3 align-items-center mt-0 flex-grow-1">
+                            <form onSubmit={handleSubmit}
+                                  className="d-flex flex-wrap flex-column flex-fill bg-body-tertiary rounded-pill shadow d-flex position-relative align-self-center m-2 mt-0"
+                                  ref={text_bubble} id="text-bubble">
                                 <div className="d-flex align-items-center justify-content-between my-1 h-100">
                                     <textarea
                                         type="text"

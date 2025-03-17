@@ -1,0 +1,12 @@
+[
+  {
+    "role": "user",
+    "content": "hola",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "Hola. Soy una IA dise\u00f1ada para asistir al personal sanitario con informaci\u00f3n y recomendaciones sobre pacientes espec\u00edficos. \u00bfEn qu\u00e9 puedo ayudarte con respecto al paciente Ana Mart\u00ednez?",
+    "type": "text"
+  }
+]

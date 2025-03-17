@@ -28,7 +28,11 @@ def exportar_txt_a_pdf(txt_path, output_pdf_path):
 
         pdf = FPDF()
         pdf.add_page()
-        pdf.set_font("Arial", size=12)
+
+        font_path = os.path.join(os.path.dirname(__file__), "DejaVuSans.ttf")
+        pdf.add_font("DejaVu", "", font_path, uni=True)
+        pdf.set_font("DejaVu", size=12)
+
         for linea in contenido:
             pdf.multi_cell(0, 10, linea.strip())
 

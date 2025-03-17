@@ -155,36 +155,56 @@ lab_df.columns = lab_df.columns.str.lower()
 # Almacenar contexto de pacientes en memoria
 contextos_pacientes = {}
 
+@app.route("/csv", methods=["GET"])
+def get_csv():
+    # Obtener la ruta absoluta correcta
+    base_dir = os.getcwd()  # Obtiene el directorio donde se ejecuta el script
+    csv_dir = os.path.join(base_dir, "datos_pacientes")  # Ruta absoluta al directorio
+    csv_path = os.path.join(csv_dir, "info_pacientes.csv")  # Ruta completa al archivo
+
+    # Verificar si el archivo existe
+    if not os.path.exists(csv_path):
+        print("Error: no se ha encontrado el archivo CSV con los datos de los pacientes")
+        return jsonify({"error": "No se ha encontrado el archivo CSV con los datos de los pacientes"}), 404
+
+    # Enviar el archivo
+    return send_from_directory(csv_dir, "info_pacientes.csv")
+
 @app.route("/add-patient", methods=["POST"])
 def get_paciente():
     try:
         # Obtener los datos del paciente desde el cuerpo de la solicitud (JSON)
         data = request.get_json()
+        print("Datos recibidos:", data)
 
         # Extraer la información del paciente
         id_paciente = data.get("id_paciente")
         nombre = data.get("nombre")
-        edad = data.get("edad")
+        edad = data.get("edad")  # No entre comillas
         sexo = data.get("sexo")
         alergias = data.get("alergias")
         motivo_ingreso = data.get("motivoIngreso")
         diagnostico_principal = data.get("diagnosticoPrincipal")
         condiciones_previas = data.get("condicionesPrevias")
-        fecha_ingreso = data.get("fechaIngreso")
+        fecha_ingreso =data.get("fechaIngreso")
         servicio = data.get("servicio")
         estado_al_ingreso = data.get("estadoAlIngreso")
-        cama = data.get("cama")
+        cama = data.get("cama")  # No entre comillas
         nuhsa = data.get("nuhsa")
 
-        # Abre el archivo CSV en modo de adición
-        with open('patients.csv', mode='a', newline='') as infopacientes:
-            writer = csv.writer(infopacientes)
+        # Ruta absoluta del archivo CSV
+        csv_path = os.path.join(os.getcwd(), "datos_pacientes", "info_pacientes.csv")
+        print("Ruta del CSV:", csv_path)  # 👈 Imprime la ruta completa del archivo
 
-            # Escribir los datos del paciente como una nueva fila en el archivo CSV
+        # Abre el archivo CSV en modo de adición
+        with open(csv_path, mode='a', newline='', encoding='utf-8') as infopacientes:
+            writer = csv.writer(infopacientes)
             writer.writerow([id_paciente, nombre, edad, sexo, alergias, motivo_ingreso, diagnostico_principal,
                              condiciones_previas, fecha_ingreso, servicio, estado_al_ingreso, cama, nuhsa])
 
+        print("Paciente agregado correctamente")  # 👈 Confirma que la escritura fue exitosa
         return jsonify({"message": "Paciente agregado correctamente"}), 200
+
     except Exception as e:
         return jsonify({"message": "Error al agregar paciente", "error": str(e)}), 500
 
@@ -193,6 +213,7 @@ def get_history():
     try:
         data = request.get_json()
         id_paciente = str(data.get("id_paciente"))
+        print("coge el id: "+id_paciente)
         with open(f"{DATA_PATH}{id_paciente}.json", "r") as f:
             historial = json.load(f)
         return jsonify(historial)
@@ -288,6 +309,7 @@ def ask_ai():
 
         id_paciente = int(id_paciente)
 
+        id_string = str(id_paciente)
         contexto_paciente = contextos_pacientes[id_paciente]
 
         if not contexto_paciente:
@@ -325,7 +347,7 @@ def ask_ai():
 
             print(f"Llamando a generarGrafica con: id_paciente={id_paciente}, x={x}, y={y}, tipo={graficos_seleccionados}")
             # Llamar a la función generarGrafica
-            paths_imagenes = gd.generarGrafica("lab_iniciales", id_paciente, x, y, graficos_seleccionados)
+            paths_imagenes = gd.generarGrafica("lab_iniciales", str(id_paciente), x, y, graficos_seleccionados)
             #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
             ai_response2 = f'{paths_imagenes[0]}'
 
@@ -365,6 +387,7 @@ def ask_ai():
 
         return conversation_history
     except Exception as e:
+        print("error en ask-ai:")
         print(e.args)
         return jsonify({"error": str(e)}), 500
 

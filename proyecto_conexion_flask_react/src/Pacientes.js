@@ -47,11 +47,11 @@ const Pacientes = () => {
         return [...cards].sort((a, b) => new Date(a[par]) - new Date(b[par])).reverse();
     }
 
-    const getSetterRecientes = (pacientes) => {
+    function getSetterRecientes (pacientes) {
         let ordenados = ordenarFecha(pacientes, "acceso");
         ordenados = ordenados.slice(0,3);
-        //setPacientesRecientes(ordenados);
-
+        setPacientesRecientes(ordenados);
+        return ordenados;
     }
 
     function updtRecientes(){
@@ -60,14 +60,22 @@ const Pacientes = () => {
 
     // Maneja la carga del archivo CSV
     const handleFiles = () => {
-        fetch("/info_pacientes.csv")
-            .then(response => response.text()) // Obtiene el contenido del CSV
+        fetch("http://localhost:5000/csv")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error al cargar el CSV");
+                }
+                return response.text();
+            })
             .then(csvText => {
+                console.log("CSV Cargado:", csvText); // Verifica que el CSV se está recibiendo correctamente
+
                 Papa.parse(csvText, {
                     complete: (result) => {
                         const data = result.data;
-                        console.log(data[0]);
-                        // Verifica si hay datos y si la cabecera es válida
+
+                        console.log("Primera fila del CSV:", data[0]); // Verifica la estructura
+
                         if (data.length > 1 && data[0][0] === "ID") {
                             const extractedCards = data.slice(1).map((row) => ({
                                 nombre: row[1],   // "Nombre"
@@ -77,28 +85,29 @@ const Pacientes = () => {
                                 fueraplanta: Math.round(Math.random()),
                                 color: Math.floor(Math.random() * 4) + 1,
                                 display: 1,
-                                acceso: new Date(Date.now()),
-                                creacion: new Date(Date.now()-1)
+                                acceso: new Date(),
+                                creacion: new Date(Date.now() - 1)
                             }));
 
-                            setCards(extractedCards);
+                            setCards(extractedCards); // Asegurar que setCards se actualiza con el nuevo array
+
                             let recientes = localStorage.getItem('recientes');
-                            if(recientes){
-                                recientes=JSON.parse(recientes);
-                                setPacientesRecientes(recientes)
-                            }else{
-                                getSetterRecientes(extractedCards);
-                                localStorage.setItem('recientes', JSON.stringify(extractedCards));
+                            if (recientes) {
+                                recientes = JSON.parse(recientes);
+                                setPacientesRecientes(recientes);
+                            } else {
+                                const ordenados = getSetterRecientes(extractedCards);
+                                localStorage.setItem('recientes', JSON.stringify(ordenados));
                             }
                         } else {
                             alert("Formato de CSV incorrecto");
                         }
                     },
-                    header: false, // La primera fila contiene los encabezados
+                    header: false,
                     skipEmptyLines: true,
                 });
             })
-        console.log("datos de las tarjetas cargados correctamente: " + cards);
+            .catch(error => console.error("Error cargando el CSV:", error));
     };
 
     function handleTipoBusquedaChange(event) {
@@ -390,6 +399,33 @@ const Pacientes = () => {
         //anyadir a cards / CSV
         //crear el chat y redigir allí
         const nuevoId = cards.length > 0 ? Math.max(...cards.map(p => p.id)) + 1 : 1;
+
+        try {
+            const response= await fetch("http://localhost:5000/add-patient", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    id_paciente: nuevoId,
+                    nombre: nuevoNombre,
+                    edad: nuevoEdad,
+                    sexo: nuevoSexo,
+                    alergias: nuevoAlergias,
+                    motivoIngreso: nuevoMotivo,
+                    diagnosticoPrincipal: nuevoDiagnostico,
+                    condicionesPrevias: nuevoCondiciones,
+                    fechaIngreso: nuevoFechaIngreso,
+                    servicio: nuevoServicio,
+                    estadoAlIngreso: nuevoEstado,
+                    cama: nuevoCama ,
+                    nuhsa: nuevoNUHSA,
+                }),
+            });
+            const result = await response.json();
+        } catch (error) {
+            console.error("Error al crear el paciente:", error);
+        }
+
+
         const nuevoPaciente = {
             nombre: nuevoNombre,   // "Nombre"
             nuhsa: nuevoNUHSA,   // "NUHSA"
@@ -405,33 +441,8 @@ const Pacientes = () => {
         const nuevoCards = [...cards, nuevoPaciente];
         setCards(nuevoCards);
 
-
-
-        try {
-            await fetch("http://localhost:5000/add-patient", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({
-                    id_paciente: nuevoPaciente.id,
-                    nombre: nuevoNombre,
-                    edad: nuevoEdad,
-                    sexo: nuevoSexo,
-                    alergias: nuevoAlergias,
-                    motivoIngreso: nuevoMotivo,
-                    diagnosticoPrincipal: nuevoDiagnostico,
-                    condicionesPrevias: nuevoCondiciones,
-                    fechaIngreso: nuevoFechaIngreso,
-                    servicio: nuevoServicio,
-                    estadoAlIngreso: nuevoEstado,
-                    cama: nuevoCama ,
-                    nuhsa: nuevoNUHSA,
-                }),
-            });
-        } catch (error) {
-            console.error("Error al crear el paciente:", error);
-        }
-
-        // accesoAPaciente(nuevoPaciente);
+        accesoAPaciente(nuevoPaciente);
+        navigate("/chat");
     }
 
     const deRecientesAChat = (paciente) => {
@@ -563,32 +574,32 @@ const Pacientes = () => {
                                 <div className="modal-body w-100" style={{overflowX:"hidden"}}>
                                     <form className={"m-3"} onSubmit={crearNuevoPaciente}>
                                         <div className={"mb-5 d-flex flex-column w-100"}>
-                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Nombre: </span><input onChange={(e) => setNuevoNombre(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Nombre"/></div>
-                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Edad: </span><input onChange={(e) => setNuevoEdad(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Edad"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Nombre: </span><input required onChange={(e) => setNuevoNombre(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Nombre"/></div>
+                                            <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span className={"fw-semibold"}>Edad: </span><input required onChange={(e) => setNuevoEdad(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Edad"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Sexo: </span>
                                                 <div className={" ms-5 d-flex flex-grow-1 justify-content-around"}>
-                                                    <input type="radio" id="Masculino" value="Masculino" name="Sexo" autoComplete="off"
+                                                    <input required type="radio" id="Masculino" value="Masculino" name="Sexo" autoComplete="off"
                                                            className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Masculino"}/>
                                                     <label className={"btn me-1"} htmlFor="Masculino">Masculino</label>
-                                                    <input type="radio" id="Femenino" value="Femenino" name="Sexo" autoComplete="off"
+                                                    <input required type="radio" id="Femenino" value="Femenino" name="Sexo" autoComplete="off"
                                                            className={"btn-check"} onChange={(e) => setNuevoSexo(e.target.value)} checked={nuevoSexo === "Femenino"}/>
                                                     <label className={"btn ms-1"} htmlFor="Femenino">Femenino</label>
                                                 </div>
                                             </div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Alergias: </span><input onChange={(e) => setNuevoAlergias(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Alergias"/></div>
+                                                className={"fw-semibold"}>Alergias: </span><input required onChange={(e) => setNuevoAlergias(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="Alergias"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Motivo de Ingreso: </span><input onChange={(e) => setNuevoMotivo(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="MotivoIngreso"/></div>
+                                                className={"fw-semibold"}>Motivo de Ingreso: </span><input required onChange={(e) => setNuevoMotivo(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="MotivoIngreso"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Diagnóstico Principal: </span><input onChange={(e) => setNuevoDiagnostico(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="DiagnosticoPrincipal"/></div>
+                                                className={"fw-semibold"}>Diagnóstico Principal: </span><input required onChange={(e) => setNuevoDiagnostico(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="DiagnosticoPrincipal"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Condiciones Previas: </span><input onChange={(e) => setNuevoCondiciones(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="CondicionesPrevias"/></div>
+                                                className={"fw-semibold"}>Condiciones Previas: </span><input required onChange={(e) => setNuevoCondiciones(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="CondicionesPrevias"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Fecha de Ingreso: </span><input onChange={(e) => setNuevoFechaIngreso(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="date" name="FechaIngreso"/></div>
+                                                className={"fw-semibold"}>Fecha de Ingreso: </span><input required onChange={(e) => setNuevoFechaIngreso(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="date" name="FechaIngreso"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
                                                 className={"fw-semibold"}>Servicio: </span>
-                                                <select id="Servicio" className={" ms-5 flex-grow-1 border-0 border-bottom form-select"} onChange={(e) => setNuevoServicio(e.target.value)}>
+                                                <select required id="Servicio" className={" ms-5 flex-grow-1 border-0 border-bottom form-select"} onChange={(e) => setNuevoServicio(e.target.value)}>
                                                     <option value="Neumología">Neumología</option>
                                                     <option value="Cardiología">Cardiología</option>
                                                     <option value="UCI">UCI</option>
@@ -598,11 +609,11 @@ const Pacientes = () => {
                                                     <option value="Gastroenterología">Gastroenterología</option>
                                                 </select></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Estado al ingreso: </span><input onChange={(e) => setNuevoEstado(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="EstadoAlIngreso"/></div>
+                                                className={"fw-semibold"}>Estado al ingreso: </span><input required onChange={(e) => setNuevoEstado(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="EstadoAlIngreso"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>Número de Cama: </span><input onChange={(e) => setNuevoCama(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Cama"/></div>
+                                                className={"fw-semibold"}>Número de Cama: </span><input required onChange={(e) => setNuevoCama(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="number" name="Cama"/></div>
                                             <div className={"d-flex w-100 justify-content-between align-items-center my-1"}><span
-                                                className={"fw-semibold"}>NUHSA: </span><input onChange={(e) => setNuevoNUHSA(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="NUHSA"/></div>
+                                                className={"fw-semibold"}>NUHSA: </span><input required onChange={(e) => setNuevoNUHSA(e.target.value)} className={" ms-5 flex-grow-1 border-0 border-bottom"} type="text" name="NUHSA"/></div>
 
                                         </div>
                                         <div className="modal-footer w-100">
