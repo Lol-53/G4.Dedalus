@@ -178,5 +178,25 @@
     "role": "assistant",
     "content": "Lo siento por la confusi\u00f3n anterior. Despu\u00e9s de revisar cuidadosamente la informaci\u00f3n proporcionada, puedo confirmar que s\u00ed tengo datos espec\u00edficos para Juan P\u00e9rez del d\u00eda 02/05/2023 a las 14:00. Aqu\u00ed est\u00e1 la informaci\u00f3n:\n\nFecha: 02/05/2023\nHora: 14:00\n\nMediciones:\n- Presi\u00f3n Sist\u00f3lica: 110 mmHg\n- Presi\u00f3n Diast\u00f3lica: 70 mmHg\n- Frecuencia Card\u00edaca: 92 latidos por minuto\n- Temperatura: 38.5\u00b0C\n- Frecuencia Respiratoria: 22 respiraciones por minuto\n- Saturaci\u00f3n de Ox\u00edgeno: 95%\n- Glucosa: 110 mg/dL\n\nEstos son todos los datos disponibles para ese momento espec\u00edfico. Como puede ver, se registraron los signos vitales y el nivel de glucosa de Juan en ese momento.",
     "type": "text"
+  },
+  {
+    "role": "user",
+    "content": "hola",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "Hola de nuevo. \u00bfEn qu\u00e9 puedo ayudarte con respecto al paciente Juan P\u00e9rez? Estoy aqu\u00ed para proporcionar informaci\u00f3n sobre su caso, responder preguntas espec\u00edficas o ayudar con cualquier otra consulta relacionada con su estado de salud y tratamiento. \u00bfHay algo en particular que te gustar\u00eda saber?",
+    "type": "text"
+  },
+  {
+    "role": "user",
+    "content": "hola",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "Hola de nuevo. Parece que est\u00e1s tratando de iniciar una conversaci\u00f3n. Como asistente m\u00e9dico virtual, estoy aqu\u00ed para ayudarte con cualquier pregunta o informaci\u00f3n que necesites sobre el paciente Juan P\u00e9rez. \n\n\u00bfHay algo espec\u00edfico que quieras saber sobre su caso cl\u00ednico, su tratamiento, sus signos vitales, o cualquier otro aspecto de su atenci\u00f3n m\u00e9dica? Estar\u00e9 encantado de proporcionarte la informaci\u00f3n que necesites bas\u00e1ndome en los datos disponibles.\n\nSi tienes alguna pregunta en particular o si necesitas un resumen de su situaci\u00f3n actual, no dudes en preguntar. Estoy aqu\u00ed para ayudarte.",
+    "type": "text"
   }
 ]

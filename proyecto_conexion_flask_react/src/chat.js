@@ -781,6 +781,8 @@ const Chat = () => {
 
     const generarResumen = async () => {
 
+        setLoading(true)
+
         const response=await fetch("http://localhost:5000/generate-report", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -816,6 +818,7 @@ const Chat = () => {
                 URL.revokeObjectURL(url); // Liberar memoria
 
            }
+            setLoading(false);
         }
     }
 
@@ -882,17 +885,19 @@ const Chat = () => {
 
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
-                                   <div className={`chat-bubble fromai shadow ${loading ? "d-inline" : "d-none"}`}>
-                                       <div className="spinner-grow" role="status">
-                                           <span className="visually-hidden">Loading...</span>
-                                       </div>
-                                   </div>
+
 
                             {convHistory.map((msg, index) => (
                                 <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
                                     {renderMessageContent(msg)}
                                 </div>
+
                             ))}
+                            <div className={`chat-bubble fromai shadow ${loading ? "d-inline" : "d-none"}`}>
+                                <div className="spinner-grow" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
                         </div>
                         <div ref={chat_text_area} id="chat-text-area" className="d-flex flex-wrap align-items-center mb-3 align-items-center mt-0 flex-grow-1">
                             <form onSubmit={handleSubmit} className="d-flex flex-wrap flex-column flex-fill bg-body-tertiary rounded-pill shadow d-flex position-relative align-self-center m-2 mt-0" ref={text_bubble} id="text-bubble">
