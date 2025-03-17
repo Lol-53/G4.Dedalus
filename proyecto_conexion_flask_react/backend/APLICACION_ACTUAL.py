@@ -10,6 +10,7 @@ from flask_cors import CORS
 from langchain_anthropic import ChatAnthropic
 import GraficaDatos as gd  # Importar la función generarGrafica
 import GeneraPDF as gpdf  # Importar la función generarGrafica
+import generardorJSONResumen as gjson  # Importar la función generarGrafica
 import openai  # Utilizar el proxy de litellm para Amazon Bedrock
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
@@ -370,17 +371,131 @@ def ask_ai():
 @app.route("/generate-report", methods=["POST"])
 def generate_report():
     try:
+        data = request.get_json()
 
-        messages = [{"role": "system", "content":}]
-            response = client.chat.completions.create(
+        messages = [{"role": "system", "content":"""
+            Genera el contenido un pdf con el resumen clínico detallado basado en la evolución del paciente, de los datos de laboratorio iniciales, de la medicación, de las notas, procedimientos e información médica relacionada con el paciente.
+            
+            El resumen tiene que tener como título "Resumen Clínico de " con el nombre del paciente. Luego un subtítulo con la fecha del ingreso del paciente. El resto de secciones debe de seguir el formato de Heading1.
+            
+            El resumen debe incluir las siguientes secciones: Datos del paciente, Motivo de Ingreso, Antecedentes médicos, Estado clínico actual, Pruebas realizadas, notas medicas realizadas con sus respectivas fechas ,Tratamiento y recomendaciones.
+            
+            Si en alguna sección no existen datos o se queda vacía, se deberá de poner "No se tiene información de {Nombre Sección vacía}" donde nombre sección vacía corresponde con el nombre de la sección que no tiene ningún dato.
+            
+            Información médica del paciente:
+            
+            Primera sección de Datos del paciente:
+            Nombre del paciente: [Nombre completo del paciente]
+            Edad: [Edad del paciente] años
+            Sexo: [Masculino/Femenino]
+            Identificador: [Número ID del paciente]
+            Cama: [número de cama que ocupa el paciente]
+            NUHSA: [Código NUHSA asociado al paciente]
+            Diagnostico Principal: [Codigo del Diagnóstico Principal]
+            
+            Segunda sección Motivo del Ingreso:
+            Motivo de ingreso: [Descripción del estado del ingreso por el cual el paciente está buscando atención médica o ha recibido atención médica]
+            
+            
+            Tercera sección Antecedentes médicos:
+            Antecedentes médicos: [Descripción de enfermedades o condiciones previas del paciente, como enfermedades crónicas, cirugías previas, etc.]
+            Alérgias: [Descripción de las alérgias que presenta el paciente]
+            
+            
+            Cuarta sección Estado clínico actual:
+            Síntomas al ingreso: [Descripción de los síntomas actuales del paciente al momento de la consulta o ingreso]
+            Evolución del paciente: [Descripción de la evolución de los síntomas del paciente junto a la flecha del estudio de la evolución]
+            Diagnóstico inicial: [Descripción del diagnóstico inicial]
+            
+            
+            Quinta sección Pruebas realizadas:
+            Resultados de Laboratorio: [Listado de valores y magnitudes de pruebas realizadas en el laboratorio del paciente]
+            Pruebas realizadas: [Descripción de las pruebas o procedimientos que se han realizado al paciente, como  radiografías, ecografías, etc.]
+            
+            Sexta sección Notas médicas:
+            Notas médicas: [Registros, en formato lista "fecha,nota realizada", del paciente realizados por personal médico junto con su fecha de realización]
+            
+            
+            
+            Séptima sección Tratamiento y Recomendaciones:
+            Tratamiento administrado: [Descripción de los tratamientos que se le han administrado al paciente, como medicamentos con la dosis y vía, intervenciones quirúrgicas, terapias, etc.]
+            Estado clínico actual: [Descripción del estado clínico del paciente tras las intervenciones iniciales, incluyendo mejoría o complicaciones]
+            
+            
+            Genera un resumen clínico con la siguiente estructura:
+            Resumen Clínico del nombre paciente
+            Fecha de ingreso
+            
+            Datos del paciente:
+            
+            Nombre completo
+            Edad
+            Sexo
+            Identificador
+            Cama
+            Código NUHSA
+            
+            Motivo de Ingreso:
+            
+            Breve descripción del motivo que llevó al paciente a buscar atención médica.
+            Antecedentes médicos:
+            
+            Enfermedades crónicas, cirugías previas, antecedentes familiares relevantes.
+            Estado clínico actual:
+            
+            Descripción de los síntomas actuales, diagnóstico y evolución del estado del paciente.
+            Pruebas realizadas:
+            
+            Listado y detalle de las pruebas realizadas, los resultados obtenidos con sus magnitudes y el diagnóstico a partir de las mismas.
+            Notas médicas:
+            
+            Listado de las fechas y notas realizadas al paciente por el personal médico.
+            Tratamiento y recomendaciones:
+            
+            Detalles del tratamiento administrado (medicamentos, terapias) y recomendaciones para el seguimiento.
+            
+            
+            
+            """}]
+        csv_files = [
+            "datos_pacientes/info_pacientes.csv",
+            "datos_pacientes/notas.csv",
+            "datos_pacientes/resumen_evolucion.csv",
+            "datos_pacientes/resumen_evolucion_p1.csv",
+            "datos_pacientes/resumen_evolucion_p2.csv",
+            "datos_pacientes/resumen_evolucion_process.csv",
+            "datos_pacientes/resumen_lab_iniciales.csv",
+            "datos_pacientes/resumen_medicacion.csv",
+            "datos_pacientes/resumen_procedimientos.csv"
+        ]
+
+
+        print("hola")
+        csv_data = gjson.csv_a_json_por_id(csv_files, data.get("id_paciente"))
+        csv_data = json.dumps(csv_data, ensure_ascii=False, indent=2)
+        print("he pasado cargar CSV")
+        messages.append({"role": "system", "content": csv_data})
+        print("he pasado append")
+        print(csv_data)
+
+        messages.append({"role": "user", "content": "generame un resumen con los datos del paciente"})
+
+        print("he pasado append 2")
+
+        response = client.chat.completions.create(
             model="bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0",
             messages=messages
         )
-        ai_response = response.choices[0].message.content
-        gpdf.GeneraPDF(ai_response)
+        print("he creado response")
 
-        return jsonify({"informe": informe})
+        ai_response = response.choices[0].message.content
+        print(ai_response)
+
+        gpdf.GeneraPDF(ai_response)
+        print("no tengo ni idea de que ocurre")
+        return jsonify({"informe": ai_response})
     except Exception as e:
+        print(e)
         return jsonify({"error": str(e)}), 500
 
 
