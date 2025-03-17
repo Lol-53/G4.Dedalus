@@ -849,15 +849,12 @@ const Chat = () => {
 
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
-                            {loading.map(() => {
-                               if(loading){
-                                   <div className={"chat-bubble fromai shadow"}>
+                                   <div className={`chat-bubble fromai shadow ${loading ? "d-inline" : "d-none"}`}>
                                        <div className="spinner-grow" role="status">
                                            <span className="visually-hidden">Loading...</span>
                                        </div>
                                    </div>
-                               }
-                            })}
+                               
                             {convHistory.map((msg, index) => (
                                 <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
                                     {renderMessageContent(msg)}
