@@ -23,6 +23,9 @@ inspect(head(rules))
 rules_2 <- apriori(trans, parameter = list(support = 0.01, confidence = 0.5))
 inspect(head(rules_2))
 
+library(arulesViz)
+plot(rules)
+
 rules_subset_1 <- subset(rules, support >= 0.02 & confidence >= 0.6)
 inspect(head(rules_subset_1))
 
@@ -53,10 +56,17 @@ rules_subset_2_json <- toJSON(rules_subset_2_df, pretty = TRUE)
 write(rules_subset_1_json, file = "rules_subset_1.json")
 write(rules_subset_2_json, file = "rules_subset_2.json")
 
-# Guardar el JSON en un archivo
 
 
+# Si busco casos frecuentes en los síntomas?
 
+rules_frequent <- apriori(trans, parameter=list(support = 0.01, confidence = 0.8, target="frequent itemsets"))
 
+inspect(head(rules_frequent))
+plot(rules_frequent)
 
+# Quiero en la aplicacion de la izq sea Disease para establecer reglas 
 
+length(rules_frequent)
+rules_frequent <- subset(rules_frequent,rhs %in% c("Disease"))
+summary(rules_frequent)

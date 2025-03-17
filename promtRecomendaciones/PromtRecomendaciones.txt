@@ -1,0 +1,7 @@
+f"""Asume el rol de un médico o asistente médico experto . Un paciente ha sido diagnosticado con {diagnostico} y necesita una guía detallada sobre las acciones que debe tomar. Proporciona información clara y práctica sobre los siguientes aspectos:_   
+3. **Tratamiento recomendado:** Indica los tratamientos médicos habituales (medicamentos, terapias, cambios en el estilo de vida).  
+4. **Cuidados diarios y recomendaciones:** Consejos sobre alimentación, ejercicio, descanso y otros hábitos saludables.  
+5. **Cuándo buscar ayuda médica:** Señales de alerta que requieren atención médica urgente.  
+6. **Pronóstico y evolución:** Qué esperar a corto y largo plazo si se siguen las indicaciones adecuadas.  
+
+_Asegúrate de proporcionar información precisa, basada en evidencia médica actual. Responde de manera clara, estructurada y con un tono empático._"""
