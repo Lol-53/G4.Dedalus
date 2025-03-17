@@ -48,5 +48,45 @@
     "role": "assistant",
     "content": "pacientes\\2\\graficaBoxplot\\graficaBoxplot-2025-03-17_19-06-51.png",
     "type": "image"
+  },
+  {
+    "role": "user",
+    "content": "puedes generarme una gr\u00e1fica de violin de los leucocitos?",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "pacientes\\2\\graficaViolin\\graficaViolin-2025-03-17_20-23-23.png",
+    "type": "image"
+  },
+  {
+    "role": "user",
+    "content": "puedes generarme una gr\u00e1fica de violin de los leucocitos?",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "pacientes\\2\\graficaViolin\\graficaViolin-2025-03-17_20-40-16.png",
+    "type": "image"
+  },
+  {
+    "role": "user",
+    "content": "puedes generarme una gr\u00e1fica de violin de los leucocitos?",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "pacientes\\2\\graficaViolin\\graficaViolin-2025-03-17_20-40-22.png",
+    "type": "image"
+  },
+  {
+    "role": "user",
+    "content": "\u00bfMe puedes mostrar la informaci\u00f3n de la nota m\u00e9dica del d\u00eda 10/07/2023?",
+    "type": "text"
+  },
+  {
+    "role": "assistant",
+    "content": "Ciertamente. La nota m\u00e9dica del d\u00eda 10/07/2023, que corresponde al primer d\u00eda de ingreso de Mar\u00eda L\u00f3pez, contiene la siguiente informaci\u00f3n:\n\n**D\u00eda 1:** \n- Paciente femenina de 75 a\u00f1os con factores de riesgo cardiovascular (HTA, hipercolesterolemia) ingresa por IAM anterior extenso.\n- Ingres\u00f3 hipotensa y diafor\u00e9tica.\n- Recibi\u00f3 angioplastia primaria con colocaci\u00f3n de stent farmacoactivo en DA (arteria descendente anterior).\n- En UCI cursa estable:\n  - PA 100/60 con leve soporte de noradrenalina\n  - FC 95 lpm\n- Dolor tor\u00e1cico resuelto post-angioplastia.\n- Enzimas card\u00edacas en ascenso (Troponina I positiva).\n- Se inicia tratamiento:\n  - Doble antiagregaci\u00f3n (clopidogrel por alergia a AAS)\n  - Anticoagulaci\u00f3n SC\n  - Beta-bloqueo\n  - Estatina de alta intensidad\n- Plan:\n  - Monitoreo estricto en UCI primeras 24h\n  - Controlar diuresis\n  - Vigilar signos de insuficiencia card\u00edaca\n\nEsta nota proporciona una visi\u00f3n detallada del estado inicial de la paciente al ingreso, el procedimiento realizado, su estado post-procedimiento y el plan de tratamiento inicial.",
+    "type": "text"
   }
 ]

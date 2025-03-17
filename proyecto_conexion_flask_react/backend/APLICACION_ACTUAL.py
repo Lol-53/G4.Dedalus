@@ -52,36 +52,148 @@ for emb in embeddingFiles:
 # Asegurar que exista la carpeta de historiales
 os.makedirs(DATA_PATH, exist_ok=True)
 
-def generarEmbedding(user_message, id_paciente):
+# def generarEmbedding(user_message, id_paciente):
+#
+#     user_embedding = None
+#     embeddings = {"role": "system", "content": "información relevante ofrecida en formato json SQUaD: "}
+#
+#     headers = {
+#         "Content-Type": "application/json",
+#         "Authorization": f"Bearer sk-lqIaTaCA6djhkYLWFx5Gww"
+#     }
+#
+#     payload = {
+#         "model": "bedrock/amazon.titan-embed-text-v2:0",
+#         "input": user_message
+#     }
+#
+#     response = requests.post(
+#         "https://litellm.dccp.pbu.dedalus.com/embeddings",
+#         headers=headers,
+#         json=payload
+#     )
+#
+#     if response.status_code == 200:
+#         response_json = response.json()
+#         user_embedding = response_json["data"][0]["embedding"]
+#
+#     if user_embedding:
+#         best_match = None
+#         best_score = -1
+#         second_best_match = None
+#         second_best_score = -1
+#
+#         for item in all_embeddings:
+#             if item["key"] == str(id_paciente).strip():
+#                 stored_embedding = item["embedding"]
+#
+#                 # Convert embeddings to numpy arrays
+#                 user_embedding_array = np.array(user_embedding)
+#                 stored_embedding_array = np.array(stored_embedding)
+#
+#                 # Ensure they are 2D arrays for cosine_similarity
+#                 if user_embedding_array.ndim == 1:
+#                     user_embedding_array = user_embedding_array.reshape(1, -1)
+#                 if stored_embedding_array.ndim == 1:
+#                     stored_embedding_array = stored_embedding_array.reshape(1, -1)
+#
+#                 # Calculate cosine similarity
+#                 similarity = cosine_similarity(user_embedding_array, stored_embedding_array)[0][0]
+#
+#                 # Update best matches
+#                 if similarity > best_score:
+#                     # Current best becomes second best
+#                     second_best_score = best_score
+#                     second_best_match = best_match
+#
+#                     best_score = similarity
+#                     best_match = item
+#
+#                 elif similarity > second_best_score:
+#                     second_best_score = similarity
+#                     second_best_match = item
+#
+#         # Return the most relevant responses
+#         if best_match:
+#             print("se ha encontrado un best match: " + str(best_match))
+#             embeddings["content"] += f"Pregunta más similar encontrada: {best_match['question']} "
+#             embeddings["content"] += f"Respuesta: {best_match['answer']} "
+#             embeddings["content"] += f"Contexto: {best_match['context']} "
+#         if second_best_match:
+#             print("se ha encontrado un second best match: " + str(second_best_match))
+#             embeddings["content"] += f"\nSegunda mejor coincidencia encontrada: {second_best_match['question']} "
+#             embeddings["content"] += f"Respuesta: {second_best_match['answer']} "
+#             embeddings["content"] += f"Contexto: {second_best_match['context']}"
+#         else:
+#             print("no se encontraron matches relevantes")
+#             embeddings["content"] += "No se encontraron coincidencias relevantes."
+#     else:
+#         print("no se encontraron embeddings")
+#         embeddings["content"] += "No se encontraron embeddings."
+#     print(embeddings)
+#     return embeddings
 
-    user_embedding = None
+def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_threshold=0.8, current_matches=[], user_embedding=None):
+    """
+    Generates embeddings and finds the top N most similar matches that exceed a minimum similarity threshold.
+
+    Args:
+        user_message: The user's message to generate embeddings for
+        id_paciente: The patient ID to filter embeddings
+        num_matches: Number of best matches to return (default: 5)
+        similarity_threshold: Minimum similarity score required (default: 0.8)
+
+    Returns:
+        A dictionary with relevant information in SQuAD format
+    """
+
     embeddings = {"role": "system", "content": "información relevante ofrecida en formato json SQUaD: "}
 
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer sk-lqIaTaCA6djhkYLWFx5Gww"
-    }
+    if len(current_matches)==num_matches:
+        top_matches = current_matches
 
-    payload = {
-        "model": "bedrock/amazon.titan-embed-text-v2:0",
-        "input": user_message
-    }
+        for i, (match, score) in enumerate(top_matches):
+            rank = i + 1
+            print(f"se ha encontrado match #{rank}: {str(match)} con puntuación: {score:.4f}")
 
-    response = requests.post(
-        "https://litellm.dccp.pbu.dedalus.com/embeddings",
-        headers=headers,
-        json=payload
-    )
+            if i == 0:
+                prefix = "Pregunta más similar encontrada: "
+            else:
+                prefix = f"\nCoincidencia #{rank} encontrada: "
 
-    if response.status_code == 200:
-        response_json = response.json()
-        user_embedding = response_json["data"][0]["embedding"]
+            embeddings["content"] += f"{prefix}{match['question']} "
+            embeddings["content"] += f"Respuesta: {match['answer']} "
+            embeddings["content"] += f"Contexto: {match['context']} "
+            embeddings["content"] += f"(Similitud: {score:.4f}) "
+
+        print(embeddings)
+        return embeddings
+
+    if not user_embedding:
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer sk-lqIaTaCA6djhkYLWFx5Gww"
+        }
+
+        payload = {
+            "model": "bedrock/amazon.titan-embed-text-v2:0",
+            "input": user_message
+        }
+
+        response = requests.post(
+            "https://litellm.dccp.pbu.dedalus.com/embeddings",
+            headers=headers,
+            json=payload
+        )
+
+        if response.status_code == 200:
+            response_json = response.json()
+            user_embedding = response_json["data"][0]["embedding"]
 
     if user_embedding:
-        best_match = None
-        best_score = -1
-        second_best_match = None
-        second_best_score = -1
+        # Create a list to store all matches with their scores
+        all_matches = []
+        existing_items = [match_tuple[0] for match_tuple in current_matches]
 
         for item in all_embeddings:
             if item["key"] == str(id_paciente).strip():
@@ -100,37 +212,41 @@ def generarEmbedding(user_message, id_paciente):
                 # Calculate cosine similarity
                 similarity = cosine_similarity(user_embedding_array, stored_embedding_array)[0][0]
 
-                # Update best matches
-                if similarity > best_score:
-                    # Current best becomes second best
-                    second_best_score = best_score
-                    second_best_match = best_match
+                # Only add matches that exceed the similarity threshold
+                if similarity >= similarity_threshold and item not in existing_items:
+                    all_matches.append((item, similarity))
 
-                    best_score = similarity
-                    best_match = item
+        # Sort matches by similarity score in descending order
+        all_matches.sort(key=lambda x: x[1], reverse=True)
 
-                elif similarity > second_best_score:
-                    second_best_score = similarity
-                    second_best_match = item
+        # Take only the top N matches
+        top_matches = all_matches[:num_matches]
 
-        # Return the most relevant responses
-        if best_match:
-            print("se ha encontrado un best match: " + str(best_match))
-            embeddings["content"] += f"Pregunta más similar encontrada: {best_match['question']} "
-            embeddings["content"] += f"Respuesta: {best_match['answer']} "
-            embeddings["content"] += f"Contexto: {best_match['context']} "
-        if second_best_match:
-            print("se ha encontrado un second best match: " + str(second_best_match))
-            embeddings["content"] += f"\nSegunda mejor coincidencia encontrada: {second_best_match['question']} "
-            embeddings["content"] += f"Respuesta: {second_best_match['answer']} "
-            embeddings["content"] += f"Contexto: {second_best_match['context']}"
+        # If we found matches, add them to the response
+        if top_matches:
+            if len(current_matches) + len(top_matches) > num_matches  :
+                excess = ( len(top_matches) + len(current_matches) ) - num_matches
+                top_matches = top_matches[:num_matches-excess]
+
+            return generarEmbedding(
+                user_message,
+                id_paciente,
+                num_matches=num_matches,
+                similarity_threshold=similarity_threshold-0.001,
+                current_matches=current_matches + top_matches,
+                user_embedding=user_embedding
+            )
         else:
-            print("no se encontraron matches relevantes")
-            embeddings["content"] += "No se encontraron coincidencias relevantes."
-    else:
-        print("no se encontraron embeddings")
-        embeddings["content"] += "No se encontraron embeddings."
-    print(embeddings)
+            print("no se encontraron matches relevantes que superen el umbral de similitud " + str(similarity_threshold))
+            return generarEmbedding(
+                user_message,
+                id_paciente,
+                num_matches=num_matches,
+                similarity_threshold=similarity_threshold-0.001,
+                user_embedding=user_embedding)
+
+    print("no se pudo hacer embedding de la pregunta del usuario")
+    embeddings["content"] += "No se encontraron embeddings."
     return embeddings
 
 # Asegurar que Flask sirva archivos de imágenes

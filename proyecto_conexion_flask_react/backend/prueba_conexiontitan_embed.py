@@ -4,7 +4,7 @@ from typing import TextIO
 import time
 
 # Cargar el archivo JSON SQuAD
-with open("datos_pacientes/dataset_squad_notas.json", "r", encoding="utf-8") as file:
+with open("datos_pacientes/dataset_squad_procedimientos.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 # Lista para almacenar los embeddings
@@ -31,7 +31,7 @@ for entry in data["data"]:
 
             payload = {
                 "model": "bedrock/amazon.titan-embed-text-v2:0",
-                "input": f"{context} {question}"
+                "input": f"{question} {context}"
             }
 
             response = requests.post(
@@ -52,10 +52,10 @@ for entry in data["data"]:
             else :
                 print(f"Error al generar embeddings para el paciente {patient_id}")
                 print(response.json())
-            time.sleep(1)
+            time.sleep(0.1)
 
 # Guardar los embeddings en un archivo JSON
-with open("embeddings/embeddings_notas.json", "w", encoding="utf-8") as file:
+with open("embeddings/embeddings_procedimientos.json", "w", encoding="utf-8") as file:
     json.dump(embeddings_data, file, ensure_ascii=False, indent=4)
 
 print("Embeddings generados y guardados en embeddings.json")
