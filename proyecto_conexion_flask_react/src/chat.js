@@ -708,7 +708,7 @@ const Chat = () => {
         setLoading(false);
     };
 
-    useEffect(() => {
+    const enterMandar = (event) =>{
         const textInput = campo_msg.current;
         textInput.addEventListener("keydown", function(event){
             if(event.key === "Enter" && !event.shiftKey && !event.ctrlKey && !event.altKey){
@@ -717,7 +717,12 @@ const Chat = () => {
                 handleSubmit(event);
             }
         });
-    }, [campo_msg]);
+    }
+
+
+    useEffect(() => {
+        enterMandar();
+    }, [campo_msg, handleSubmit]);
 
 
     const sendMessageToBackend = async (userMessage) => {
