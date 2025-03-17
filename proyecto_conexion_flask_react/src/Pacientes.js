@@ -366,13 +366,13 @@ const Pacientes = () => {
                 return false;
             }
         });
-        ;
+
         if(duplicados.length>0){
             nuevas=[...cargadas];
             nuevas=nuevasCards(nuevas); //Sustituimos y ya
             nuevas=ordenarFecha(nuevas, "acceso");
         }else{
-            nuevas.slice(0,3);
+             nuevas = nuevas.slice(0,3);
         }
 
         console.log(nuevas);

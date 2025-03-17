@@ -14,6 +14,7 @@ const Chat = () => {
 
     const [message, setMessage] = useState(""); // Guarda el mensaje escrito
     const [messages, setMessages] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const [convHistory, setConvHistory] = useState([]);
 
@@ -695,8 +696,10 @@ const Chat = () => {
 
         scrollToBottom();
         // Enviar el mensaje al backend Flask
+        setLoading(true);
         await sendMessageToBackend(messageSend);
         scrollToBottom();
+        setLoading(false);
     };
 
 
@@ -767,13 +770,21 @@ const Chat = () => {
             nuevas=nuevasCards(nuevas); //Sustituimos y ya
             nuevas=ordenarFecha(nuevas, "acceso");
         }else{
-            nuevas.slice(0,3);
+            nuevas = nuevas.slice(0,3);
         }
 
         console.log(nuevas);
         setPacientesRecientes(nuevas);
         localStorage.setItem('recientes', JSON.stringify(nuevas));
     };
+
+    const generarResumen = async () => {
+        await fetch("http://localhost:5000/generate-report", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({id_paciente: idPaciente}),
+        });
+    }
 
     const deRecientesAChat = (paciente) => {
         paciente.acceso=new Date(Date.now());
@@ -838,6 +849,15 @@ const Chat = () => {
 
                     <div className="container-fluid justify-content-start pe-0 d-flex flex-column" ref={contenido_Chat} id="contenidoChat">
                         <div className="d-flex flex-column justify-content-start me-6 vh-50 p-3 flex-shrink- h-100" ref={chat_body} id="chat-body">
+                            {loading.map(() => {
+                               if(loading){
+                                   <div className={"chat-bubble fromai shadow"}>
+                                       <div className="spinner-grow" role="status">
+                                           <span className="visually-hidden">Loading...</span>
+                                       </div>
+                                   </div>
+                               }
+                            })}
                             {convHistory.map((msg, index) => (
                                 <div key={`msg-${index}-${msg.type}`} className={`chat-bubble from${msg.role} shadow`}>
                                     {renderMessageContent(msg)}
@@ -859,7 +879,7 @@ const Chat = () => {
                                     <button type="submit" className="rounded-circle border-0 px-2 py-1 me-2" id="button-send"><i className="bi bi-send"></i></button>
                                 </div>
                             </form>
-                            <button className="mx-2 py-1 px-2 border-0 rounded-circle  align-self-center" name="Generar resumen" id="generar-resumen"><i className="bi bi-file-earmark-arrow-down"></i></button>
+                            <button className="mx-2 py-1 px-2 border-0 rounded-circle  align-self-center" name="Generar resumen" id="generar-resumen" onClick={generarResumen}><i className="bi bi-file-earmark-arrow-down"></i></button>
                         </div>
                     </div>
                 </div>
