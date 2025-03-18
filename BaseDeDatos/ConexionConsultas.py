@@ -8,9 +8,9 @@ def get_db_connection():
     try:
         conn = mariadb.connect(
             host="localhost",  # O la IP del servidor
-            user="tu_usuario",
-            password="tu_contraseña",
-            database="nombre_de_la_base_de_datos"
+            user="root",
+            password="",
+            database="dedalus"
         )
         return conn
     except mariadb.Error as e:
@@ -72,9 +72,10 @@ def get_users():
         return print("Error: No se pudo conectar a la base de datos")
     
     cursor = conn.cursor(dictionary=True)  # Devuelve los resultados como diccionarios
-    cursor.execute("SELECT * FROM usuarios")
+    cursor.execute("SELECT * FROM paciente")
     users = cursor.fetchall()
     
+    print(jsonify(users))
     cursor.close()
     conn.close()
     
@@ -82,3 +83,5 @@ def get_users():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+get_users()
