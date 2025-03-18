@@ -1,4 +1,6 @@
 import json
+import traceback
+
 import numpy as np
 from flask import Flask, request, jsonify, send_from_directory
 import pandas as pd
@@ -52,88 +54,7 @@ for emb in embeddingFiles:
 # Asegurar que exista la carpeta de historiales
 os.makedirs(DATA_PATH, exist_ok=True)
 
-# def generarEmbedding(user_message, id_paciente):
-#
-#     user_embedding = None
-#     embeddings = {"role": "system", "content": "información relevante ofrecida en formato json SQUaD: "}
-#
-#     headers = {
-#         "Content-Type": "application/json",
-#         "Authorization": f"Bearer sk-lqIaTaCA6djhkYLWFx5Gww"
-#     }
-#
-#     payload = {
-#         "model": "bedrock/amazon.titan-embed-text-v2:0",
-#         "input": user_message
-#     }
-#
-#     response = requests.post(
-#         "https://litellm.dccp.pbu.dedalus.com/embeddings",
-#         headers=headers,
-#         json=payload
-#     )
-#
-#     if response.status_code == 200:
-#         response_json = response.json()
-#         user_embedding = response_json["data"][0]["embedding"]
-#
-#     if user_embedding:
-#         best_match = None
-#         best_score = -1
-#         second_best_match = None
-#         second_best_score = -1
-#
-#         for item in all_embeddings:
-#             if item["key"] == str(id_paciente).strip():
-#                 stored_embedding = item["embedding"]
-#
-#                 # Convert embeddings to numpy arrays
-#                 user_embedding_array = np.array(user_embedding)
-#                 stored_embedding_array = np.array(stored_embedding)
-#
-#                 # Ensure they are 2D arrays for cosine_similarity
-#                 if user_embedding_array.ndim == 1:
-#                     user_embedding_array = user_embedding_array.reshape(1, -1)
-#                 if stored_embedding_array.ndim == 1:
-#                     stored_embedding_array = stored_embedding_array.reshape(1, -1)
-#
-#                 # Calculate cosine similarity
-#                 similarity = cosine_similarity(user_embedding_array, stored_embedding_array)[0][0]
-#
-#                 # Update best matches
-#                 if similarity > best_score:
-#                     # Current best becomes second best
-#                     second_best_score = best_score
-#                     second_best_match = best_match
-#
-#                     best_score = similarity
-#                     best_match = item
-#
-#                 elif similarity > second_best_score:
-#                     second_best_score = similarity
-#                     second_best_match = item
-#
-#         # Return the most relevant responses
-#         if best_match:
-#             print("se ha encontrado un best match: " + str(best_match))
-#             embeddings["content"] += f"Pregunta más similar encontrada: {best_match['question']} "
-#             embeddings["content"] += f"Respuesta: {best_match['answer']} "
-#             embeddings["content"] += f"Contexto: {best_match['context']} "
-#         if second_best_match:
-#             print("se ha encontrado un second best match: " + str(second_best_match))
-#             embeddings["content"] += f"\nSegunda mejor coincidencia encontrada: {second_best_match['question']} "
-#             embeddings["content"] += f"Respuesta: {second_best_match['answer']} "
-#             embeddings["content"] += f"Contexto: {second_best_match['context']}"
-#         else:
-#             print("no se encontraron matches relevantes")
-#             embeddings["content"] += "No se encontraron coincidencias relevantes."
-#     else:
-#         print("no se encontraron embeddings")
-#         embeddings["content"] += "No se encontraron embeddings."
-#     print(embeddings)
-#     return embeddings
-
-def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_threshold=0.8, current_matches=[], user_embedding=None):
+def generarEmbedding(user_message, id_paciente, num_matches=3, similarity_threshold=0.7, current_matches=[], user_embedding=None):
     """
     Generates embeddings and finds the top N most similar matches that exceed a minimum similarity threshold.
 
@@ -148,6 +69,10 @@ def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_thresh
     """
 
     embeddings = {"role": "system", "content": "información relevante ofrecida en formato json SQUaD: "}
+
+    if (similarity_threshold <= 0.2):
+        embeddings["content"] += "No se encontraron embeddings."
+        return embeddings
 
     if len(current_matches)==num_matches:
         top_matches = current_matches
@@ -232,7 +157,7 @@ def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_thresh
                 user_message,
                 id_paciente,
                 num_matches=num_matches,
-                similarity_threshold=similarity_threshold-0.001,
+                similarity_threshold=similarity_threshold-0.0015,
                 current_matches=current_matches + top_matches,
                 user_embedding=user_embedding
             )
@@ -242,7 +167,7 @@ def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_thresh
                 user_message,
                 id_paciente,
                 num_matches=num_matches,
-                similarity_threshold=similarity_threshold-0.001,
+                similarity_threshold=similarity_threshold-0.0015,
                 user_embedding=user_embedding)
 
     print("no se pudo hacer embedding de la pregunta del usuario")
@@ -367,21 +292,25 @@ def set_context():
             notas_texto = notas_paciente.to_string(index=False) if not notas_paciente.empty else "Sin notas registradas."
 
             contexto = f"""
-            Eres una IA que asiste a personal sanitario para responder preguntas, generar informes, gráficas y orientar sobre un paciente concreto.
-            Como contexto inicial, te proporcionaré los siguientes datos del paciente:
+            Eres una IA que asiste a personal sanitario para responder preguntas, resumir información, y dar pasos a seguir u orientar 
+            sobre un paciente concreto. Como contexto inicial, te proporcionaré los siguientes datos del paciente:
             {info_texto}
 
             Y algunas notas tomadas:
             {notas_texto}
 
-            Cuando se te haga una pregunta concreta, responderás con los datos proporcionados a eso y SOLO a eso, lo mismo con las gráficas, recuperarás
-            solo los datos necesarios, cuando se te pida un resumen, resumirás en base a todos los datos que tengas y cuando se te pida consejo
-            sobre pasos a seguir o recomendaciones para el paciente, recuperarás información relevante según el ámbito sobre el que se te pregunte.
+            Cuando se te haga una pregunta concreta, responderás con los datos proporcionados a eso y SOLO a eso, cuando se te pida un resumen, resumirás en base a todos los datos que tengas 
+            y cuando se te pida consejo sobre pasos a seguir o recomendaciones para el paciente, recuperarás información relevante según el ámbito sobre el que se te pregunte y también podrás
+            en ese caso aportar otra información externa a los datos proporcionado que ayude a orientar al usuario.
             
             También se te proporcionan otros datos que el sistema encuentra en base a la pregunta del usuario y vienen con el siguiete prefijo:
             "información relevante ofrecida en formato json SQUaD:"
-            Pon especial atención a esos datos para responder preguntas concretas sobre dosis del paciente, mediciones, anomalías, todo lo que
-            se incluya en ese mensaje, es información relevante que debes tener en cuenta para responder.
+            Pon especial atención a esos datos para responder preguntas concretas sobre dosis del paciente, mediciones, anomalías, así como para dar los pasos a seguir o recomendaciones.
+            Todo lo que se incluya en ese mensaje  es información relevante que debes tener en cuenta para responder.
+            
+            También es importante ofrecer la información de manera visual, cuando des una lista de valores (1., 2. ... ó a), b) ...), introduce saltos de línea, tauladores,
+            cualquier cosa que permita ver de manera visual la información, no te limites a copiar y pegar la información que se te ofrece en ese aspecto, y si se te pide
+            un resumen, también sería interesante dividirlo en apartados y dejar más bonita la información.
             """
 
             contextos_pacientes[id_paciente] = contexto
@@ -405,6 +334,60 @@ def saveHistory(history, paciente_id):
     pass
 
 
+def esDeGraficos(user_message, id_paciente, conversation_history):
+    graficos_disponibles = {
+        "correlacion": "graficaCorrelacion",
+        "correlación": "graficaCorrelacion",
+        "dispersión": "graficaDispersion",
+        "dispersion": "graficaDispersion",
+        "histograma": "graficaHistograma",
+        "istograma": "graficaHistograma",
+        "barras": "graficaBarras",
+        "boxplot": "graficaBoxplot",
+        "violín": "graficaViolin",
+        "violin": "graficaViolin",
+        "tendencia": "graficaCurvaTendencia"
+    }
+
+    graficos_seleccionados = [nombre for palabra, nombre in graficos_disponibles.items() if palabra in user_message.lower()]
+
+    if graficos_seleccionados:
+        palabras_usuario = re.sub(r'[^\w\s]', '', user_message.lower()).split()
+        variables_encontradas = [col for col in lab_df.columns if any(palabra.lower() in col.lower() for palabra in palabras_usuario)]
+
+        x = variables_encontradas[0] if len(variables_encontradas) > 0 else None
+        y = variables_encontradas[1] if len(variables_encontradas) > 1 else None
+
+        if not x:
+            print("No se encontró una variable válida en los datos.")
+            return False
+
+        print(f"Llamando a generarGrafica con: id_paciente={id_paciente}, x={x}, y={y}, tipo={graficos_seleccionados}")
+        # Llamar a la función generarGrafica
+        paths_imagenes = gd.generarGrafica("lab_iniciales", str(id_paciente), x, y, graficos_seleccionados)
+        #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
+        ai_response2 = f'{paths_imagenes[0]}'
+
+        conversation_history.append({"role": "assistant", "content": ai_response2, "type": "image"})
+
+        saveHistory(conversation_history, id_paciente)
+
+        return conversation_history
+
+
+def obtener_diagnostico(path_CSV_pacientes:str,ID:str):
+
+    diagnostico= "No se encontro diagnóstico"
+    df = pd.read_csv(path_CSV_pacientes)
+    print(df.columns)
+
+    datos_id = df[df["ID"]==ID]
+
+    print(datos_id)
+
+    return datos_id.iloc[0]["DiagnosticoPrincipal"]
+
+
 @app.route("/ask-ai", methods=["POST"])
 def ask_ai():
     """Procesa preguntas sobre el paciente usando Claude-Sonnet en Amazon Bedrock o genera gráficos si es necesario."""
@@ -425,7 +408,6 @@ def ask_ai():
 
         id_paciente = int(id_paciente)
 
-        id_string = str(id_paciente)
         contexto_paciente = contextos_pacientes[id_paciente]
 
         if not contexto_paciente:
@@ -434,49 +416,37 @@ def ask_ai():
 
 
         # Verificar si la pregunta es sobre gráficos
-        graficos_disponibles = {
-            "correlacion": "graficaCorrelacion",
-            "correlación": "graficaCorrelacion",
-            "dispersión": "graficaDispersion",
-            "dispersion": "graficaDispersion",
-            "histograma": "graficaHistograma",
-            "istograma": "graficaHistograma",
-            "barras": "graficaBarras",
-            "boxplot": "graficaBoxplot",
-            "violín": "graficaViolin",
-            "violin": "graficaViolin",
-            "tendencia": "graficaCurvaTendencia"
-        }
-
-        graficos_seleccionados = [nombre for palabra, nombre in graficos_disponibles.items() if palabra in user_message.lower()]
-
-        if graficos_seleccionados:
-            palabras_usuario = re.sub(r'[^\w\s]', '', user_message.lower()).split()
-            variables_encontradas = [col for col in lab_df.columns if any(palabra.lower() in col.lower() for palabra in palabras_usuario)]
-
-            x = variables_encontradas[0] if len(variables_encontradas) > 0 else None
-            y = variables_encontradas[1] if len(variables_encontradas) > 1 else None
-
-            if not x:
-                print("No se encontró una variable válida en los datos.")
-                return jsonify({"error": "No se encontró una variable válida en los datos."}), 400
-
-            print(f"Llamando a generarGrafica con: id_paciente={id_paciente}, x={x}, y={y}, tipo={graficos_seleccionados}")
-            # Llamar a la función generarGrafica
-            paths_imagenes = gd.generarGrafica("lab_iniciales", str(id_paciente), x, y, graficos_seleccionados)
-            #imagenes_urls = [f"/images/{os.path.basename(path)}" for path in paths_imagenes if path]
-            ai_response2 = f'{paths_imagenes[0]}'
-
-            conversation_history.append({"role": "assistant", "content": ai_response2, "type": "image"})
-
-            saveHistory(conversation_history, id_paciente)
-
-            return conversation_history
+        graficos = esDeGraficos(user_message, id_paciente, conversation_history)
+        if graficos:
+            return graficos
 
 
-        messages = [{"role": "system", "content": contextos_pacientes[id_paciente]},
-                    generarEmbedding(user_message, id_paciente),
-                    {"role": "system", "content": "Este es el historial previo de la conversación:"}]
+        messages = [{"role": "system", "content": contextos_pacientes[id_paciente]}]
+
+        # DETECTAR RECOMENDACION:
+
+        frases_recomendacion = [
+            "pasos a seguir", "recomendaciones", "siguientes pasos",
+            "siguientes acciones", "recomiéndame", "recomiendame",
+            "qué debo hacer", "que debo hacer"
+        ]
+
+        detectar_recomendacion = any(frase in user_message.lower() for frase in frases_recomendacion)
+
+        if detectar_recomendacion:
+            messages.append({"role": "system", "content": f"""Asume el rol de un médico o asistente médico experto . Un paciente ha sido diagnosticado con {obtener_diagnostico("datos_pacientes/info_pacientes.csv", id_paciente)} 
+                y necesita una guía detallada sobre las acciones que debe tomar. Proporciona información clara y práctica sobre los siguientes aspectos:_   
+                3. **Tratamiento recomendado:** Indica los tratamientos médicos habituales (medicamentos, terapias, cambios en el estilo de vida).  
+                4. **Cuidados diarios y recomendaciones:** Consejos sobre alimentación, ejercicio, descanso y otros hábitos saludables.  
+                5. **Cuándo buscar ayuda médica:** Señales de alerta que requieren atención médica urgente.  
+                6. **Pronóstico y evolución:** Qué esperar a corto y largo plazo si se siguen las indicaciones adecuadas.  
+                
+                _Asegúrate de proporcionar información precisa, basada en evidencia médica actual. Responde de manera clara, estructurada y con un tono empático._"""})
+            messages.append(generarEmbedding(user_message, id_paciente, 10, 0.65))
+        else:
+            messages.append(generarEmbedding(user_message, id_paciente))
+
+        messages.append({"role": "system", "content": "Este es el historial previo de la conversación:"})
 
         conversation_history_adapted = conversation_history.copy()
 
@@ -505,14 +475,13 @@ def ask_ai():
     except Exception as e:
         print("error en ask-ai:")
         print(e.args)
+        print(traceback.format_exc())
         return jsonify({"error": str(e)}), 500
 
 @app.route("/generate-report", methods=["POST"])
 def generate_report():
     try:
         data = request.get_json()
-
-        #messages2 = [{"role": "user", "content":"buenas tardes"}]
 
         messages = [{"role": "system", "content":"""
             Genera el contenido un pdf con el resumen clínico detallado basado en la evolución del paciente, de los datos de laboratorio iniciales, de la medicación, de las notas, procedimientos e información médica relacionada con el paciente.
@@ -594,7 +563,10 @@ def generate_report():
             Tratamiento y recomendaciones:
             
             Detalles del tratamiento administrado (medicamentos, terapias) y recomendaciones para el seguimiento.
+            Notas adicionales:
             
+            Aquí, en base a la información obtenida a lo largo de la conversación suministrada y todos los datos que hayas recibido, puedes
+            hacer algún apunte como lo haría un Doctor, como una especie de conclusión con un enfoque más humano
             
             
             """}]
@@ -611,12 +583,20 @@ def generate_report():
         ]
 
 
-        print("hola")
         csv_data = gjson.csv_a_json_por_id(csv_files, data.get("id_paciente"))
         csv_data = json.dumps(csv_data, ensure_ascii=False, indent=2)
-        print("he pasado cargar CSV")
+
         messages.append({"role": "system", "content": csv_data})
-        print("he pasado append")
+
+        conversation_history = loadHistory(data.get("id_paciente"))
+
+        conversation_history_adapted = conversation_history.copy()
+
+        for mensaje in conversation_history_adapted:
+            mensaje.pop("text", None)
+
+        messages.extend(conversation_history_adapted)
+
         print(csv_data)
 
         messages.append({"role": "user", "content": "generame un resumen con los datos del paciente"})
