@@ -6,6 +6,7 @@ app = Flask(__name__)
 # Configuración de la conexión a MariaDB
 def get_db_connection():
     try:
+        conn = mariadb.connect(
             host="localhost",  # O la IP del servidor
             user="tu_usuario",
             password="tu_contraseña",
