@@ -16,9 +16,23 @@ import generardorJSONResumen as gjson  # Importar la función generarGrafica
 import openai  # Utilizar el proxy de litellm para Amazon Bedrock
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
+import subprocess
+import atexit
+
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)  # Habilitar CORS para todas las rutas
+
+def on_shutdown():
+    if os.path.exists("datos_pacientes/resumen_procedimientos.csv"):
+        os.remove("datos_pacientes/info_pacientes.csv")
+        os.remove("datos_pacientes/notas.csv")
+        os.remove("datos_pacientes/resumen_evolucion_process.csv")
+        os.remove("datos_pacientes/resumen_lab_iniciales.csv")
+        os.remove("datos_pacientes/resumen_medicacion.csv")
+        os.remove("datos_pacientes/resumen_procedimientos.csv")
+
+atexit.register(on_shutdown)
 
 # Configurar la conexión con Bedrock usando litellm
 client = openai.OpenAI(
@@ -26,6 +40,11 @@ client = openai.OpenAI(
     base_url="https://litellm.dccp.pbu.dedalus.com"  # No compartir URL en mensajes públicos
 )
 
+ruta_script = "./datos_pacientes/ConexionConsultas.py"
+subprocess.run(["python", ruta_script])
+
+while not os.path.exists("datos_pacientes/resumen_procedimientos.csv"):
+    True
 DATA_PATH = "historiales/"
 
 # Cargar embeddings
@@ -157,7 +176,7 @@ def generarEmbedding(user_message, id_paciente, num_matches=3, similarity_thresh
                 user_message,
                 id_paciente,
                 num_matches=num_matches,
-                similarity_threshold=similarity_threshold-0.0015,
+                similarity_threshold=similarity_threshold-0.015,
                 current_matches=current_matches + top_matches,
                 user_embedding=user_embedding
             )
@@ -167,7 +186,7 @@ def generarEmbedding(user_message, id_paciente, num_matches=3, similarity_thresh
                 user_message,
                 id_paciente,
                 num_matches=num_matches,
-                similarity_threshold=similarity_threshold-0.0015,
+                similarity_threshold=similarity_threshold-0.015,
                 user_embedding=user_embedding)
 
     print("no se pudo hacer embedding de la pregunta del usuario")

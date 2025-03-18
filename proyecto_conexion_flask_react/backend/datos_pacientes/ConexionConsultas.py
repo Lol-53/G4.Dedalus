@@ -116,6 +116,13 @@ def exportar_csv_tabla (file_name,tabla_name,conexion):
             escritor_csv.writerows(filas)   # Escribir datos
 
 
-
+conexion=conectar()
+exportar_csv_tabla("datos_pacientes/info_pacientes.csv", "paciente", conexion)
+exportar_csv_tabla("datos_pacientes/notas.csv", "notas", conexion)
+exportar_csv_tabla("datos_pacientes/resumen_evolucion_process.csv", "evolucion", conexion)
+exportar_csv_tabla("datos_pacientes/resumen_lab_iniciales.csv", "lab_iniciales", conexion)
+exportar_csv_tabla("datos_pacientes/resumen_medicacion.csv", "medicacion", conexion)
+exportar_csv_tabla("datos_pacientes/resumen_procedimientos.csv", "procedimiento", conexion)
+cerrar_conexion(conexion)
 
 

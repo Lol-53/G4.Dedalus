@@ -74,20 +74,29 @@ const Pacientes = () => {
                     complete: (result) => {
                         const data = result.data;
 
-                        console.log("Primera fila del CSV:", data[0]); // Verifica la estructura
+                        const headers = data[0];
+
+                        console.log("Primera fila del CSV:", headers); // Verifica la estructura
 
                         if (data.length > 1 && data[0][0] === "ID") {
-                            const extractedCards = data.slice(1).map((row) => ({
-                                nombre: row[1],   // "Nombre"
-                                nuhsa: row[12],   // "NUHSA"
-                                cama: row[11],    // "Cama"
-                                id: row[0],       // "ID"
-                                fueraplanta: Math.round(Math.random()),
-                                color: Math.floor(Math.random() * 4) + 1,
-                                display: 1,
-                                acceso: new Date(),
-                                creacion: new Date(Date.now() - 1)
-                            }));
+                            const extractedCards = data.slice(1).map((row) => {
+                                const rowData = row.reduce((obj, value, index) => {
+                                    obj[headers[index]] = value;
+                                    return obj;
+                                }, {});
+
+                                return {
+                                    nombre: rowData["Nombre"],    // Acceder por nombre
+                                    nuhsa: rowData["NUHSA"],
+                                    cama: rowData["Cama"],
+                                    id: rowData["ID"],
+                                    fueraplanta: Math.round(Math.random()),
+                                    color: Math.floor(Math.random() * 4) + 1,
+                                    display: 1,
+                                    acceso: new Date(),
+                                    creacion: new Date(Date.now() - 1),
+                                };
+                            });
 
                             setCards(extractedCards); // Asegurar que setCards se actualiza con el nuevo array
 

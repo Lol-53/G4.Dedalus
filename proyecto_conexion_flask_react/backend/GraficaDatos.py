@@ -13,7 +13,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from datetime import datetime
 from pandas import DataFrame
-
 # Definir los colores personalizados
 color2 = "#c5e86c"  # greenD
 color1 = "#4298b5"  # azul1D Actual
