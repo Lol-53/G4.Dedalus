@@ -760,7 +760,7 @@ const Chat = () => {
             );
         } else {
             scrollToBottom();
-            return <p>{msg.content}</p>;
+            return <p dangerouslySetInnerHTML={{ __html: msg.content.replace(/\n/g, "<br>") }}></p>;
         }
     };
 
