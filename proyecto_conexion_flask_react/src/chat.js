@@ -16,6 +16,7 @@ const Chat = () => {
     const [msgTemporal, setMsgTemporal] = useState("");
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [peticionResumen, setPeticionResumen] =useState(false);
 
     const [convHistory, setConvHistory] = useState([]);
 
@@ -801,7 +802,7 @@ const Chat = () => {
 
     const generarResumen = async () => {
 
-        setLoading(true)
+        setPeticionResumen(true)
 
         const response=await fetch("http://localhost:5000/generate-report", {
             method: "POST",
@@ -838,7 +839,7 @@ const Chat = () => {
                 URL.revokeObjectURL(url); // Liberar memoria
 
            }
-            setLoading(false);
+            setPeticionResumen(false);
         }
     }
 
@@ -913,7 +914,10 @@ const Chat = () => {
                                 </div>
 
                             ))}
-                            <div className={`chat-bubble fromassistant shadow flex-wrap flex-row ${loading ? "d-flex" : "d-none"}`}>
+                            <div className={`chat-bubble fromuser shadow ${loading ? "d-inline" : "d-none"}`}>
+                                {msgTemporal}
+                            </div>
+                            <div className={`chat-bubble fromassistant shadow flex-wrap flex-row ${loading || peticionResumen ? "d-flex" : "d-none"}`}>
                                 <div className="spinner-grow d-flex spinner-grow-sm me-2 text-body-secondary"
                                      role="status">
                                     <span className="visually-hidden">Loading...</span>
@@ -924,9 +928,6 @@ const Chat = () => {
                                 <div className="spinner-grow spinner-grow-sm ms-2 text-body-secondary" role="status">
                                     <span className="visually-hidden">Loading...</span>
                                 </div>
-                            </div>
-                            <div className={`chat-bubble fromuser shadow ${loading ? "d-inline" : "d-none"}`}>
-                                {msgTemporal}
                             </div>
                         </div>
                         <div ref={chat_text_area} id="chat-text-area"
@@ -943,11 +944,12 @@ const Chat = () => {
                                         id="campo-msg"
                                         className="chat_input my-2 mx-3 bg-body-tertiary border-0 border-bottom ms-5"
                                         placeholder="Escribe un mensaje..."
+                                        disabled={loading || peticionResumen}
                                     />
-                                    <button type="submit" className="rounded-circle border-0 px-2 py-1 me-2" id="button-send"><i className="bi bi-send"></i></button>
+                                    <button type="submit" className="rounded-circle border-0 px-2 py-1 me-2" id="button-send" disabled={loading || peticionResumen}><i className="bi bi-send"></i></button>
                                 </div>
                             </form>
-                            <button className="mx-2 py-1 px-2 border-0 rounded-circle  align-self-center" name="Generar resumen" id="generar-resumen" onClick={generarResumen}><i className="bi bi-file-earmark-arrow-down"></i></button>
+                            <button className="mx-2 py-1 px-2 border-0 rounded-circle  align-self-center" name="Generar resumen" id="generar-resumen" onClick={generarResumen} disabled={loading || peticionResumen}><i className="bi bi-file-earmark-arrow-down"></i></button>
                         </div>
                     </div>
                 </div>

@@ -39,6 +39,7 @@ body{
   word-wrap: break-word;
   text-decoration: none;
   color:inherit;
+  font-size: large;
 }
 
 #collapseRecientes ul li:hover{
