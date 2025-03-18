@@ -29,7 +29,7 @@ def exportar_txt_a_pdf(txt_path, output_pdf_path):
         pdf = FPDF()
         pdf.add_page()
 
-        font_path = os.path.join(os.path.dirname(__file__), "DejaVuSans.ttf")
+        font_path = os.path.join(os.getcwd(), "DejaVuSans.ttf")
         pdf.add_font("DejaVu", "", font_path, uni=True)
         pdf.set_font("DejaVu", size=12)
 

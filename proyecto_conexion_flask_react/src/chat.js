@@ -720,9 +720,9 @@ const Chat = () => {
     }
 
 
-    useEffect(() => {
-        enterMandar();
-    }, [campo_msg, handleSubmit]);
+    //useEffect(() => {
+    //    enterMandar();
+    //}, [campo_msg, handleSubmit]);
 
 
     const sendMessageToBackend = async (userMessage) => {
