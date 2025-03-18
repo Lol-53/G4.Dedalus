@@ -26,14 +26,14 @@ for _, row in df.iterrows():
         )
 
     preguntas = [
-            {"question": "¿Qué información hay en la nota médica?", "id": i, "answers": [{"text": row['Nota'], "answer_start": context.find(str(row['Nota']))}]},
+            {"question": f"¿Qué información hay en la nota médica del día {row['Fecha']}?", "id": i, "answers": [{"text": row['Nota'], "answer_start": context.find(str(row['Nota']))}]},
             ]
 
     data["data"].append({"title": titulo , "paragraphs": [{"context": context, "qas": preguntas}]})
     i+=2
 
 # Guardar en JSON
-with open("dataset_squad_notas.json", "w", encoding="utf-8") as f:
+with open("dataset_squad_notas_con_FechasPreguntas.json", "w", encoding="utf-8") as f:
     json.dump(data, f, indent=4,ensure_ascii=False)
 
 print("✅ Dataset convertido a formato SQuAD.")
