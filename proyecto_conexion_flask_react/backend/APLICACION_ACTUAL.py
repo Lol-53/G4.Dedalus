@@ -54,7 +54,7 @@ for emb in embeddingFiles:
 # Asegurar que exista la carpeta de historiales
 os.makedirs(DATA_PATH, exist_ok=True)
 
-def generarEmbedding(user_message, id_paciente, num_matches=5, similarity_threshold=0.8, current_matches=[], user_embedding=None):
+def generarEmbedding(user_message, id_paciente, num_matches=3, similarity_threshold=0.7, current_matches=[], user_embedding=None):
     """
     Generates embeddings and finds the top N most similar matches that exceed a minimum similarity threshold.
 
