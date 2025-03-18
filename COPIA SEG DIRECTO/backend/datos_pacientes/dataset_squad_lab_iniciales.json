@@ -1,0 +1,1104 @@
+{
+    "data": [
+        {
+            "title": "1",
+            "paragraphs": [
+                {
+                    "context": "Paciente 1 nombre Juan Pérez. Glucosa: 110 mg/dL. pH: 7.35. Cetonas: 0.0 mmol/L. Creatinina: 1.1 mg/dL. Hemoglobina: 14.5 g/dL. Leucocitos: 15000 células/mm³. Sodio: 134 mEq/L. Potasio: 4.3 mEq/L. Urea: 50 mg/dL. Amilasa: 80 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 1,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 39
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 2,
+                            "answers": [
+                                {
+                                    "text": 7.35,
+                                    "answer_start": 54
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 3,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 69
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 4,
+                            "answers": [
+                                {
+                                    "text": 1.1,
+                                    "answer_start": 93
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 5,
+                            "answers": [
+                                {
+                                    "text": 14.5,
+                                    "answer_start": 117
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 6,
+                            "answers": [
+                                {
+                                    "text": 15000,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 7,
+                            "answers": [
+                                {
+                                    "text": 134,
+                                    "answer_start": 166
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 8,
+                            "answers": [
+                                {
+                                    "text": 4.3,
+                                    "answer_start": 186
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 9,
+                            "answers": [
+                                {
+                                    "text": 50,
+                                    "answer_start": 141
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 10,
+                            "answers": [
+                                {
+                                    "text": 80,
+                                    "answer_start": 222
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "2",
+            "paragraphs": [
+                {
+                    "context": "Paciente 2 nombre María López. Glucosa: 140 mg/dL. pH: 7.3. Cetonas: 0.0 mmol/L. Creatinina: 0.9 mg/dL. Hemoglobina: 13.0 g/dL. Leucocitos: 12000 células/mm³. Sodio: 137 mEq/L. Potasio: 4.0 mEq/L. Urea: 40 mg/dL. Amilasa: 50 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 11,
+                            "answers": [
+                                {
+                                    "text": 140,
+                                    "answer_start": 40
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 12,
+                            "answers": [
+                                {
+                                    "text": 7.3,
+                                    "answer_start": 55
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 13,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 69
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 14,
+                            "answers": [
+                                {
+                                    "text": 0.9,
+                                    "answer_start": 93
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 15,
+                            "answers": [
+                                {
+                                    "text": 13.0,
+                                    "answer_start": 117
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 16,
+                            "answers": [
+                                {
+                                    "text": 12000,
+                                    "answer_start": 140
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 17,
+                            "answers": [
+                                {
+                                    "text": 137,
+                                    "answer_start": 166
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 18,
+                            "answers": [
+                                {
+                                    "text": 4.0,
+                                    "answer_start": 186
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 19,
+                            "answers": [
+                                {
+                                    "text": 40,
+                                    "answer_start": 41
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 20,
+                            "answers": [
+                                {
+                                    "text": 50,
+                                    "answer_start": 222
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "3",
+            "paragraphs": [
+                {
+                    "context": "Paciente 3 nombre Carlos García. Glucosa: 450 mg/dL. pH: 7.1. Cetonas: 5.0 mmol/L. Creatinina: 1.6 mg/dL. Hemoglobina: 16.0 g/dL. Leucocitos: 18000 células/mm³. Sodio: 130 mEq/L. Potasio: 5.5 mEq/L. Urea: 60 mg/dL. Amilasa: 95 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 21,
+                            "answers": [
+                                {
+                                    "text": 450,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 22,
+                            "answers": [
+                                {
+                                    "text": 7.1,
+                                    "answer_start": 57
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 23,
+                            "answers": [
+                                {
+                                    "text": 5.0,
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 24,
+                            "answers": [
+                                {
+                                    "text": 1.6,
+                                    "answer_start": 95
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 25,
+                            "answers": [
+                                {
+                                    "text": 16.0,
+                                    "answer_start": 119
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 26,
+                            "answers": [
+                                {
+                                    "text": 18000,
+                                    "answer_start": 142
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 27,
+                            "answers": [
+                                {
+                                    "text": 130,
+                                    "answer_start": 168
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 28,
+                            "answers": [
+                                {
+                                    "text": 5.5,
+                                    "answer_start": 188
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 29,
+                            "answers": [
+                                {
+                                    "text": 60,
+                                    "answer_start": 205
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 30,
+                            "answers": [
+                                {
+                                    "text": 95,
+                                    "answer_start": 224
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "4",
+            "paragraphs": [
+                {
+                    "context": "Paciente 4 nombre Lucía Ramírez. Glucosa: 120 mg/dL. pH: 7.4. Cetonas: 0.0 mmol/L. Creatinina: 0.8 mg/dL. Hemoglobina: 12.8 g/dL. Leucocitos: 16000 células/mm³. Sodio: 135 mEq/L. Potasio: 3.8 mEq/L. Urea: 30 mg/dL. Amilasa: 55 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 31,
+                            "answers": [
+                                {
+                                    "text": 120,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 32,
+                            "answers": [
+                                {
+                                    "text": 7.4,
+                                    "answer_start": 57
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 33,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 34,
+                            "answers": [
+                                {
+                                    "text": 0.8,
+                                    "answer_start": 95
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 35,
+                            "answers": [
+                                {
+                                    "text": 12.8,
+                                    "answer_start": 119
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 36,
+                            "answers": [
+                                {
+                                    "text": 16000,
+                                    "answer_start": 142
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 37,
+                            "answers": [
+                                {
+                                    "text": 135,
+                                    "answer_start": 168
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 38,
+                            "answers": [
+                                {
+                                    "text": 3.8,
+                                    "answer_start": 188
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 39,
+                            "answers": [
+                                {
+                                    "text": 30,
+                                    "answer_start": 205
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 40,
+                            "answers": [
+                                {
+                                    "text": 55,
+                                    "answer_start": 224
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "5",
+            "paragraphs": [
+                {
+                    "context": "Paciente 5 nombre Miguel Rodríguez. Glucosa: 130 mg/dL. pH: 7.28. Cetonas: 0.0 mmol/L. Creatinina: 1.8 mg/dL. Hemoglobina: 11.0 g/dL. Leucocitos: 12000 células/mm³. Sodio: 130 mEq/L. Potasio: 4.8 mEq/L. Urea: 90 mg/dL. Amilasa: 30 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 41,
+                            "answers": [
+                                {
+                                    "text": 130,
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 42,
+                            "answers": [
+                                {
+                                    "text": 7.28,
+                                    "answer_start": 60
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 43,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 75
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 44,
+                            "answers": [
+                                {
+                                    "text": 1.8,
+                                    "answer_start": 99
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 45,
+                            "answers": [
+                                {
+                                    "text": 11.0,
+                                    "answer_start": 123
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 46,
+                            "answers": [
+                                {
+                                    "text": 12000,
+                                    "answer_start": 146
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 47,
+                            "answers": [
+                                {
+                                    "text": 130,
+                                    "answer_start": 45
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 48,
+                            "answers": [
+                                {
+                                    "text": 4.8,
+                                    "answer_start": 192
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 49,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 209
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 50,
+                            "answers": [
+                                {
+                                    "text": 30,
+                                    "answer_start": 46
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "6",
+            "paragraphs": [
+                {
+                    "context": "Paciente 6 nombre Ana Gómez. Glucosa: 220 mg/dL. pH: 7.25. Cetonas: 0.4 mmol/L. Creatinina: 2.0 mg/dL. Hemoglobina: 13.0 g/dL. Leucocitos: 18000 células/mm³. Sodio: 132 mEq/L. Potasio: 5.2 mEq/L. Urea: 90 mg/dL. Amilasa: 25 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 51,
+                            "answers": [
+                                {
+                                    "text": 220,
+                                    "answer_start": 38
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 52,
+                            "answers": [
+                                {
+                                    "text": 7.25,
+                                    "answer_start": 53
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 53,
+                            "answers": [
+                                {
+                                    "text": 0.4,
+                                    "answer_start": 68
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 54,
+                            "answers": [
+                                {
+                                    "text": 2.0,
+                                    "answer_start": 92
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 55,
+                            "answers": [
+                                {
+                                    "text": 13.0,
+                                    "answer_start": 116
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 56,
+                            "answers": [
+                                {
+                                    "text": 18000,
+                                    "answer_start": 139
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 57,
+                            "answers": [
+                                {
+                                    "text": 132,
+                                    "answer_start": 165
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 58,
+                            "answers": [
+                                {
+                                    "text": 5.2,
+                                    "answer_start": 185
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 59,
+                            "answers": [
+                                {
+                                    "text": 90,
+                                    "answer_start": 202
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 60,
+                            "answers": [
+                                {
+                                    "text": 25,
+                                    "answer_start": 55
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "7",
+            "paragraphs": [
+                {
+                    "context": "Paciente 7 nombre Pedro Álvarez. Glucosa: 180 mg/dL. pH: 7.37. Cetonas: 0.0 mmol/L. Creatinina: 1.0 mg/dL. Hemoglobina: 14.0 g/dL. Leucocitos: 12000 células/mm³. Sodio: 138 mEq/L. Potasio: 4.3 mEq/L. Urea: 40 mg/dL. Amilasa: 20 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 61,
+                            "answers": [
+                                {
+                                    "text": 180,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 62,
+                            "answers": [
+                                {
+                                    "text": 7.37,
+                                    "answer_start": 57
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 63,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 72
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 64,
+                            "answers": [
+                                {
+                                    "text": 1.0,
+                                    "answer_start": 96
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 65,
+                            "answers": [
+                                {
+                                    "text": 14.0,
+                                    "answer_start": 120
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 66,
+                            "answers": [
+                                {
+                                    "text": 12000,
+                                    "answer_start": 143
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 67,
+                            "answers": [
+                                {
+                                    "text": 138,
+                                    "answer_start": 169
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 68,
+                            "answers": [
+                                {
+                                    "text": 4.3,
+                                    "answer_start": 189
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 69,
+                            "answers": [
+                                {
+                                    "text": 40,
+                                    "answer_start": 206
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 70,
+                            "answers": [
+                                {
+                                    "text": 20,
+                                    "answer_start": 144
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "8",
+            "paragraphs": [
+                {
+                    "context": "Paciente 8 nombre Rosa Jiménez. Glucosa: 130 mg/dL. pH: 7.28. Cetonas: 0.0 mmol/L. Creatinina: 0.9 mg/dL. Hemoglobina: 16.0 g/dL. Leucocitos: 14000 células/mm³. Sodio: 135 mEq/L. Potasio: 3.6 mEq/L. Urea: 30 mg/dL. Amilasa: 20 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 71,
+                            "answers": [
+                                {
+                                    "text": 130,
+                                    "answer_start": 41
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 72,
+                            "answers": [
+                                {
+                                    "text": 7.28,
+                                    "answer_start": 56
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 73,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 71
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 74,
+                            "answers": [
+                                {
+                                    "text": 0.9,
+                                    "answer_start": 95
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 75,
+                            "answers": [
+                                {
+                                    "text": 16.0,
+                                    "answer_start": 119
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 76,
+                            "answers": [
+                                {
+                                    "text": 14000,
+                                    "answer_start": 142
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 77,
+                            "answers": [
+                                {
+                                    "text": 135,
+                                    "answer_start": 168
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 78,
+                            "answers": [
+                                {
+                                    "text": 3.6,
+                                    "answer_start": 188
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 79,
+                            "answers": [
+                                {
+                                    "text": 30,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 80,
+                            "answers": [
+                                {
+                                    "text": 20,
+                                    "answer_start": 224
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "9",
+            "paragraphs": [
+                {
+                    "context": "Paciente 9 nombre Javier Santos. Glucosa: 110 mg/dL. pH: 7.48. Cetonas: 0.0 mmol/L. Creatinina: 0.8 mg/dL. Hemoglobina: 15.0 g/dL. Leucocitos: 14000 células/mm³. Sodio: 138 mEq/L. Potasio: 3.2 mEq/L. Urea: 15 mg/dL. Amilasa: 25 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 81,
+                            "answers": [
+                                {
+                                    "text": 110,
+                                    "answer_start": 42
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 82,
+                            "answers": [
+                                {
+                                    "text": 7.48,
+                                    "answer_start": 57
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 83,
+                            "answers": [
+                                {
+                                    "text": 0.0,
+                                    "answer_start": 72
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 84,
+                            "answers": [
+                                {
+                                    "text": 0.8,
+                                    "answer_start": 96
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 85,
+                            "answers": [
+                                {
+                                    "text": 15.0,
+                                    "answer_start": 120
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 86,
+                            "answers": [
+                                {
+                                    "text": 14000,
+                                    "answer_start": 143
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 87,
+                            "answers": [
+                                {
+                                    "text": 138,
+                                    "answer_start": 169
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 88,
+                            "answers": [
+                                {
+                                    "text": 3.2,
+                                    "answer_start": 189
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 89,
+                            "answers": [
+                                {
+                                    "text": 15,
+                                    "answer_start": 120
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 90,
+                            "answers": [
+                                {
+                                    "text": 25,
+                                    "answer_start": 225
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "10",
+            "paragraphs": [
+                {
+                    "context": "Paciente 10 nombre Alejandro Ruiz. Glucosa: 180 mg/dL. pH: 7.3. Cetonas: 0.5 mmol/L. Creatinina: 1.4 mg/dL. Hemoglobina: 16.0 g/dL. Leucocitos: 17000 células/mm³. Sodio: 133 mEq/L. Potasio: 4.5 mEq/L. Urea: 70 mg/dL. Amilasa: 850 U/L. ",
+                    "qas": [
+                        {
+                            "question": "¿Cuál es el nivel de glucosa del paciente?",
+                            "id": 91,
+                            "answers": [
+                                {
+                                    "text": 180,
+                                    "answer_start": 44
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el pH del paciente?",
+                            "id": 92,
+                            "answers": [
+                                {
+                                    "text": 7.3,
+                                    "answer_start": 59
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de cetonas del paciente?",
+                            "id": 93,
+                            "answers": [
+                                {
+                                    "text": 0.5,
+                                    "answer_start": 73
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de creatinina del paciente?",
+                            "id": 94,
+                            "answers": [
+                                {
+                                    "text": 1.4,
+                                    "answer_start": 97
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de hemoglobina del paciente?",
+                            "id": 95,
+                            "answers": [
+                                {
+                                    "text": 16.0,
+                                    "answer_start": 121
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuántos leucocitos tiene el paciente?",
+                            "id": 96,
+                            "answers": [
+                                {
+                                    "text": 17000,
+                                    "answer_start": 144
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de sodio del paciente?",
+                            "id": 97,
+                            "answers": [
+                                {
+                                    "text": 133,
+                                    "answer_start": 170
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de potasio del paciente?",
+                            "id": 98,
+                            "answers": [
+                                {
+                                    "text": 4.5,
+                                    "answer_start": 190
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de urea del paciente?",
+                            "id": 99,
+                            "answers": [
+                                {
+                                    "text": 70,
+                                    "answer_start": 145
+                                }
+                            ]
+                        },
+                        {
+                            "question": "¿Cuál es el nivel de amilasa del paciente?",
+                            "id": 100,
+                            "answers": [
+                                {
+                                    "text": 850,
+                                    "answer_start": 226
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

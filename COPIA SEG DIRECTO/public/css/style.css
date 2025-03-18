@@ -1,0 +1,137 @@
+body{
+  font-family: "Open Sans", sans-serif;
+}
+
+
+/* ------------------ DEFINICION COLORES DEDALUS ------------------ */
+
+:root{
+  --greenD: #c5e86c;
+  --azul1D: #4298b5;
+  --azul2D: #34879e;
+  --azul3D: #26508e;
+}
+
+.lateral{
+  background-color: #fbfbfb;
+  width:200px;
+
+}
+
+.navbar a{
+  color:#26508e;
+  font-size: larger;
+  transition: color 0.3s ease-in-out, font-size 0.1s ease-in-out;
+}
+
+.navbar a:hover{
+  color:#34879e;
+  font-size: x-large;
+  transition: font-size 0.1s ease-in-out;
+}
+
+header h1{
+  font-size: 5em;
+}
+
+#navBarCollapsed{
+  transition: transform 0.3s linear;
+}
+
+#page{
+  transition: transform 0.3s linear, position 0.3s linear;
+
+  /* left:200px; */
+}
+
+.hide{
+  transform: translateX(-100%);
+}
+
+
+/* @media (max-width:767px){
+#page{
+    left:0px
+}
+
+}
+
+@media (min-width:768px){
+#page{
+    left:0px
+}
+
+} */
+
+.lateral.hidden {
+  transform: translateX(-100%);
+}
+
+#page.hidden{
+  transform: translateX(0px);
+}
+
+#page.expanded{
+  transform: translateX(-200px);
+}
+
+
+#menu-button{
+  transition: transform 0.3s linear;
+}
+
+#menu-button.expanded{
+  transform: translateY(10px);
+}
+
+#menu-button.hidden{
+  transform: translateY(-10px);
+}
+
+/* -------------------------------------------------------------------------- */
+
+#pacientes .card{
+  min-width:200px;
+  max-width:350px;
+  height:150px;
+  margin:10px;
+  margin-right: calc(1vw + 5px);
+  font-size:20px;
+  background-color: #fbfbfb;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border: none;
+  text-wrap-mode: wrap;
+  /* color:#26508e; */
+  flex: 1 1 200px;
+}
+
+#pacientes .card:hover{
+  cursor:pointer;
+  background-color: #f7f7f7;
+  transform: scale(1.05);
+}
+
+#pacientes #newPaciente{
+  text-align: center;
+  justify-content: center;
+  font-size:100px;
+  color:gray;
+}
+
+
+.card-gradient.gr1{
+  background: linear-gradient(to right, #bee7a6, var(--azul1D));
+}
+
+.card-gradient.gr2{
+  background: linear-gradient(to left, var(--azul1D), var(--azul3D));
+}
+
+
+.card-gradient.gr3{
+  background: linear-gradient(to right, var(--greenD), #3b78e9);
+}
+
+.card-gradient.gr4{
+  background: linear-gradient(to right, #3399dd, #c5e86c);
+}

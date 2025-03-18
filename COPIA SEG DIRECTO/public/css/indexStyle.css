@@ -1,0 +1,11 @@
+body {
+  background-image: url('../img/fondoWeb.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+img{
+  width: 500px;  /* Cambia el ancho */
+  height: auto;  /* Mantiene la proporción */
+}
