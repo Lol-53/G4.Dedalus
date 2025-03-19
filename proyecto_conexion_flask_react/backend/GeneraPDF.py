@@ -2,6 +2,13 @@ from fpdf import FPDF
 import os
 
 def GeneraPDF(contenido, nombre_pdf="informe_generado.pdf"):
+
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    public_dir = os.path.join(base_dir, "public")
+    ruta_pdf = os.path.join(public_dir, nombre_pdf)
+
+    if os.path.exists(ruta_pdf):
+        os.remove(ruta_pdf)  # Eliminar archivo existente
     txt_path = guardar_string_como_txt(contenido, "archivo")
 
     # Ruta absoluta hacia ../public

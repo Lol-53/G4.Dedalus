@@ -800,8 +800,8 @@ const Chat = () => {
         localStorage.setItem('recientes', JSON.stringify(nuevas));
     };
 
-    const generarResumen = async () => {
-
+    const generarResumen = async (e) => {
+        e.preventDefault()
         setPeticionResumen(true)
 
         const response=await fetch("http://localhost:5000/generate-report", {
