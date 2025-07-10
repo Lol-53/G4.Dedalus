@@ -1,0 +1,84 @@
+Ciertamente, aquí tienes un resumen clínico detallado de la paciente María López:
+
+Resumen Clínico de María López
+Fecha de ingreso: 10/07/2023
+
+Datos del paciente:
+
+Nombre completo: María López
+Edad: 75 años
+Sexo: Femenino
+Identificador: 2
+Cama: 2
+Código NUHSA: NA 34720037
+
+Motivo de Ingreso:
+
+La paciente ingresó por dolor torácico opresivo irradiado a brazo izquierdo, lo que posteriormente se diagnosticó como infarto agudo de miocardio (IAM) anterior extenso.
+
+Antecedentes médicos:
+
+Enfermedades crónicas: Hipertensión arterial, hipercolesterolemia
+Cirugías previas: Colecistectomía laparoscópica hace 5 años
+Alergias: Penicilina
+
+Estado clínico actual:
+
+Al ingreso, la paciente se presentó hipotensa y diaforética con una presión arterial de 90/60 mmHg. Se le diagnosticó un infarto agudo de miocardio (IAM) anterior extenso. 
+
+Evolución: 
+- Día 1: Ingresó a UCI, recibió angioplastia primaria con colocación de stent farmacoactivo en la arteria descendente anterior (DA). Se inició soporte con noradrenalina.
+- Día 2: Evolución favorable, sin dolor torácico recurrente. PA 110/70 sin inotrópicos, FC 80 lpm. Ecocardiograma mostró aquinesia anteroseptal con FE 45%.
+- Día 3: Trasladada a Unidad Coronaria. Estable hemodinámicamente (PA 115/75). Inició deambulación sin complicaciones.
+- Día 4: Continuó mejorando. Prueba de esfuerzo submáxima mostró buena tolerancia.
+- Día 5: Condiciones de alta. PA 120/80, FC 68 lpm, SatO2 98% aire ambiente.
+
+Pruebas realizadas:
+
+1. Laboratorio inicial (10/07/2023):
+   - Glucosa: 150 mg/dL
+   - Leucocitos: 12,000/μL
+   - Hemoglobina: 13.0 g/dL
+   - Plaquetas: 230,000/μL
+   - Colesterol total: 240 mg/dL
+   - HDL: 40 mg/dL
+   - LDL: 170 mg/dL
+   - Triglicéridos: 150 mg/dL
+   - Creatinina: 0.9 mg/dL
+   - Troponina I: Positiva (en ascenso)
+
+2. ECG de 12 derivaciones
+3. Cateterismo cardíaco con angioplastia y stent
+4. Ecocardiograma: Mostró aquinesia anteroseptal, FE 45%
+5. Radiografía de tórax: Cardiomegalia leve y congestión pulmonar hilio-basilar
+6. Doppler de miembros inferiores: Sin evidencias de TVP
+7. Prueba de esfuerzo submáxima (Día 4): Buena tolerancia, sin angina ni arritmias
+
+Notas médicas:
+
+10/07/2023: Ingreso por IAM anterior extenso. Angioplastia primaria con stent en DA. Inicio de doble antiagregación y anticoagulación.
+11/07/2023: Evolución favorable en UCI. Ecocardiograma muestra FE 45%. Se inicia IECA.
+12/07/2023: Traslado a Unidad Coronaria. Inicio de deambulación asistida. Se añade aspirina a dosis baja.
+13/07/2023: Continúa mejoría. Prueba de esfuerzo submáxima satisfactoria. Se refuerza educación sobre factores de riesgo.
+14/07/2023: Alta hospitalaria. Se explica necesidad de continuar doble antiagregación por 12 meses.
+
+Tratamiento y recomendaciones:
+
+1. Medicamentos:
+   - Clopidogrel 75 mg VO diario
+   - Atorvastatina 80 mg VO nocturna
+   - Bisoprolol 2.5 mg VO diario
+   - Ramipril (dosis ajustada según PA)
+   - Aspirina a dosis baja
+
+2. Recomendaciones:
+   - Dieta hiposódica e hipograsa
+   - Control estricto de factores de riesgo (PA, glucemia)
+   - Rehabilitación cardíaca ambulatoria
+   - Seguimiento con cardiología en 1 semana
+   - Continuar doble antiagregación por 12 meses, luego AAS indefinidamente
+   - Mantener betabloqueante, IECA y estatina de por vida
+
+Notas adicionales:
+
+La paciente ha mostrado una evolución favorable tras el infarto agudo de miocardio. Es crucial mantener un seguimiento estrecho y asegurar la adherencia al tratamiento para prevenir complicaciones futuras. La educación del paciente sobre los signos de alarma y la importancia de los cambios en el estilo de vida será fundamental para su recuperación a largo plazo. Se recomienda un abordaje integral que incluya apoyo psicológico para manejar el estrés post-infarto y fomentar una actitud positiva hacia los cambios necesarios en su vida diaria.
